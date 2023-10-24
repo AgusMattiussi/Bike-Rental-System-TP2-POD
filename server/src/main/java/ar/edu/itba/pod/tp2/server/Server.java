@@ -40,11 +40,13 @@ public class Server {
         config.setNetworkConfig(networkConfig);
 
         // Management Center Config
+        /*
         ManagementCenterConfig managementCenterConfig = new ManagementCenterConfig()
                 .setUrl("http://localhost:8080/mancenter/")
                 .setEnabled(true);
 
         config.setManagementCenterConfig(managementCenterConfig);
+        */
 
         // Start cluster
         Hazelcast.newHazelcastInstance(config);

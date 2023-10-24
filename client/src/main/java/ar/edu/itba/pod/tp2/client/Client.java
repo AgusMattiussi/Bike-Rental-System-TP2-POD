@@ -27,7 +27,7 @@ public class Client {
 
         // Client Network Config
         ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig();
-        String[] addresses = {"192.168.1.51:5701"};
+        String[] addresses = {"192.168.1.110:5701"};
         clientNetworkConfig.addAddress(addresses);
 
         clientConfig.setNetworkConfig(clientNetworkConfig);
@@ -39,7 +39,9 @@ public class Client {
 
         testMapFromMember.set(1, "test1");
 
-        IMap<Integer, String> testMap = hazelcastInstance.getMap(mapName);System.out.println(testMap.get(1));
+        IMap<Integer, String> testMap = hazelcastInstance.getMap(mapName);
+
+        System.out.println(testMap.get(1));
 
         // Shutdown
         HazelcastClient.shutdownAll();

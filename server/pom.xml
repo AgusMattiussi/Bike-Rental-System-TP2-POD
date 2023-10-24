@@ -18,7 +18,6 @@
     <dependency>
       <groupId>com.hazelcast</groupId>
       <artifactId>hazelcast-all</artifactId>
-      <version>3.8.6</version>
     </dependency>
   </dependencies>
   <build>
