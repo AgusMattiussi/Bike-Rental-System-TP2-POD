@@ -1,26 +1,52 @@
 package ar.edu.itba.pod.tp2.server;
 
-import io.grpc.ServerBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
+import java.util.Collections;
+
+import com.hazelcast.config.*;
+import com.hazelcast.core.Hazelcast;
+import com.hazelcast.core.HazelcastInstance;
 
 public class Server {
     private static Logger logger = LoggerFactory.getLogger(Server.class);
 
     public static void main(String[] args) throws InterruptedException, IOException {
-        logger.info(" Server Starting ...");
+        logger.info("hz-config Server Starting ...");
 
-        int port = 50051;
-        io.grpc.Server server = ServerBuilder.forPort(port)
-                .build();
-        server.start();
-        logger.info("Server started, listening on " + port);
-        server.awaitTermination();
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            logger.info("Shutting down gRPC server since JVM is shutting down");
-            server.shutdown();
-            logger.info("Server shut down");
-        }));
-    }}
+        // Config
+        Config config = new Config();
+
+        // Group Config
+        GroupConfig groupConfig = new GroupConfig()
+                .setName("g0")
+                .setPassword("g0-pass");
+        config.setGroupConfig(groupConfig);
+
+        // Network Config
+        MulticastConfig multicastConfig = new MulticastConfig();
+
+        JoinConfig joinConfig = new JoinConfig().setMulticastConfig(multicastConfig);
+
+        InterfacesConfig interfacesConfig = new InterfacesConfig()
+                .setInterfaces(Collections.singletonList("192.168.1.*"))
+                .setEnabled(true);
+
+        NetworkConfig networkConfig = new NetworkConfig()
+                .setInterfaces(interfacesConfig)
+                .setJoin(joinConfig);
+
+        config.setNetworkConfig(networkConfig);
+
+        // Management Center Config
+        ManagementCenterConfig managementCenterConfig = new ManagementCenterConfig()
+                .setUrl("http://localhost:8080/mancenter/")
+                .setEnabled(true);
+
+        config.setManagementCenterConfig(managementCenterConfig);
+
+        // Start cluster
+        Hazelcast.newHazelcastInstance(config);
+    }
+}
