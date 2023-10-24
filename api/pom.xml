@@ -16,6 +16,10 @@
       <artifactId>annotations-api</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>com.hazelcast</groupId>
+      <artifactId>hazelcast-all</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <extensions>
