@@ -1,15 +1,30 @@
 package ar.edu.itba.pod.tp2.client;
 
+import ar.edu.itba.pod.tp2.model.BikeTrip;
+
+import ar.edu.itba.pod.tp2.model.Station;
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import static ar.edu.itba.pod.tp2.client.utils.ClientUtils.*;
+import static ar.edu.itba.pod.tp2.client.AverageDistance.*;
+
 
 public class Client {
     private static Logger logger = LoggerFactory.getLogger(Client.class);
@@ -33,13 +48,21 @@ public class Client {
         HazelcastInstance hazelcastInstance = getHazelClientInstance(addresses);
         logger.info("Hazelcast client started");
 
+//        Mapa de tipo emplacement_pk_start -> [viajes que salen de ahi]
+        Map<Integer, BikeTrip> bikeTripMap = getBikeTrip(inPath);
+//        Mapa de tipo pk -> station
+        Map<Long, Station> stationMap = getStations(inPath);
 
-        String mapName = "testMap";
-        IMap<Integer, String> testMapFromMember = hazelcastInstance.getMap(mapName);
+        IMap<Integer, BikeTrip> bikeIMap = hazelcastInstance.getMap("bike-map");
+        IMap<Long, Station> stationIMap = hazelcastInstance.getMap("station-map");
 
-        testMapFromMember.set(1, "test1");
-        IMap<Integer, String> testMap = hazelcastInstance.getMap(mapName);
-        System.out.println(testMap.get(1));
+        try{
+            bikeIMap.putAll(bikeTripMap);
+            stationIMap.putAll(stationMap);
+        }catch (Exception e){
+            logger.error("Error en la lectura del archivo");
+//            TODO: limpiar y borrar
+        }
 
         switch (query) {
             case "query1" -> {
@@ -48,7 +71,7 @@ public class Client {
             case "query2" -> {
                 String n = argMap.get(N_VAL);
                 validateNullArgument(n, "N (result limit) not specified");
-
+                averageClientSolver(hazelcastInstance,n, bikeIMap, stationIMap);
                 logger.info("Query 2");
             }
             case "query3" -> {
@@ -68,4 +91,47 @@ public class Client {
         // Shutdown
         HazelcastClient.shutdownAll();
     }
+
+    private static Map<Long, Station> getStations(String inPath){
+        List<String[]> data = readData(inPath + "stations.csv");
+        Map<Long, Station> stationMap = new HashMap<>();
+        for (String[] dArr: data) {
+//            pk;name;latitude;longitude
+            stationMap.put(Long.parseLong(dArr[0]), new Station(Long.parseLong(dArr[0]), dArr[1], Double.parseDouble(dArr[2]), Double.parseDouble(dArr[3])));
+        }
+        return  stationMap;
+    }
+
+    private static Map<Integer, BikeTrip> getBikeTrip(String inPath){
+        List<String[]> data = readData(inPath + "bikes.csv");
+        Map<Integer, BikeTrip> bikeTripMap = new HashMap<>();
+        for (String[] dArr: data) {
+//            start_date;emplacement_pk_start;end_date;emplacement_pk_end;is_member
+            bikeTripMap.put(Integer.parseInt(dArr[1]), new BikeTrip(LocalDateTime.parse(dArr[0]), LocalDateTime.parse(dArr[2]), Integer.parseInt(dArr[1]), Integer.parseInt(dArr[3]), dArr[4].equals("1")));
+        }
+        return  bikeTripMap;
+    }
+
+    private static List<String[]> readData(String inPath){
+            FileReader filereader = null;
+            try {
+                filereader = new FileReader(inPath);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException("File not found");
+            }
+
+            CSVParser parser = new CSVParserBuilder()
+                    .withSeparator(';')
+                    .build();
+            try(CSVReader csvReader = new CSVReaderBuilder(filereader)
+                    .withSkipLines(1)
+                    .withCSVParser(parser)
+                    .build()) {
+                return csvReader.readAll();
+            } catch (IOException e) {
+                throw new RuntimeException("Error reading file in path");
+            }
+
+    }
+
 }
