@@ -1,14 +1,10 @@
 package ar.edu.itba.pod.tp2.client;
 
 import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.IList;
-import io.grpc.ManagedChannel;
-import model.BikeTrip;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
-import java.util.concurrent.ExecutionException;
 
 import static ar.edu.itba.pod.tp2.client.utils.ClientUtils.*;
 
