@@ -19,7 +19,6 @@ public class LongestTripReducerFactory implements ReducerFactory<Integer, Triple
     private static class LongestTripReducer extends Reducer<Triple<Integer, Long, LocalDateTime>, Pair<Integer, Long>> {
 
         private Triple<Integer, Long, LocalDateTime> longestTrip;
-
         @Override
         public void beginReduce() {
             longestTrip = new Triple<>(-1, -1L, LocalDateTime.MAX);
