@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 // Recibe un ID de viaje y un BikeTrip y emite como key el ID de la estación de inicio y como value una terna Triple
 // con el ID de la estacion de destino, la duración en minutos del viaje y la fecha de inicio del viaje (para desempatar
 // viajes de igual duración)
+@SuppressWarnings("deprecation")
 public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Triple<Integer, Long, LocalDateTime>>, HazelcastInstanceAware {
 
     private IMap<Integer, Station> stations;

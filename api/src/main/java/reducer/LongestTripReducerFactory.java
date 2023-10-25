@@ -11,6 +11,7 @@ import java.util.Comparator;
 import java.util.Map;
 
 // (startStationId, (endStationId, tripDuration, startDateTime)) -> (endStationId, longestTripDuration)
+@SuppressWarnings("deprecation")
 public class LongestTripReducerFactory implements ReducerFactory<Integer, Triple<Integer, Long, LocalDateTime>, Pair<Integer, Long>> {
 
     @Override
@@ -18,7 +19,7 @@ public class LongestTripReducerFactory implements ReducerFactory<Integer, Triple
         return new LongestTripReducer();
     }
 
-    private class LongestTripReducer extends Reducer<Triple<Integer, Long, LocalDateTime>, Pair<Integer, Long>> {
+    private static class LongestTripReducer extends Reducer<Triple<Integer, Long, LocalDateTime>, Pair<Integer, Long>> {
 
         private Triple<Integer, Long, LocalDateTime> longestTrip;
 
