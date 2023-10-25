@@ -1,5 +1,10 @@
 package ar.edu.itba.pod.tp2.client.utils;
 
+import com.hazelcast.client.HazelcastClient;
+import com.hazelcast.client.config.ClientConfig;
+import com.hazelcast.client.config.ClientNetworkConfig;
+import com.hazelcast.config.GroupConfig;
+import com.hazelcast.core.HazelcastInstance;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.slf4j.Logger;
@@ -9,6 +14,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public final class ClientUtils {
@@ -16,7 +22,7 @@ public final class ClientUtils {
     public final static String INPUT_PATH = "inPath";
     public final static String SERVER_ADDRESS = "addresses";
     public final static String OUT_PATH = "outPath";
-    public final static String N = "n";
+    public final static String N_VAL = "n";
     public final static String START_DATE = "startDate";
     public final static String END_DATE = "endDate";
 
@@ -56,6 +62,23 @@ public final class ClientUtils {
             logger.error(erroMsg);
             System.exit(1);
         }
+    }
+
+
+    public static HazelcastInstance getHazelClientInstance(List<String> addresses) {
+        String name = "group_name";
+        String pass = "group_password";
+
+        ClientConfig clientConfig = new ClientConfig();
+
+        GroupConfig groupConfig = new GroupConfig().setName(name).setPassword(pass);
+        clientConfig.setGroupConfig(groupConfig);
+
+
+        ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig().setAddresses(addresses);
+        clientConfig.setNetworkConfig(clientNetworkConfig);
+
+        return HazelcastClient.newHazelcastClient(clientConfig);
     }
 }
 
