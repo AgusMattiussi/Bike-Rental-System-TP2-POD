@@ -1,14 +1,13 @@
-package mapper;
+package ar.edu.itba.pod.tp2.mapper;
 
+import ar.edu.itba.pod.tp2.model.Station;
+import ar.edu.itba.pod.tp2.model.Triple;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.HazelcastInstanceAware;
 import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.Context;
 import com.hazelcast.mapreduce.Mapper;
-import model.BikeTrip;
-import model.Pair;
-import model.Station;
-import model.Triple;
+import ar.edu.itba.pod.tp2.model.BikeTrip;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

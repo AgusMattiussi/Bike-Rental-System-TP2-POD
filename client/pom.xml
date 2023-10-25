@@ -19,11 +19,6 @@
       <groupId>com.hazelcast</groupId>
       <artifactId>hazelcast-all</artifactId>
     </dependency>
-      <dependency>
-          <groupId>io.grpc</groupId>
-          <artifactId>grpc-api</artifactId>
-          <version>1.49.0</version>
-      </dependency>
   </dependencies>
   <build>
     <testSourceDirectory>src/test/java</testSourceDirectory>
