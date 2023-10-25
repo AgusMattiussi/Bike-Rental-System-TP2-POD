@@ -27,7 +27,8 @@ public class Client {
 
         // Client Network Config
         ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig();
-        String[] addresses = {"192.168.1.110:5701"};
+        String[] addresses = {"127.0.0.1:5701"};
+//        String[] addresses = {"192.168.1.110:5701"};
         clientNetworkConfig.addAddress(addresses);
 
         clientConfig.setNetworkConfig(clientNetworkConfig);
