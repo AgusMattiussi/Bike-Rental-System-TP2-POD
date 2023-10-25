@@ -21,7 +21,7 @@ import java.util.Map;
 public final class ClientUtils {
     private final static Logger logger = LoggerFactory.getLogger(ClientUtils.class);
     public final static String INPUT_PATH = "inPath";
-    public final static String SERVER_ADDRESS = "addresses";
+    public final static String ADDRESSES = "addresses";
     public final static String OUT_PATH = "outPath";
     public final static String N_VAL = "n";
     public final static String START_DATE = "startDate";

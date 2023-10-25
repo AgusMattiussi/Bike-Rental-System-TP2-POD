@@ -21,7 +21,7 @@ public class AverageDistance {
 
         Map<String, String> argMap = parseArguments(args);
 
-        final String serverAddress = getArgumentValue(argMap, SERVER_ADDRESS);
+        final String serverAddress = getArgumentValue(argMap, ADDRESSES);
         final String inPath = getArgumentValue(argMap, INPUT_PATH);
         final String outPath = getArgumentValue(argMap, OUT_PATH);
         final String N = getArgumentValue(argMap, N_VAL);

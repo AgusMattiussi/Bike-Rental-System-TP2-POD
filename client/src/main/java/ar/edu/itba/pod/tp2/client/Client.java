@@ -25,11 +25,11 @@ public class Client {
         final Map<String, String> argMap = parseArguments(args);
 
         final String query = args[0]; // TODO: Revisar
-        final List<String> addresses = getAddressesList(argMap.get("addresses"));
-        final String inPath = argMap.get("inPath");
-        final String outPath = argMap.get("outPath");
+        final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
+        final String inPath = argMap.get(INPUT_PATH);
+        final String outPath = argMap.get(OUT_PATH);
 
-        validateNullArgument(argMap.get("addresses"), "Addresses not specified");
+        validateNullArgument(argMap.get(ADDRESSES), "Addresses not specified");
         validateNullArgument(inPath, "Input path not specified");
         validateNullArgument(outPath, "Output path not specified");
 
@@ -49,7 +49,7 @@ public class Client {
                 logger.info("Query 1");
             }
             case "query2" -> {
-                String n = argMap.get("n");
+                String n = argMap.get(N_VAL);
                 validateNullArgument(n, "N (result limit) not specified");
 
                 logger.info("Query 2");
@@ -58,8 +58,8 @@ public class Client {
                 logger.info("Query 3");
             }
             case "query4" -> {
-                 String startDate = argMap.get("startDate");
-                 String endDate = argMap.get("endDate");
+                 String startDate = argMap.get(START_DATE);
+                 String endDate = argMap.get(END_DATE);
                  validateNullArgument(startDate, "Start date not specified");
                  validateNullArgument(endDate, "End date not specified");
 
