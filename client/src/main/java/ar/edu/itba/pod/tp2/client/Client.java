@@ -51,10 +51,10 @@ public class Client {
 //        Mapa de tipo emplacement_pk_start -> [viajes que salen de ahi]
         Map<Integer, BikeTrip> bikeTripMap = getBikeTrip(inPath);
 //        Mapa de tipo pk -> station
-        Map<Long, Station> stationMap = getStations(inPath);
+        Map<Integer, Station> stationMap = getStations(inPath);
 
         IMap<Integer, BikeTrip> bikeIMap = hazelcastInstance.getMap("bike-map");
-        IMap<Long, Station> stationIMap = hazelcastInstance.getMap("station-map");
+        IMap<Integer, Station> stationIMap = hazelcastInstance.getMap("station-map");
 
         try{
             bikeIMap.putAll(bikeTripMap);
@@ -76,6 +76,8 @@ public class Client {
             }
             case "query3" -> {
                 logger.info("Query 3");
+                Query3 query3Instance = new Query3("query3", hazelcastInstance, stationIMap, bikeIMap);
+                query3Instance.run();
             }
             case "query4" -> {
                  String startDate = argMap.get(START_DATE);
@@ -92,12 +94,12 @@ public class Client {
         HazelcastClient.shutdownAll();
     }
 
-    private static Map<Long, Station> getStations(String inPath){
+    private static Map<Integer, Station> getStations(String inPath){
         List<String[]> data = readData(inPath + "stations.csv");
-        Map<Long, Station> stationMap = new HashMap<>();
+        Map<Integer, Station> stationMap = new HashMap<>();
         for (String[] dArr: data) {
 //            pk;name;latitude;longitude
-            stationMap.put(Long.parseLong(dArr[0]), new Station(Long.parseLong(dArr[0]), dArr[1], Double.parseDouble(dArr[2]), Double.parseDouble(dArr[3])));
+            stationMap.put(Integer.parseInt(dArr[0]), new Station(Long.parseLong(dArr[0]), dArr[1], Double.parseDouble(dArr[2]), Double.parseDouble(dArr[3])));
         }
         return  stationMap;
     }

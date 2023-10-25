@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class AverageDistance {
     private static Logger logger = LoggerFactory.getLogger(AverageDistance.class);
-    public static void averageClientSolver(HazelcastInstance hazelcastInstance, String n, IMap<Integer, BikeTrip> bikeIMap, IMap<Long, Station> stationIMap) {
+    public static void averageClientSolver(HazelcastInstance hazelcastInstance, String n, IMap<Integer, BikeTrip> bikeIMap, IMap<Integer, Station> stationIMap) {
         // Example = ./query2 -Daddresses='10.6.0.1:5701' -DinPath=. -DoutPath=. -Dn=4
         logger.info("AverageDistance Client Starting...");
         try {
