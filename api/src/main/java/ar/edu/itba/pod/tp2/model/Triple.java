@@ -2,6 +2,7 @@ package ar.edu.itba.pod.tp2.model;
 
 import java.io.Serializable;
 
+// TODO: Cambiar esta clase del mal por "FinishedBikeTrip"
 public record Triple<A, B, C>(A first, B second, C third) implements Serializable {
 
     @Override
