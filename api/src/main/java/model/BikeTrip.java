@@ -1,42 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class BikeTrip {
-
-    private final LocalDateTime startDate;
-    private final LocalDateTime endDate;
-    private final int startStationId;
-    private final int endStationId;
-    private final boolean isMember;
-
-    public BikeTrip(LocalDateTime startDate, LocalDateTime endDate, int startStationId, int endStationId, boolean isMember) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.startStationId = startStationId;
-        this.endStationId = endStationId;
-        this.isMember = isMember;
-    }
-
-    public LocalDateTime getStartDate() {
-        return startDate;
-    }
-
-    public LocalDateTime getEndDate() {
-        return endDate;
-    }
-
-    public int getStartStationId() {
-        return startStationId;
-    }
-
-    public int getEndStationId() {
-        return endStationId;
-    }
-
-    public boolean isMember() {
-        return isMember;
-    }
+public record BikeTrip(LocalDateTime startDate, LocalDateTime endDate, int startStationId, int endStationId,
+                       boolean isMember) implements Serializable {
 
     @Override
     public boolean equals(Object o) {
@@ -50,16 +18,6 @@ public class BikeTrip {
         if (isMember != bikeTrip.isMember) return false;
         if (!startDate.equals(bikeTrip.startDate)) return false;
         return endDate.equals(bikeTrip.endDate);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = startDate.hashCode();
-        result = 31 * result + endDate.hashCode();
-        result = 31 * result + startStationId;
-        result = 31 * result + endStationId;
-        result = 31 * result + (isMember ? 1 : 0);
-        return result;
     }
 
     @Override

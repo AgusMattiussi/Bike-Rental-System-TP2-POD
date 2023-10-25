@@ -8,13 +8,15 @@ import com.hazelcast.mapreduce.Mapper;
 import model.BikeTrip;
 import model.Pair;
 import model.Station;
+import model.Triple;
 
 import java.time.Duration;
-import java.util.Map;
+import java.time.LocalDateTime;
 
-// Recibe un ID de viaje y un BikeTrip y emite como key el ID de la estación de inicio y como value un par
-// con el ID de la estacion de destino y la duración en minutos del viaje.
-public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Pair<Integer, Long>>, HazelcastInstanceAware {
+// Recibe un ID de viaje y un BikeTrip y emite como key el ID de la estación de inicio y como value una terna Triple
+// con el ID de la estacion de destino, la duración en minutos del viaje y la fecha de inicio del viaje (para desempatar
+// viajes de igual duración)
+public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Triple<Integer, Long, LocalDateTime>>, HazelcastInstanceAware {
 
     private IMap<Integer, Station> stations;
     private final String stationsMapName;
@@ -29,10 +31,9 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Pai
     }
 
     @Override
-    public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, Pair<Integer, Long>> context) {
-        Integer startStationId = bikeTrip.getStartStationId();
-        Integer endStationId = bikeTrip.getEndStationId();
-
+    public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, Triple<Integer, Long, LocalDateTime>> context) {
+        Integer startStationId = bikeTrip.startStationId();
+        Integer endStationId = bikeTrip.endStationId();
 
         // Solo tenemos en cuenta viajes entre distintas estaciones
         //TODO: Validar si son nulls?
@@ -41,10 +42,10 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Pai
         }
 
         // Calculamos la duracion del viaje en minutos
-        Duration tripDuration = Duration.between(bikeTrip.getStartDate(), bikeTrip.getEndDate());
+        Duration tripDuration = Duration.between(bikeTrip.startDate(), bikeTrip.endDate());
 
-        // Emitimos una tupla (startStationId, (endStationId, tripDuration))
-        context.emit(startStationId, new Pair<>(endStationId, tripDuration.toMinutes()));
+        // Emitimos una tupla (startStationId, (endStationId, tripDuration, startDateTime))
+        context.emit(startStationId, new Triple<>(endStationId, tripDuration.toMinutes(), bikeTrip.startDate()));
     }
 
 

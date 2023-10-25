@@ -2,23 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Pair<A, B> implements Serializable {
-
-    private final A first;
-    private final B second;
-
-    public Pair(A first, B second) {
-        this.first = first;
-        this.second = second;
-    }
-
-    public A getFirst() {
-        return first;
-    }
-
-    public B getSecond() {
-        return second;
-    }
+public record Pair<A, B>(A first, B second) implements Serializable {
 
     @Override
     public boolean equals(Object o) {
@@ -29,13 +13,6 @@ public class Pair<A, B> implements Serializable {
 
         if (!first.equals(pair.first)) return false;
         return second.equals(pair.second);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = first.hashCode();
-        result = 31 * result + second.hashCode();
-        return result;
     }
 
     @Override
