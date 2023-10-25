@@ -4,6 +4,7 @@ import ar.edu.itba.pod.tp2.model.BikeTrip;
 
 import ar.edu.itba.pod.tp2.model.Station;
 import com.hazelcast.client.HazelcastClient;
+import com.hazelcast.client.proxy.ClientMapProxy;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 import com.opencsv.CSVParser;
@@ -18,9 +19,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static ar.edu.itba.pod.tp2.client.utils.ClientUtils.*;
 import static ar.edu.itba.pod.tp2.client.AverageDistance.*;
@@ -48,13 +47,13 @@ public class Client {
         HazelcastInstance hazelcastInstance = getHazelClientInstance(addresses);
         logger.info("Hazelcast client started");
 
-//        Mapa de tipo emplacement_pk_start -> [viajes que salen de ahi]
-        Map<Integer, BikeTrip> bikeTripMap = getBikeTrip(inPath);
 //        Mapa de tipo pk -> station
-        Map<Long, Station> stationMap = getStations(inPath);
+        Map<Integer, Station> stationMap = getStations(inPath);
+//        Mapa de tipo emplacement_pk_start -> [viajes que salen de ahi]
+        Map<String, BikeTrip> bikeTripMap = getBikeTrip(inPath, stationMap);
 
-        IMap<Integer, BikeTrip> bikeIMap = hazelcastInstance.getMap("bike-map");
-        IMap<Long, Station> stationIMap = hazelcastInstance.getMap("station-map");
+        IMap<String, BikeTrip> bikeIMap = hazelcastInstance.getMap("bike-map");
+        IMap<Integer, Station> stationIMap = hazelcastInstance.getMap("station-map");
 
         try{
             bikeIMap.putAll(bikeTripMap);
@@ -71,8 +70,12 @@ public class Client {
             case "query2" -> {
                 String n = argMap.get(N_VAL);
                 validateNullArgument(n, "N (result limit) not specified");
-                averageClientSolver(hazelcastInstance,n, bikeIMap, stationIMap);
                 logger.info("Query 2");
+
+                List<Station> stations = new ArrayList<>();
+                stations.addAll(stationMap.values());
+
+                averageClientSolver(hazelcastInstance,Integer.parseInt(n), bikeIMap, stations, outPath);
             }
             case "query3" -> {
                 logger.info("Query 3");
@@ -92,22 +95,23 @@ public class Client {
         HazelcastClient.shutdownAll();
     }
 
-    private static Map<Long, Station> getStations(String inPath){
+    private static Map<Integer, Station> getStations(String inPath){
         List<String[]> data = readData(inPath + "stations.csv");
-        Map<Long, Station> stationMap = new HashMap<>();
+        Map<Integer, Station> stationMap = new HashMap<>();
         for (String[] dArr: data) {
 //            pk;name;latitude;longitude
-            stationMap.put(Long.parseLong(dArr[0]), new Station(Long.parseLong(dArr[0]), dArr[1], Double.parseDouble(dArr[2]), Double.parseDouble(dArr[3])));
+            stationMap.put(Integer.parseInt(dArr[0]), new Station(
+                    Integer.parseInt(dArr[0]), dArr[1], Double.parseDouble(dArr[2]), Double.parseDouble(dArr[3])));
         }
         return  stationMap;
     }
 
-    private static Map<Integer, BikeTrip> getBikeTrip(String inPath){
+    private static Map<String, BikeTrip> getBikeTrip(String inPath, Map<Integer,Station> stationMap){
         List<String[]> data = readData(inPath + "bikes.csv");
-        Map<Integer, BikeTrip> bikeTripMap = new HashMap<>();
+        Map<String, BikeTrip> bikeTripMap = new HashMap<>();
         for (String[] dArr: data) {
 //            start_date;emplacement_pk_start;end_date;emplacement_pk_end;is_member
-            bikeTripMap.put(Integer.parseInt(dArr[1]), new BikeTrip(LocalDateTime.parse(dArr[0]), LocalDateTime.parse(dArr[2]), Integer.parseInt(dArr[1]), Integer.parseInt(dArr[3]), dArr[4].equals("1")));
+            bikeTripMap.put(stationMap.get(Integer.parseInt(dArr[1])).name(), new BikeTrip(LocalDateTime.parse(dArr[0]), LocalDateTime.parse(dArr[2]), Integer.parseInt(dArr[1]), Integer.parseInt(dArr[3]), dArr[4].equals("1")));
         }
         return  bikeTripMap;
     }

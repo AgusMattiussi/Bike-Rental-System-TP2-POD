@@ -2,7 +2,7 @@ package ar.edu.itba.pod.tp2.model;
 
 import java.io.Serializable;
 
-public record Station(long id, String name, double latitude, double longitude) implements Serializable {
+public record Station(int id, String name, double latitude, double longitude) implements Serializable {
 
     @Override
     public boolean equals(Object o) {
