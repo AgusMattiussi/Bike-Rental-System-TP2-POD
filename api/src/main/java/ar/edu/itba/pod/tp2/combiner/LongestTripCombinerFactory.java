@@ -12,7 +12,7 @@ public class LongestTripCombinerFactory implements CombinerFactory<Integer,
 
     @Override
     public Combiner<Triple<Integer, Long, LocalDateTime>, Triple<Integer, Long, LocalDateTime>> newCombiner(Integer integer) {
-        return null;
+        return new LongestTripCombiner();
     }
 
     private static class LongestTripCombiner extends Combiner<Triple<Integer, Long, LocalDateTime>, Triple<Integer, Long, LocalDateTime>> {
