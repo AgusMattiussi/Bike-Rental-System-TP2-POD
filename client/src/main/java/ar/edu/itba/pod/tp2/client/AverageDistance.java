@@ -22,12 +22,12 @@ import java.util.Map;
 
 public class AverageDistance {
     private static Logger logger = LoggerFactory.getLogger(AverageDistance.class);
-    public static void averageClientSolver(HazelcastInstance hazelcastInstance, int n, IMap<String, BikeTrip> bikeIMap, List<Station> stations, String outPath) {
+    public static void averageClientSolver(HazelcastInstance hazelcastInstance, int n, IMap<Integer, BikeTrip> bikeIMap, List<Station> stations, String outPath) {
         // Example = ./query2 -Daddresses='10.6.0.1:5701' -DinPath=. -DoutPath=. -Dn=4
         logger.info("Average Distance Client Starting...");
 
         JobTracker jobTracker = hazelcastInstance.getJobTracker("averageDistance");
-        Job<String, BikeTrip> job = jobTracker.newJob(KeyValueSource.fromMap(bikeIMap));
+        Job<Integer, BikeTrip> job = jobTracker.newJob(KeyValueSource.fromMap(bikeIMap));
 
 
         try {
@@ -38,30 +38,30 @@ public class AverageDistance {
                     .submit(new AverageDistanceCollator()).get();
 
 
-            writeResultToFile(outPath , result, n, outPath);
+            writeResultToFile(outPath, result, n, outPath);
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.error(e.toString());
         }
 
     }
 
-    static void writeResultToFile(String path, List<Map.Entry<String, Double>> result, int n, String outPath){
-        try {
-            BufferedWriter buffer = new BufferedWriter(new FileWriter(path, false));
-            buffer.write("station;avg_distance");
+        static void writeResultToFile (String path, List < Map.Entry < String, Double >> result,int n, String outPath){
+            try {
+                BufferedWriter buffer = new BufferedWriter(new FileWriter(path, false));
+                buffer.write("station;avg_distance");
 
-            List<Map.Entry<String, Double>> croppedResults = result.stream().limit(n).toList();
+                List<Map.Entry<String, Double>> croppedResults = result.stream().limit(n).toList();
 
-            for (Map.Entry<String, Double> res : croppedResults){
-                buffer.newLine();
-                buffer.write(res.getKey() + ";" + res.getValue().toString());
+                for (Map.Entry<String, Double> res : croppedResults) {
+                    buffer.newLine();
+                    buffer.write(res.getKey() + ";" + res.getValue().toString());
+                }
+                buffer.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            buffer.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-    }
+        }
 
 }

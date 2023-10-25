@@ -49,10 +49,11 @@ public class Client {
 
 //        Mapa de tipo pk -> station
         Map<Integer, Station> stationMap = getStations(inPath);
-//        Mapa de tipo emplacement_pk_start -> [viajes que salen de ahi]
-        Map<String, BikeTrip> bikeTripMap = getBikeTrip(inPath, stationMap);
 
-        IMap<String, BikeTrip> bikeIMap = hazelcastInstance.getMap("bike-map");
+//        Mapa de tipo emplacement_pk_start -> [viajes que salen de ahi]
+        Map<Integer, BikeTrip> bikeTripMap = getBikeTrip(inPath, stationMap);
+
+        IMap<Integer, BikeTrip> bikeIMap = hazelcastInstance.getMap("bike-map");
         IMap<Integer, Station> stationIMap = hazelcastInstance.getMap("station-map");
 
         try{
@@ -79,6 +80,8 @@ public class Client {
             }
             case "query3" -> {
                 logger.info("Query 3");
+                Query3 query3Instance = new Query3("query3", hazelcastInstance, stationIMap, bikeIMap);
+                query3Instance.run();
             }
             case "query4" -> {
                  String startDate = argMap.get(START_DATE);
@@ -106,12 +109,12 @@ public class Client {
         return  stationMap;
     }
 
-    private static Map<String, BikeTrip> getBikeTrip(String inPath, Map<Integer,Station> stationMap){
+    private static Map<Integer, BikeTrip> getBikeTrip(String inPath, Map<Integer,Station> stationMap){
         List<String[]> data = readData(inPath + "bikes.csv");
-        Map<String, BikeTrip> bikeTripMap = new HashMap<>();
+        Map<Integer, BikeTrip> bikeTripMap = new HashMap<>();
         for (String[] dArr: data) {
 //            start_date;emplacement_pk_start;end_date;emplacement_pk_end;is_member
-            bikeTripMap.put(stationMap.get(Integer.parseInt(dArr[1])).name(), new BikeTrip(LocalDateTime.parse(dArr[0]), LocalDateTime.parse(dArr[2]), Integer.parseInt(dArr[1]), Integer.parseInt(dArr[3]), dArr[4].equals("1")));
+            bikeTripMap.put(Integer.parseInt(dArr[1]), new BikeTrip(LocalDateTime.parse(dArr[0]), LocalDateTime.parse(dArr[2]), Integer.parseInt(dArr[1]), Integer.parseInt(dArr[3]), dArr[4].equals("1")));
         }
         return  bikeTripMap;
     }

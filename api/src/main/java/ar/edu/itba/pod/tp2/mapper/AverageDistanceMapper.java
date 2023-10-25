@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 // Recibe un nombre de estacion y un viaje y emite el nombre de la estacion y al distancia del viaje
-public class AverageDistanceMapper implements Mapper<String, BikeTrip, String, Double> {
+public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, String, Double> {
     private Map<Integer, Station> stations = new HashMap<>();
 
 
@@ -22,16 +22,16 @@ public class AverageDistanceMapper implements Mapper<String, BikeTrip, String, D
     }
 
     @Override
-    public void map(String stationName, BikeTrip bikeTrip, Context<String, Double> context) {
+    public void map(Integer stationId, BikeTrip bikeTrip, Context<String, Double> context) {
         double distances_total = 0;
-        if (stations.containsKey(bikeTrip.startStationId())){
+        if (stations.containsKey(stationId)){
             Station startStation = stations.get(bikeTrip.startStationId());
-            if (startStation.name().equals(stationName)){
+            if (startStation.id() == stationId){
                 Station endStation = stations.get(bikeTrip.endStationId());
                 distances_total = haversine(startStation.latitude(), startStation.longitude(), endStation.latitude(), endStation.longitude());
             }
+            context.emit(startStation.name(), distances_total);
         }
-        context.emit(stationName, distances_total);
 
     }
 
