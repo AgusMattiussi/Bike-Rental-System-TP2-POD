@@ -21,14 +21,14 @@ public class LongestTripReducerFactory implements ReducerFactory<Integer, Triple
         private Triple<Integer, Long, LocalDateTime> longestTrip;
         @Override
         public void beginReduce() {
-            longestTrip = new Triple<>(-1, -1L, LocalDateTime.MAX);
+            longestTrip = null;
         }
 
         @Override
         public void reduce(Triple<Integer, Long, LocalDateTime> trip) {
-            if (isTripLonger(trip))
+            if (longestTrip == null || isTripLonger(trip))
                 // Guardamos una copia del trip TODO: Preguntar si es necesario
-                longestTrip = new Triple<>(trip.first(), trip.second(), trip.third());
+                longestTrip = trip;
         }
 
         @Override
