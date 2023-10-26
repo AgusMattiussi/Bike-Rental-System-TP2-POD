@@ -10,15 +10,15 @@ public class DateRangePredicate implements KeyPredicate<BikeTrip> {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
-    public DateRangePredicate(LocalDateTime startDate, LocalDateTime endDate) {
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public DateRangePredicate(String startDate, String endDate) {
+        this.startDate = LocalDateTime.parse(startDate);
+        this.endDate = LocalDateTime.parse(endDate);
     }
 
     @Override
     public boolean evaluate(BikeTrip bikeTrip) {
-        LocalDateTime tripStartDate = bikeTrip.startDate();
-        LocalDateTime tripEndDate = bikeTrip.endDate();
+        LocalDateTime tripStartDate = bikeTrip.getStartDate();
+        LocalDateTime tripEndDate = bikeTrip.getEndDate();
 
         return (tripStartDate.isAfter(startDate) || tripStartDate.isEqual(startDate)) &&
                 (tripEndDate.isBefore(endDate) || tripEndDate.isEqual(endDate));

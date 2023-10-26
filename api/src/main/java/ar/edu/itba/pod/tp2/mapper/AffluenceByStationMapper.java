@@ -15,28 +15,24 @@ import java.time.LocalDateTime;
 public class AffluenceByStationMapper implements Mapper<Integer, BikeTrip, Integer, Pair<LocalDateTime, Integer>>, HazelcastInstanceAware {
 
     private IMap<Integer, Station> stations;
-    private final String stationsMapName;
+    private static final String STATIONS_MAP_NAME = "stations";
 
-    public AffluenceByStationMapper(String stationsMapName) {
-        this.stationsMapName = stationsMapName;
+    @Override
+    public void setHazelcastInstance(HazelcastInstance hazelcastInstance) {
+        stations = hazelcastInstance.getMap(STATIONS_MAP_NAME);
     }
 
     @Override
     public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, Pair<LocalDateTime, Integer>> context) {
-        Integer startStationId = bikeTrip.startStationId();
-        Integer endStationId = bikeTrip.endStationId();
+        Integer startStationId = bikeTrip.getStartStationId();
+        Integer endStationId = bikeTrip.getEndStationId();
 
         //TODO: ver si puedo pasar esto a un keypredicate
         if(!stations.containsKey(startStationId) || !stations.containsKey(endStationId)) {
             return;
         }
 
-        context.emit(startStationId, new Pair<>(bikeTrip.startDate(), 1));
-        context.emit(endStationId, new Pair<>(bikeTrip.endDate(), -1));
-    }
-
-    @Override
-    public void setHazelcastInstance(HazelcastInstance hazelcastInstance) {
-        stations = hazelcastInstance.getMap(stationsMapName);
+        context.emit(startStationId, new Pair<>(bikeTrip.getStartDate(), 1));
+        context.emit(endStationId, new Pair<>(bikeTrip.getEndDate(), -1));
     }
 }

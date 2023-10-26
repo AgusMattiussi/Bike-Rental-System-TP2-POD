@@ -8,8 +8,8 @@ public class SameStationPredicate implements KeyPredicate<BikeTrip> {
 
     @Override
     public boolean evaluate(BikeTrip bikeTrip) {
-        Integer startStationId = bikeTrip.startStationId();
-        Integer endStationId = bikeTrip.endStationId();
+        Integer startStationId = bikeTrip.getStartStationId();
+        Integer endStationId = bikeTrip.getEndStationId();
 
         return !startStationId.equals(endStationId);
     }
