@@ -116,7 +116,7 @@ public class Client {
         Map<Integer, BikeTrip> bikeTripMap = new HashMap<>();
         for (String[] dArr: data) {
 //            start_date;emplacement_pk_start;end_date;emplacement_pk_end;is_member
-            bikeTripMap.put(Integer.parseInt(dArr[1]), new BikeTrip(LocalDateTime.parse(dArr[0]), LocalDateTime.parse(dArr[2]), Integer.parseInt(dArr[1]), Integer.parseInt(dArr[3]), dArr[4].equals("1")));
+            bikeTripMap.put(Integer.parseInt(dArr[1]), new BikeTrip( Integer.parseInt(dArr[1]), LocalDateTime.parse(dArr[0]), Integer.parseInt(dArr[3]), LocalDateTime.parse(dArr[2]), dArr[4].equals("1")));
         }
         return  bikeTripMap;
     }

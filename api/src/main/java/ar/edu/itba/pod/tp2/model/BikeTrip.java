@@ -1,23 +1,72 @@
 package ar.edu.itba.pod.tp2.model;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import com.hazelcast.nio.ObjectDataInput;
+import com.hazelcast.nio.ObjectDataOutput;
+import com.hazelcast.nio.serialization.DataSerializable;
 
-public record BikeTrip(LocalDateTime startDate, LocalDateTime endDate, int startStationId, int endStationId,
-                       boolean isMember) implements Serializable {
+import java.io.IOException;
+import java.io.Serializable;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+
+public final class BikeTrip implements DataSerializable {
+    private int startStationId;
+    private LocalDateTime startDate;
+    private int endStationId;
+    private LocalDateTime endDate;
+    private boolean isMember;
+
+    public BikeTrip(int startStationId, LocalDateTime startDate, int endStationId, LocalDateTime endDate, boolean isMember) {
+        this.startStationId = startStationId;
+        this.startDate = startDate;
+        this.endStationId = endStationId;
+        this.endDate = endDate;
+        this.isMember = isMember;
+    }
+
+    public int getStartStationId() {
+        return startStationId;
+    }
+
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
+
+    public int getEndStationId() {
+        return endStationId;
+    }
+
+    public LocalDateTime getEndDate() {
+        return endDate;
+    }
+
+    public boolean isMember() {
+        return isMember;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        BikeTrip bikeTrip = (BikeTrip) o;
+        BikeTrip that = (BikeTrip) o;
 
-        if (startStationId != bikeTrip.startStationId) return false;
-        if (endStationId != bikeTrip.endStationId) return false;
-        if (isMember != bikeTrip.isMember) return false;
-        if (!startDate.equals(bikeTrip.startDate)) return false;
-        return endDate.equals(bikeTrip.endDate);
+        if (startStationId != that.startStationId) return false;
+        if (endStationId != that.endStationId) return false;
+        if (isMember != that.isMember) return false;
+        if (!startDate.equals(that.startDate)) return false;
+        return endDate.equals(that.endDate);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = startStationId;
+        result = 31 * result + startDate.hashCode();
+        result = 31 * result + endStationId;
+        result = 31 * result + endDate.hashCode();
+        result = 31 * result + (isMember ? 1 : 0);
+        return result;
     }
 
     @Override
@@ -30,5 +79,23 @@ public record BikeTrip(LocalDateTime startDate, LocalDateTime endDate, int start
         sb.append(", isMember=").append(isMember);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public void writeData(ObjectDataOutput out) throws IOException {
+        out.writeInt(startStationId);
+        out.writeLong(startDate.toInstant(ZoneOffset.UTC).toEpochMilli());
+        out.writeInt(endStationId);
+        out.writeLong(endDate.toInstant(ZoneOffset.UTC).toEpochMilli());
+        out.writeBoolean(isMember);
+    }
+
+    @Override
+    public void readData(ObjectDataInput in) throws IOException {
+        startStationId = in.readInt();
+        startDate = LocalDateTime.ofInstant(Instant.ofEpochMilli(in.readLong()), ZoneOffset.UTC);
+        endStationId = in.readInt();
+        endDate = LocalDateTime.ofInstant(Instant.ofEpochMilli(in.readLong()), ZoneOffset.UTC);
+        isMember = in.readBoolean();
     }
 }

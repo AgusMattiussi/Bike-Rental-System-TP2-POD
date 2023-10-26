@@ -28,8 +28,8 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Tri
 
     @Override
     public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, Triple<Integer, Long, LocalDateTime>> context) {
-        Integer startStationId = bikeTrip.startStationId();
-        Integer endStationId = bikeTrip.endStationId();
+        Integer startStationId = bikeTrip.getStartStationId();
+        Integer endStationId = bikeTrip.getEndStationId();
 
         // Solo tenemos en cuenta viajes entre distintas estaciones
         //TODO: Validar si son nulls?
@@ -38,10 +38,10 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Tri
         }
 
         // Calculamos la duracion del viaje en minutos
-        Duration tripDuration = Duration.between(bikeTrip.startDate(), bikeTrip.endDate());
+        Duration tripDuration = Duration.between(bikeTrip.getStartDate(), bikeTrip.getEndDate());
 
         // Emitimos una tupla (startStationId, (endStationId, tripDuration, startDateTime))
-        context.emit(startStationId, new Triple<>(endStationId, tripDuration.toMinutes(), bikeTrip.startDate()));
+        context.emit(startStationId, new Triple<>(endStationId, tripDuration.toMinutes(), bikeTrip.getStartDate()));
     }
 
 

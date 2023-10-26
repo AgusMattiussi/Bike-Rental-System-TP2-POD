@@ -24,9 +24,9 @@ public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, String, 
     public void map(Integer stationId, BikeTrip bikeTrip, Context<String, Double> context) {
         double distances_total = 0;
         if (stations.containsKey(stationId)){
-            Station startStation = stations.get(bikeTrip.startStationId());
+            Station startStation = stations.get(bikeTrip.getStartStationId());
             if (startStation.id() == stationId){
-                Station endStation = stations.get(bikeTrip.endStationId());
+                Station endStation = stations.get(bikeTrip.getEndStationId());
                 distances_total = haversine(startStation.latitude(), startStation.longitude(), endStation.latitude(), endStation.longitude());
             }
             context.emit(startStation.name(), distances_total);

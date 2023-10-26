@@ -38,10 +38,12 @@ public class Query3 {
                 .mapper(new LongestTripMapper())
                 .combiner(new LongestTripCombinerFactory())
                 .reducer( new LongestTripReducerFactory())
-                .submit(); // Attach a callback listenerfuture .andThen(buildCallback());
+                .submit();
+                // Attach a callback listenerfuture .andThen(buildCallback());
 
         // Esperamos el resultado de forma sincrónica
         Map<Integer, Pair<Integer, Long>> result;
+
         try {
             result = future.get();
         } catch (InterruptedException | ExecutionException e) {
