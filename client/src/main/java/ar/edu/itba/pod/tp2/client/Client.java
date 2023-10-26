@@ -111,7 +111,7 @@ public class Client {
             stationMap.put(Integer.parseInt(dArr[0]), new Station(
                     Integer.parseInt(dArr[0]), dArr[1], Double.parseDouble(dArr[2]), Double.parseDouble(dArr[3])));
         }
-        return  stationMap;
+        return stationMap;
     }
 
     private static Map<Integer, BikeTrip> getBikeTrip(String inPath, Map<Integer,Station> stationMap){

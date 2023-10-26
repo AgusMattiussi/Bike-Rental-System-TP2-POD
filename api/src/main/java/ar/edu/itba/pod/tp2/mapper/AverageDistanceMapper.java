@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 // Recibe un nombre de estacion y un viaje y emite el nombre de la estacion y al distancia del viaje
+@SuppressWarnings("deprecation")
 public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, String, Double> {
     private Map<Integer, Station> stations = new HashMap<>();
 
