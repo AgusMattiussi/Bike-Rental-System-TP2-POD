@@ -1,5 +1,6 @@
 package ar.edu.itba.pod.tp2.mapper;
 
+import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
 import ar.edu.itba.pod.tp2.model.Station;
 import ar.edu.itba.pod.tp2.model.Triple;
 import com.hazelcast.core.HazelcastInstance;
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 // con el ID de la estacion de destino, la duración en minutos del viaje y la fecha de inicio del viaje (para desempatar
 // viajes de igual duración)
 @SuppressWarnings("deprecation")
-public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Triple<Integer, Long, LocalDateTime>>, HazelcastInstanceAware {
+public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, FinishedBikeTrip>, HazelcastInstanceAware {
 
     private IMap<Integer, Station> stations;
     private static final String STATIONS_MAP_NAME = "stations"; //TODO: Deberia ser parametro?
@@ -27,7 +28,7 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Tri
     }
 
     @Override
-    public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, Triple<Integer, Long, LocalDateTime>> context) {
+    public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, FinishedBikeTrip> context) {
         Integer startStationId = bikeTrip.getStartStationId();
         Integer endStationId = bikeTrip.getEndStationId();
 
@@ -41,7 +42,7 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Tri
         Duration tripDuration = Duration.between(bikeTrip.getStartDate(), bikeTrip.getEndDate());
 
         // Emitimos una tupla (startStationId, (endStationId, tripDuration, startDateTime))
-        context.emit(startStationId, new Triple<>(endStationId, tripDuration.toMinutes(), bikeTrip.getStartDate()));
+        context.emit(startStationId, new FinishedBikeTrip(endStationId, tripDuration.toMinutes(), bikeTrip.getStartDate()));
     }
 
 

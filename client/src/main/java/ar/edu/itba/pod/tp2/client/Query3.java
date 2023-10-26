@@ -3,6 +3,7 @@ package ar.edu.itba.pod.tp2.client;
 import ar.edu.itba.pod.tp2.combiners.LongestTripCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.LongestTripMapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
+import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Station;
 import ar.edu.itba.pod.tp2.reducer.LongestTripReducerFactory;
@@ -34,7 +35,7 @@ public class Query3 {
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 
-        JobCompletableFuture<Map<Integer, Pair<Integer, Long>>> future = jobTracker.newJob(source)
+        JobCompletableFuture<Map<Integer, FinishedBikeTrip>> future = jobTracker.newJob(source)
                 .mapper(new LongestTripMapper())
                 .combiner(new LongestTripCombinerFactory())
                 .reducer( new LongestTripReducerFactory())
@@ -42,7 +43,7 @@ public class Query3 {
                 // Attach a callback listenerfuture .andThen(buildCallback());
 
         // Esperamos el resultado de forma sincrónica
-        Map<Integer, Pair<Integer, Long>> result;
+        Map<Integer, FinishedBikeTrip> result;
 
         try {
             result = future.get();
@@ -53,7 +54,8 @@ public class Query3 {
         //TODO: Cambiar stationIds por stationNames y generar CSV
         result.entrySet().stream()
                 .sorted(/* TODO: Sort */)
-                .map(entry -> "From: " + entry.getKey() + " - To: " + entry.getValue().first() + " - Trip duration: " + entry.getValue().second())
+                .map(entry -> "From: " + entry.getKey() + " - To: " + entry.getValue().getEndStationId()
+                        + " - Trip duration: " + entry.getValue().getDurationInMinutes())
                 .forEach(System.out::println);
 
     }
