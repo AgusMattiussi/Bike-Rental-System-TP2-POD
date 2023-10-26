@@ -86,12 +86,15 @@ public class Client {
                 query3Instance.run();
             }
             case "query4" -> {
+                logger.info("Query 4");
+
                  String startDate = argMap.get(START_DATE);
                  String endDate = argMap.get(END_DATE);
                  validateNullArgument(startDate, "Start date not specified");
                  validateNullArgument(endDate, "End date not specified");
 
-                logger.info("Query 4");
+                Query4 query4Instance = new Query4("query4", hazelcastInstance, stationIMap, bikeIMap, startDate, endDate);
+                query4Instance.run();
             }
             default -> logger.error("Invalid query");
         }
