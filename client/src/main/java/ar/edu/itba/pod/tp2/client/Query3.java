@@ -1,6 +1,6 @@
 package ar.edu.itba.pod.tp2.client;
 
-import ar.edu.itba.pod.tp2.combiner.LongestTripCombinerFactory;
+import ar.edu.itba.pod.tp2.combiners.LongestTripCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.LongestTripMapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
 import ar.edu.itba.pod.tp2.model.Pair;
