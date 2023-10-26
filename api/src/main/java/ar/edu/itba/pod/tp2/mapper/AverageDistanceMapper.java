@@ -15,8 +15,7 @@ public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, String, 
 
 
     public AverageDistanceMapper(List<Station> stationList) {
-        for (Station station:
-                stationList) {
+        for (Station station: stationList) {
             stations.put(station.id(), station);
         }
     }

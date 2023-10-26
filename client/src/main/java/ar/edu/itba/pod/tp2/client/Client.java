@@ -55,6 +55,8 @@ public class Client {
 
         IMap<Integer, BikeTrip> bikeIMap = hazelcastInstance.getMap("bike-map");
         IMap<Integer, Station> stationIMap = hazelcastInstance.getMap("station-map");
+        bikeIMap.clear();
+        stationIMap.clear();
 
         try{
             bikeIMap.putAll(bikeTripMap);
