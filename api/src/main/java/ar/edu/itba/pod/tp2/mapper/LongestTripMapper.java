@@ -33,7 +33,6 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Fin
         Integer endStationId = bikeTrip.getEndStationId();
 
         // Solo tenemos en cuenta viajes entre distintas estaciones
-        //TODO: Validar si son nulls?
         if(startStationId.equals(endStationId) || !stations.containsKey(startStationId) || !stations.containsKey(endStationId)) {
             return;
         }
