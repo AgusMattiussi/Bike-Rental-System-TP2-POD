@@ -1,9 +1,8 @@
 package ar.edu.itba.pod.tp2.client;
 
+import ar.edu.itba.pod.tp2.collators.AffluenceByStationCollator;
 import ar.edu.itba.pod.tp2.mapper.AffluenceByStationMapper;
-import ar.edu.itba.pod.tp2.model.BikeTrip;
-import ar.edu.itba.pod.tp2.model.Station;
-import ar.edu.itba.pod.tp2.model.Triple;
+import ar.edu.itba.pod.tp2.model.*;
 import ar.edu.itba.pod.tp2.reducer.AffluenceByStationReducerFactory;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
@@ -11,7 +10,7 @@ import com.hazelcast.mapreduce.JobCompletableFuture;
 import com.hazelcast.mapreduce.JobTracker;
 import com.hazelcast.mapreduce.KeyValueSource;
 
-import java.util.Map;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @SuppressWarnings("deprecation")
@@ -37,14 +36,14 @@ public class Query4 {
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 
-        JobCompletableFuture<Map<Integer, Triple<Integer, Integer, Integer>>> future = jobTracker.newJob(source)
+        JobCompletableFuture<List<Pair<String, AffluenceInfo>>> future = jobTracker.newJob(source)
                 .mapper(new AffluenceByStationMapper(startDate, endDate))
                 .reducer(new AffluenceByStationReducerFactory())
-                .submit();
+                .submit(new AffluenceByStationCollator(stations));
         // Attach a callback listenerfuture .andThen(buildCallback());
 
         // Esperamos el resultado de forma sincrónica
-        Map<Integer, Triple<Integer, Integer, Integer>> result;
+        List<Pair<String, AffluenceInfo>> result;
 
         try {
             result = future.get();

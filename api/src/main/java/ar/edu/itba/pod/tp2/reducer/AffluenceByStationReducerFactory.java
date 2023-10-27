@@ -1,5 +1,6 @@
 package ar.edu.itba.pod.tp2.reducer;
 
+import ar.edu.itba.pod.tp2.model.AffluenceInfo;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Triple;
 import com.hazelcast.mapreduce.Reducer;
@@ -10,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class AffluenceByStationReducerFactory implements ReducerFactory<Integer, Pair<LocalDateTime, Integer>, Triple<Integer, Integer, Integer>> {
+public class AffluenceByStationReducerFactory implements ReducerFactory<Integer, Pair<LocalDateTime, Integer>, AffluenceInfo> {
     @Override
-    public Reducer<Pair<LocalDateTime, Integer>, Triple<Integer, Integer, Integer>> newReducer(Integer integer) {
+    public Reducer<Pair<LocalDateTime, Integer>, AffluenceInfo> newReducer(Integer integer) {
         return new AffluenceByStationReducer();
     }
 
-    private static class AffluenceByStationReducer extends Reducer<Pair<LocalDateTime, Integer>, Triple<Integer, Integer, Integer>> {
+    private static class AffluenceByStationReducer extends Reducer<Pair<LocalDateTime, Integer>, AffluenceInfo> {
         private Map<LocalDateTime, Integer> affluenceByDay = new HashMap<>();
 
         @Override
@@ -39,7 +40,7 @@ public class AffluenceByStationReducerFactory implements ReducerFactory<Integer,
         }
 
         @Override
-        public Triple<Integer, Integer, Integer> finalizeReduce(){
+        public AffluenceInfo finalizeReduce(){
             int positiveDays = 0;
             int negativeDays = 0;
             int neutralDays = 0;
@@ -54,7 +55,7 @@ public class AffluenceByStationReducerFactory implements ReducerFactory<Integer,
                 }
             }
 
-            return new Triple<>(positiveDays, negativeDays, neutralDays);
+            return new AffluenceInfo(positiveDays, negativeDays, neutralDays);
         }
     }
 }
