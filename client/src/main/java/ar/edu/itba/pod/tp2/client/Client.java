@@ -33,9 +33,10 @@ public class Client {
         // ./queryX -Daddresses='xx.xx.xx.xx:XXXX;yy.yy.yy.yy:YYYY' -DinPath=XX -DoutPath=YY [-Dn=4 |  -DstartDate=01/05/2021 -DendDate=31/05/2021 ]
         final Map<String, String> argMap = parseArguments(args);
 
-        /*final*/ String query = args[0]; // TODO: Revisar
+//        final String query = args[0]; // TODO: hacer scripts para cada query
+
         //TODO: Cambiar
-        query = "query3";
+        String query = "query3";
 
         final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
         final String inPath = argMap.get(INPUT_PATH);
