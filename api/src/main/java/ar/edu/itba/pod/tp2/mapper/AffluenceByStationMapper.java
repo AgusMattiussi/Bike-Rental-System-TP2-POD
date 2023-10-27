@@ -9,7 +9,6 @@ import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.Context;
 import com.hazelcast.mapreduce.Mapper;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @SuppressWarnings("deprecation")
