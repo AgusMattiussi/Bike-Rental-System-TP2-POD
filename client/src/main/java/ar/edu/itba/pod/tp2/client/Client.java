@@ -36,7 +36,7 @@ public class Client {
 //        final String query = args[0]; // TODO: hacer scripts para cada query
 
         //TODO: Cambiar
-        String query = "query3";
+        String query = "query4";
 
         final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
         final String inPath = argMap.get(INPUT_PATH);

@@ -6,19 +6,19 @@ import ar.edu.itba.pod.tp2.model.Triple;
 import com.hazelcast.mapreduce.Reducer;
 import com.hazelcast.mapreduce.ReducerFactory;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class AffluenceByStationReducerFactory implements ReducerFactory<Integer, Pair<LocalDateTime, Integer>, AffluenceInfo> {
+public class AffluenceByStationReducerFactory implements ReducerFactory<Integer, Pair<LocalDate, Integer>, AffluenceInfo> {
     @Override
-    public Reducer<Pair<LocalDateTime, Integer>, AffluenceInfo> newReducer(Integer integer) {
+    public Reducer<Pair<LocalDate, Integer>, AffluenceInfo> newReducer(Integer integer) {
         return new AffluenceByStationReducer();
     }
 
-    private static class AffluenceByStationReducer extends Reducer<Pair<LocalDateTime, Integer>, AffluenceInfo> {
-        private Map<LocalDateTime, Integer> affluenceByDay = new HashMap<>();
+    private static class AffluenceByStationReducer extends Reducer<Pair<LocalDate, Integer>, AffluenceInfo> {
+        private Map<LocalDate, Integer> affluenceByDay = new HashMap<>();
 
         @Override
         public void beginReduce() {
@@ -26,8 +26,9 @@ public class AffluenceByStationReducerFactory implements ReducerFactory<Integer,
         }
 
         @Override
-        public void reduce(Pair<LocalDateTime, Integer> pair) {
-            LocalDateTime time = pair.first();
+        public void reduce(Pair<LocalDate, Integer> pair) {
+            System.out.println("Reducing...");
+            LocalDate time = pair.first();
             Integer affluence = pair.second();
 
             affluenceByDay.compute(time, (key, currentValue) -> {

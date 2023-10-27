@@ -9,20 +9,24 @@ import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.Context;
 import com.hazelcast.mapreduce.Mapper;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @SuppressWarnings("deprecation")
-public class AffluenceByStationMapper implements Mapper<Integer, BikeTrip, Integer, Pair<LocalDateTime, Integer>>, HazelcastInstanceAware {
+public class AffluenceByStationMapper implements Mapper<Integer, BikeTrip, Integer, Pair<LocalDate, Integer>>, HazelcastInstanceAware {
 
     private IMap<Integer, Station> stations;
     private static final String STATIONS_MAP_NAME = "station-map";
 
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
+
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
 
     public AffluenceByStationMapper(String startDate, String endDate) {
-        this.startDate = LocalDateTime.parse(startDate);
-        this.endDate = LocalDateTime.parse(endDate);
+        this.startDate = LocalDate.parse(startDate, formatter);
+        this.endDate = LocalDate.parse(endDate, formatter);
     }
 
     @Override
@@ -31,12 +35,14 @@ public class AffluenceByStationMapper implements Mapper<Integer, BikeTrip, Integ
     }
 
     @Override
-    public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, Pair<LocalDateTime, Integer>> context) {
+    public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, Pair<LocalDate, Integer>> context) {
+        System.out.println("Mapping...");
+
         Integer startStationId = bikeTrip.getStartStationId();
         Integer endStationId = bikeTrip.getEndStationId();
 
-        LocalDateTime tripStartDate = bikeTrip.getStartDate();
-        LocalDateTime tripEndDate = bikeTrip.getEndDate();
+        LocalDate tripStartDate = LocalDate.from(bikeTrip.getStartDate());
+        LocalDate tripEndDate = LocalDate.from(bikeTrip.getEndDate());
 
         /* Nos interesan viajes entre distintas estaciones,
            que esten en el rango de fechas y que las estaciones existan en el csv de estaciones */
@@ -48,7 +54,7 @@ public class AffluenceByStationMapper implements Mapper<Integer, BikeTrip, Integ
         context.emit(endStationId, new Pair<>(tripEndDate, -1));
     }
 
-    private boolean datesInRange(LocalDateTime tripStartDate, LocalDateTime tripEndDate) {
+    private boolean datesInRange(LocalDate tripStartDate, LocalDate tripEndDate) {
         return (tripStartDate.isAfter(startDate) || tripStartDate.isEqual(startDate)) &&
                 (tripEndDate.isBefore(endDate) || tripEndDate.isEqual(endDate));
     }

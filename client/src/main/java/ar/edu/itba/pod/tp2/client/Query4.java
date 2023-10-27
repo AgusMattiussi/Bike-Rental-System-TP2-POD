@@ -39,6 +39,7 @@ public class Query4 {
     }
 
     public void run() {
+        System.out.println("Running query 4");
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 
@@ -52,6 +53,7 @@ public class Query4 {
         List<Pair<String, AffluenceInfo>> result;
 
         try {
+            System.out.println("Waiting for query 4 result");
             result = future.get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
@@ -61,6 +63,7 @@ public class Query4 {
     }
 
     private void writeResultToFile(List<Pair<String, AffluenceInfo>> result) {
+        System.out.println("Writing query 4 result to file");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outPath + QUERY_4_CSV_NAME))) {
             writer.write(OUT_CSV_HEADER);
 
