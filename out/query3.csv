@@ -1,0 +1,987 @@
+start_station;end_station;start_date;minutes
+Bourgeoys / Favard;St-Hubert / Duluth;21/04/2021 12:34:38;7288
+Métro Charlevoix (Centre / Charlevoix);Métro Place St-Henri (St-Ferdinand / St-Jacques);18/04/2021 14:22:17;5416
+Tupper / du Fort;Léa-Roback / Sir-Georges-Etienne-Cartier;22/04/2021 08:53:10;3198
+de l'Hôtel-de-Ville / Sherbrooke;Milton / Durocher;11/04/2021 00:09:15;2140
+Métro Parc  (Hutchison / Ogilvy);d'Outremont / Ogilvy;23/04/2021 14:25:29;1395
+de St-Firmin / Fleury;Boyer / Bélanger;24/04/2021 12:35:56;1336
+5e avenue / Rosemont;des Érables / Bélanger;24/04/2021 17:42:17;1305
+Papineau / Émile-Journault;2e avenue / Jean-Rivard;09/04/2021 18:02:54;1215
+St-Dominique / du Mont-Royal;André-Laurendeau / Rachel;15/06/2021 17:09:31;1192
+Grand Boulevard / de Terrebonne;Métro Villa-Maria (de Monkland / Décarie);15/04/2021 18:14:00;1179
+de Bullion / St-Joseph;Notre-Dame / Jean-d'Estrées;15/06/2021 18:15:51;1163
+Villeneuve / St-Laurent;Chabot / du Mont-Royal;18/04/2021 19:04:04;1056
+McTavish / Sherbrooke;Parc de Bullion (de Bullion / Prince-Arthur);24/04/2021 18:31:13;1053
+Augustin-Cantin / Shearer;de l'Église / de Verdun;13/04/2021 19:44:29;1040
+Mansfield / Ste-Catherine;Lincoln / du Fort;24/04/2021 20:02:28;964
+Parc Joyce (Rockland / Lajoie);St-Cyril / Wiseman;26/04/2021 19:24:14;963
+Wilderton  / Van Horne;Gare Bois-de-Boulogne;21/08/2021 07:25:10;806
+Parc Pratt (Dunlop / Van Horne);Mozart / Waverly;15/04/2021 01:00:14;773
+de la Commune / St-Sulpice;de l'Hôtel-de-Ville / Sherbrooke;06/07/2022 23:50:25;630
+de Léry / Sherbrooke;Métro Papineau (Cartier / Ste-Catherine);18/08/2022 18:21:54;594
+Querbes / Laurier;de l'Eglise / St-Germain;14/06/2021 01:06:16;575
+Place Rodolphe-Rousseau (Gohier / Édouard-Laurin);Glengarry / Graham;17/04/2022 18:23:09;554
+Parc Jean-Drapeau (Chemin Macdonald);La Ronde;16/07/2022 11:42:51;548
+des Bassins / du Séminaire;Casino de Montréal;14/05/2022 18:26:22;533
+Boyer / Beaubien;Mozart / St-Laurent;28/04/2021 17:07:26;522
+Metcalfe / du Square-Dorchester;Sherbrooke / Frontenac;27/08/2022 18:44:45;521
+Crescent / de Maisonneuve;Métro Sherbrooke (de Rigaud / St-Denis);17/04/2021 15:42:54;520
+du Parc-La Fontaine / Duluth;Parc Jeanne-Mance (du Mont-Royal / du Parc);20/08/2022 12:31:52;520
+Bishop / Ste-Catherine;Mackay / Ste-Catherine;24/08/2022 23:59:33;515
+St-Jacques / St-Laurent;Bishop / Ste-Catherine;17/05/2022 11:48:48;508
+St-Antoine / St-François-Xavier;Métro Bonaventure (de la Gauchetière / de la Cathédrale);09/10/2022 23:56:32;507
+St-Catherine / St-Laurent;Laval / Rachel;25/05/2022 23:48:33;505
+Resther / du Mont-Royal;de Bleury / de Maisonneuve;18/08/2022 00:53:35;499
+Alexandra / Jean-Talon;Everett / Garnier;29/08/2022 01:11:43;497
+Ryde / Charlevoix;Métro Verdun (Willibrord / de Verdun);18/07/2022 07:18:19;497
+St-Hubert / St-Joseph;du Mont-Royal / Augustin-Frigon;30/04/2022 00:06:26;497
+Cartier / Bélanger;Parc Painter (Marcotte / Quenneville);31/05/2022 07:27:19;493
+Dollard / Bernard;CHU Ste-Justine (de la Côte Ste-Catherine / Hudson);22/04/2022 08:14:13;490
+de la Commune / King;Pontiac / Gilford;25/06/2022 23:38:12;482
+Chomedey / de Maisonneuve;Hillside / Ste-Catherine;19/04/2021 16:41:13;481
+Jeanne-d'Arc / Ontario;de Léry / Sherbrooke;06/05/2022 00:35:21;480
+Parc Joseph-Robin (18e avenue / Everett);Parc Villeray (Christophe-Colomb / Jarry);30/08/2022 07:56:04;477
+Stinson / Montpellier;de l'Eglise / St-Germain;21/04/2022 23:38:33;474
+Rachel / de Brébeuf;Ontario / Sicard;30/06/2022 01:29:51;471
+Milton / Clark;St-Dominique / Laurier;03/09/2022 13:05:37;465
+Ste-Catherine / Labelle;Fullum / de Rouen;22/10/2022 01:14:06;464
+Marché Atwater;Métro Place-des-Arts (du Président-Kennedy / Jeanne-Mance);11/06/2022 19:41:26;463
+Parc du Pélican (1ère avenue / Masson);Prince-Arthur / du Parc;10/06/2022 12:11:56;462
+Guilbault / Clark;Métro Place-des-Arts (du Président-Kennedy / Jeanne-Mance);11/05/2022 00:37:21;460
+Bernard / Jeanne-Mance;Gloria / Dollard;03/07/2022 08:48:13;455
+Métro St-Laurent (de Maisonneuve / St-Laurent);26e avenue / Beaubien;10/07/2022 14:34:50;452
+St-Charles / St-Sylvestre;Guilbault / Clark;25/05/2022 07:13:35;451
+du Parc-La Fontaine / Roy;Fullum / Terrasse Mercure;23/09/2022 02:28:31;449
+Duke / Brennan;St-Ambroise / Louis-Cyr;06/10/2022 13:25:34;447
+Sherbrooke / Vignal;de la Côte St-Antoine / Argyle;07/09/2022 12:22:05;445
+Ste-Catherine / Dezery;Métro Fabre (Marquette / Jean-Talon);13/07/2022 19:42:57;432
+Parc Lalancette (de Rouen / Valois);de Gaspé / Villeray;17/10/2022 03:19:46;429
+Marquette / du Mont-Royal;Marquette / Gilford;29/07/2022 02:13:41;428
+de Normanville / Villeray;Park Row O / Sherbrooke;11/09/2022 03:04:22;428
+Métro Beaubien (de Chateaubriand / Beaubien);Marie-Anne / de la Roche;26/05/2022 01:08:09;427
+de Gaspé / Beaubien;5e avenue / Masson;27/08/2022 12:08:46;424
+Marie-Anne / de la Roche;de la Commune / Berri;28/06/2022 19:07:16;416
+Ernest-Gendreau / du Mont-Royal;Charlevoix / Lionel-Groulx;25/08/2022 07:59:26;410
+Métro Peel (de Maisonneuve / Stanley);St-Zotique / Clark;22/06/2022 01:52:21;410
+de la Roche / Bélanger;Drolet / St-Zotique;20/10/2022 19:39:37;410
+Place du Commerce;Regina / de Verdun;15/08/2021 08:16:02;409
+St-Hubert / Duluth;Calixa-Lavallée / Sherbrooke;10/07/2022 03:19:13;407
+de Bordeaux / Sherbrooke;Gauthier / Papineau;05/06/2022 08:24:30;407
+Villeneuve / St-Urbain;Mackay / Ste-Catherine;05/05/2022 12:02:08;403
+Boucher / St-Denis;de la Commune / Berri;24/09/2022 07:34:40;402
+Métro Langelier (Langelier / Sherbrooke);St-André / Robin;09/06/2022 06:48:34;398
+Parc Ludger-Duvernay (St-André / St-Hubert);de la Cathédrale / René-Lévesque;16/06/2021 15:26:25;394
+de Gaspé / Fairmount;CHU Ste-Justine (de la Côte Ste-Catherine / Hudson);01/09/2022 18:42:48;394
+Métro Vendôme (de Marlowe / de Maisonneuve);Ropery / Augustin-Cantin;11/05/2022 14:25:11;393
+CCI Outremont (Dollard / Durcharme);Métro Édouard-Montpetit (du Mont-Royal / Vincent-d'Indy);22/10/2022 09:42:45;392
+Louis-Hébert / de Bellechasse;Dorion / Rachel;22/04/2022 12:55:00;391
+du Parc-Lafontaine / Rachel;Jeanne-Mance / René-Lévesque;04/10/2022 01:23:22;390
+Métro Jarry (Lajeunesse / Jarry);de Gaspé / Villeray;17/05/2022 09:55:28;388
+la Fontaine / Alexandre-de-Sève;de Bullion / St-Joseph;04/06/2022 18:18:26;388
+de l'Hôtel-de-Ville / Ste-Catherine;Parc Jeanne-Mance (du Mont-Royal / du Parc);20/08/2022 03:24:23;387
+Métro Atwater (Atwater / Ste-Catherine);Métro Peel (de Maisonneuve / Stanley);21/04/2022 13:57:01;380
+St-Urbain / René-Lévesque;Métro Pie-IX (Pierre-de-Coubertin / de la Salle) (2);03/09/2022 01:38:07;379
+Métro Préfontaine (Moreau / Hochelaga);de la Salle / Ontario;17/09/2022 11:44:51;377
+Waverly / St-Zotique;de l'Esplanade / Fairmount;03/06/2022 08:45:36;376
+Roy / St-Laurent;Boucher / St-Denis;16/08/2022 19:06:06;375
+Hogan / Ontario;St-Urbain / Beaubien;30/07/2022 21:32:45;374
+Monk / de Biencourt;Gagne / LaSalle;16/06/2021 16:39:03;373
+St-Dominique / Rachel;Rachel / de Brébeuf;01/05/2022 02:48:10;370
+Crescent / René-Lévesque;Chomedey / de Maisonneuve;02/10/2022 01:35:17;368
+Parc Père-Marquette (Chambord / Rosemont);Parc Jean-Drapeau (Chemin Macdonald);02/07/2022 16:16:16;367
+Langelier / Marie-Victorin;Parc St-Laurent (Salk / Thomas-Chapais);25/08/2022 11:35:23;366
+Rachel / du Parc-Lafontaine;Clark / Rachel;24/07/2022 12:21:25;366
+Parc Baldwin (Fullum / Sherbrooke);André-Laurendeau / Rachel;02/06/2022 09:04:02;365
+Parc Benny (Benny / de Monkland);Parc Van Horne (de la Peltrie / de Westbury);09/11/2021 07:24:05;365
+Métro Place-des-Arts (du Président-Kennedy / Jeanne-Mance);Milton / Clark;02/07/2022 15:03:39;362
+Parc St-Henri (Laporte / Guay);de Châteauguay / Ropery;14/08/2022 13:03:59;362
+Basile-Routhier / Chabanel;de Bordeaux / Sherbrooke;24/05/2022 07:40:32;360
+Parthenais / du Mont-Royal;St-Jacques / McGill;23/09/2022 12:53:07;360
+Durocher / Sherbrooke;University / Milton;17/04/2022 10:03:11;358
+Marché Jean-Talon (Casgrain / Shamrock);Bélanger / St-Denis;20/06/2022 12:20:26;358
+Parc Jeanne-Mance (du Mont-Royal / du Parc);Bernard / Jeanne-Mance;26/04/2022 16:01:08;357
+Bloomfield / Jean-Talon;Villeneuve / St-Urbain;15/10/2022 02:11:11;356
+Laval / Rachel;McCulloch / de la Côte Ste-Catherine;23/09/2022 18:29:52;356
+Plessis / Logan;la Fontaine / Alexandre-de-Sève;03/06/2022 19:20:45;348
+St-André / Cherrier;du Mont-Royal / Clark;05/06/2022 08:21:11;348
+Waverly / St-Viateur;Parc Jeanne Mance (monument sir George-Etienne Cartier);24/04/2021 12:51:13;348
+Desjardins / Ontario;Ontario / Sicard;17/04/2022 12:05:08;347
+Plessis / Ontario;du Champ-de-Mars / Gosford;20/10/2022 09:21:40;347
+de la Commune / Berri;Métro Beaubien (de Chateaubriand / Beaubien);11/04/2021 18:04:07;347
+Jean-Brillant / de la Côte-des-Neiges;Métro Édouard-Montpetit (du Mont-Royal / Vincent-d'Indy);18/09/2022 16:02:31;343
+de Bordeaux / Masson;27e avenue / Rosemont;03/09/2022 01:23:22;342
+19e avenue / St-Zotique;du Mont-Royal / Clark;23/07/2022 15:18:49;341
+26e avenue / Beaubien;Parc nature de l'Île-de-la-Visitation (Gouin / de Bruchési);12/08/2022 20:35:18;341
+IUSMM (Georges-Villeneuve);Pierre-de-Coubertin / Langelier;21/08/2022 01:28:43;341
+de l'Église / Bannantyne;Parc Jeanne Mance (monument sir George-Etienne Cartier);24/08/2022 18:38:37;341
+St-Alexandre / Ste-Catherine;Place Émilie-Gamelin (St-Hubert / de Maisonneuve);29/08/2022 18:28:16;340
+Métro Rosemont (de St-Vallier / Rosemont);Bélanger / St-Denis;17/04/2021 19:00:26;339
+Métro de l'Église (Ross / de l'Église);Parc des Rapides (LaSalle / 6e avenue);17/04/2021 15:50:13;338
+Émile-Duployé / Sherbrooke;de la Commune / King;05/06/2022 08:42:10;335
+St-Dominique / St-Zotique;Duluth / de l'Esplanade;03/08/2022 19:16:15;334
+Aylwin / Ontario;Logan / de Champlain;17/07/2022 03:33:21;333
+Paré / Mountain Sights;St-Urbain / de la Gauchetière;05/06/2022 07:54:29;333
+St-André / Ste-Catherine;Poupart / Ste-Catherine;09/07/2022 20:59:10;333
+de Gaspé / Villeray;St-Dominique / Jean-Talon;25/06/2022 08:47:25;332
+de la Commune / Place Jacques-Cartier;Drummond / Ste-Catherine;14/07/2022 13:25:31;332
+Dézéry / Ontario;Ontario / Sicard;04/09/2022 03:48:10;330
+Canning / Notre-Dame;St-Marc / Ste-Catherine;28/10/2022 08:51:16;329
+Parc de Beauséjour (Gouin / Henri-d'Arles);Stinson / Montpellier;05/07/2022 16:33:57;329
+McCulloch / de la Côte Ste-Catherine;Harvard / de Monkland;26/10/2022 07:47:22;327
+Métro Viau (Viau / Pierre-de-Coubertin);Parc J.-Arthur-Champagne (de Chambly / du Mont-Royal);29/08/2022 19:05:54;327
+Poupart / Ontario;Marquette / Rachel;31/05/2022 18:49:47;327
+Parc Henri-Dunant (Léger / Henri-Dunant);Métro Cartier;12/07/2022 06:57:24;326
+Richardson / de Montmorency;Crescent / René-Lévesque;11/09/2022 15:13:59;325
+St-Dominique / Napoléon;Pontiac / Gilford;14/07/2022 01:17:15;325
+Duvernay / Charlevoix;Canning / Notre-Dame;01/08/2022 21:29:30;324
+Rose-de-Lima / Workman;St-Maurice / Robert-Bourassa;03/05/2022 09:02:34;323
+Lajeunesse / de Liège;5e avenue / Bannantyne;09/09/2021 16:47:57;322
+3e avenue / Holt;29e avenue / St-Zotique;29/08/2022 15:09:21;321
+de la Cathédrale / René-Lévesque;Poupart / Ste-Catherine;19/06/2022 02:42:56;321
+Atwater / Sherbrooke;Villeneuve / St-Urbain;16/06/2022 15:03:28;320
+Jacques-Casault / Christophe-Colomb;Fabre / St-Zotique;14/08/2022 10:15:33;320
+Louis-Hémon / Rosemont;Tupper / du Fort;04/07/2022 09:07:51;320
+Thimens / Alexis-Nihon;Centre des loisirs (Tassé / Grenet);16/08/2022 19:48:59;318
+Vallières / St-Laurent;Cartier / Bélanger;23/04/2022 23:31:34;317
+Square Victoria (Viger / du Square-Victoria);St-Jacques / St-Laurent;29/08/2022 10:00:19;316
+Tolhurst / Fleury;Laforest / Dudemaine;17/08/2022 09:37:15;316
+Victoria / de Maisonneuve;HEC (Decelles / Jean-Brillant);15/07/2022 17:02:23;315
+Richmond / des Bassins;Durocher / Sherbrooke;26/06/2022 09:10:57;314
+Laval / du Mont-Royal;Roy / St-Laurent;05/06/2022 16:38:31;313
+du Mont-Royal / Clark;Durocher / Bernard;10/10/2021 17:10:01;313
+Métro Place-d'Armes (Viger / St-Urbain);St-Antoine / St-François-Xavier;02/09/2022 17:58:40;312
+Parc Ottawa (de Belleville / Fleury);Jeanne-Mance / Laurier;14/08/2022 12:50:38;312
+Bélanger / St-Denis;de Gaspé / Beaubien;28/05/2022 01:58:43;310
+Viger / Chenneville;de l'Hôtel-de-Ville / Ste-Catherine;11/06/2021 22:47:46;310
+Durocher / St-Viateur;Drummond / de Maisonneuve;08/10/2022 13:13:21;308
+Métro Assomption (Chauveau / de l'Assomption);Pierre-de-Coubertin / Langelier;29/09/2022 20:09:48;308
+Beaudry / Sherbrooke;St-André / Cherrier;15/10/2022 18:18:25;307
+Cartier / Masson;Villeneuve / de l'Hôtel-de-Ville;04/07/2022 14:07:04;307
+Young / Wellington;La Ronde;30/07/2022 10:19:53;306
+Léa-Roback / Sir-Georges-Etienne-Cartier;Parc Jeanne Mance (monument sir George-Etienne Cartier);14/07/2022 18:44:30;305
+Milton / du Parc;Milton / Durocher;02/09/2022 16:52:56;304
+Gerry-Boulet / St-Grégoire;St-Dominique / St-Zotique;15/08/2021 06:21:44;303
+16e avenue / Jean-Talon;Boyer / Beaubien;06/08/2022 17:23:35;302
+Jardin Botanique (Pie-IX / Sherbrooke);Marmier / St-Denis;13/05/2022 22:03:12;302
+Parc Chamberland (Dorais / de l'Église);Métro du Collège (Cartier / Décarie);10/09/2022 18:28:52;302
+Argyle / de Verdun;Métro de l'Église (Ross / de l'Église);10/11/2021 17:59:47;300
+de Maisonneuve / Mansfield (nord);de l'Hôtel-de-Ville / Ste-Catherine;08/06/2022 17:57:38;300
+10e avenue / Masson;Boyer / Rachel;16/07/2021 22:57:37;298
+Campus MIL (Outremont / Thérèse-Lavoie Roux);Chabanel / du Parc;11/08/2022 08:10:37;298
+Drummond / Ste-Catherine;Guy / Notre-Dame;30/06/2022 15:05:07;297
+St-Hubert / Laurier;Marquette / des Carrières;30/06/2022 09:59:40;297
+St-Joseph Lachine / 21e avenue;de la Commune / Place Jacques-Cartier;30/07/2022 11:40:01;297
+Ste-Catherine / Parthenais;Notre-Dame / St-Gabriel;22/09/2021 04:34:53;297
+St-Rémi / Ste Émilie;de la Côte St-Paul / St-Ambroise;25/06/2022 19:38:27;296
+Notre-Dame-de-Grâce / Décarie;Crescent / de Maisonneuve;07/09/2022 10:13:29;295
+Fleury / Lajeunesse;Métro Sauvé (Berri / Sauvé);06/06/2021 11:18:30;294
+Métro Papineau (Cartier / Ste-Catherine);Métro Frontenac (Ontario / du Havre);14/10/2022 17:04:31;294
+Henri-Julien / du Carmel;Jeanne-Mance / St-Viateur;30/07/2022 09:21:01;293
+Parc Kirkland (des Érables / Boyer);Notre-Dame-de-Grâce / Westmount;01/09/2022 13:06:08;293
+Messier / du Mont-Royal;Fullum / Terrasse Mercure;05/11/2022 13:33:13;292
+Notre-Dame / de la Montagne;St-Ambroise / Louis-Cyr;12/09/2022 08:35:19;292
+Duluth / de l'Esplanade;Marquette / Laurier;10/06/2022 23:15:54;291
+Parc Jeanne-Mance (monument à sir George-Étienne Cartier);du Mont-Royal / Augustin-Frigon;24/09/2022 12:20:29;291
+Gilford / St-Denis;de l'Esplanade / Fairmount;29/09/2022 18:31:06;290
+Métro Mont-Royal (Rivard / du Mont-Royal);Métro Lionel-Groulx (St-Jacques / Atwater);24/06/2022 15:30:54;290
+Métro de Castelnau (de Castelnau / St-Laurent);Faillon / St-Denis;15/10/2022 02:25:27;290
+Square St-Louis (du Square St-Louis / Laval);5e avenue / Masson;06/09/2022 19:08:12;290
+Lespérance / de Rouen;Émile-Duployé / Sherbrooke;20/08/2021 16:44:06;289
+Fullum / de Rouen;Dézéry / Ontario;16/07/2022 19:13:41;288
+Grand Boulevard / Sherbrooke;Métro Vendôme (de Marlowe / de Maisonneuve);29/08/2021 11:29:40;288
+Métro Henri-Bourassa (Henri-Bourassa / Millen);Bibliothèque du Boisé (Thimens / Todd);30/05/2021 10:39:54;288
+Hamilton / Jolicoeur;Viger / Chenneville;14/05/2022 13:04:03;287
+Fullum / Terrasse Mercure;St-Hubert / Duluth;10/08/2022 16:03:18;286
+Marché Jean-Talon (Henri-Julien / Jean-Talon);Gary-Carter / St-Laurent;10/05/2022 15:31:58;286
+Bennett / Adam;Bennett / Pierre-de-Coubertin;10/08/2022 18:57:41;285
+Métro Plamondon (de Kent / Victoria);de Kent / de la Côte-des-Neiges;03/08/2022 18:30:06;285
+Édouard-Montpetit / de Stirling;Drolet / Laurier;01/09/2022 20:33:31;285
+Marquette / Gilford;Bélanger / St-Denis;29/10/2022 12:47:30;282
+de Lisieux / Jean-Talon;Métro Fabre (Marquette / Jean-Talon);31/10/2022 16:35:08;282
+Mozart / Waverly;Maguire / St-Laurent;15/08/2021 11:25:52;280
+Fabre / Beaubien;Papineau / Émile-Journault;25/07/2022 16:42:32;279
+Métro Champ-de-Mars (Viger / Sanguinet);St-Dominique / Rachel;25/04/2022 16:22:39;279
+Métro Jean-Talon (Berri / Jean-Talon);St-Dominique / Bernard;28/09/2022 14:40:59;279
+8e avenue / Notre-Dame Lachine;Métro Lionel-Groulx (St-Jacques / Atwater);03/08/2022 06:50:37;278
+Laforest / Dudemaine;Gare Bois-de-Boulogne;08/09/2022 20:10:01;278
+Maguire / St-Laurent;de la Peltrie / de la Côte-des-Neiges;25/10/2022 08:51:12;278
+Métro du Collège (Cartier / Décarie);Métro Henri-Bourassa (Henri-Bourassa / Millen);02/05/2021 11:43:15;278
+St-Charles / Thomas-Keefer;Marché Atwater;29/10/2022 17:45:54;278
+Joseph-Manseau / René-Lévesque;Shearer / Centre;02/05/2022 12:53:01;277
+Laval / Duluth;BAnQ (Berri / de Maisonneuve);23/08/2021 17:13:02;277
+Graham / Kindersley;de l'Eglise / St-Germain;18/07/2021 17:15:09;275
+Métro Georges-Vanier (St-Antoine / Canning);Alexandre-DeSève / Ste-Catherine;02/07/2022 10:38:54;275
+Place d'Youville / McGill;de la Commune / Place Jacques-Cartier;30/09/2022 11:47:14;275
+Parc du Pélican (2e avenue / St-Joseph);de la Roche /  de Bellechasse;21/04/2021 19:34:09;273
+de Kent / Victoria;Graham / Kindersley;25/06/2021 16:30:35;273
+St-Denis / René-Lévesque;Métro Université de Montréal (Édouard-Montpetit / Louis-Collin);14/04/2021 08:22:01;271
+Graham / Brookfield;Graham / Wicksteed;06/08/2021 10:58:42;270
+U. Concordia - Campus Loyola (Sherbrooke / West Broadway);Métro Jean-Talon (Berri / Jean-Talon);02/05/2022 18:23:21;270
+Bibliothèque du Boisé (Thimens / Todd);Thimens / Alexis-Nihon;24/07/2022 13:58:39;269
+Marché Maisonneuve;Jeanne-d'Arc / Ontario;01/10/2022 06:00:08;269
+Sainte-Catherine / Parthenais;Poupart / Ste-Catherine;09/07/2022 21:13:52;269
+Christophe-Colomb / St-Joseph;Laval / du Mont-Royal;19/05/2021 11:48:12;268
+Ste-Famille / des Pins;Métro Peel (de Maisonneuve / Stanley);17/07/2022 17:11:58;267
+Argyle / Bannantyne;Marché Atwater;30/09/2022 11:40:32;266
+Métro Place St-Henri (St-Ferdinand / St-Jacques);Léa-Roback / Sir-Georges-Etienne-Cartier;12/05/2022 09:21:48;266
+Prince-Arthur / St-Urbain;Young / Wellington;21/04/2021 08:36:34;266
+de Lanaudière / Laurier;Métro Peel (de Maisonneuve / Stanley);25/06/2022 05:15:16;265
+Calixa-Lavallée / Sherbrooke;City Councillors / du President-Kennedy;06/08/2022 23:05:07;264
+Parc Henri-Julien (Legendre / Henri-Julien);Métro de Castelnau (de Castelnau / St-Laurent);07/08/2022 12:04:39;264
+Guy / Sainte-Catherine;St-Mathieu / Ste-Catherine;07/09/2022 23:18:25;262
+Parc Beaulac (rue Élizabeth);Métro Parc  (Hutchison / Ogilvy);16/07/2022 18:29:12;262
+d'Outremont / Ogilvy;de Gaspé / Beaubien;17/05/2022 15:20:07;262
+Notre-Dame-de-Grâce / Westmount;Glengarry / Graham;14/05/2021 18:02:38;261
+Parc de Bullion (de Bullion / Prince-Arthur);Henri-Julien / du Carmel;22/05/2022 00:32:44;261
+Metcalfe / St-Catherine;de la Commune / St-Sulpice;04/08/2022 12:02:28;260
+de la Montagne/ Sherbrooke;University / Milton;03/09/2022 22:41:45;260
+Quesnel / Vinet;Métro Jolicoeur (de Sève / Drake);26/08/2022 20:05:49;259
+des Récollets / McGill;Ryde / Charlevoix;04/06/2022 11:04:11;259
+Berri / Cherrier;Ste-Catherine / Labelle;10/08/2022 11:36:37;258
+Gare Bois-de-Boulogne;Papineau / Émile-Journault;08/07/2022 14:46:51;258
+Victoria Hall;de Maisonneuve / Mansfield (sud);07/09/2022 11:11:25;257
+Métro Sauvé (Berri / Sauvé);Parc Eusèbe-Ménard (Gouin / St-Vital);04/09/2022 15:38:48;256
+Métro Acadie (de l'Acadie / Beaumont);Bloomfield / Jean-Talon;15/10/2021 17:07:15;255
+Bibliothèque Jean-Corbeil (Goncourt / Place Montrichard);Parc du Mail (Bois de Coulonges / du Mail);04/09/2022 11:13:36;254
+CHSLD St-Michel (8e avenue / Jarry);Clark / St-Viateur;03/06/2022 07:32:54;254
+Glengarry / Graham;Graham / Brookfield;14/05/2022 15:46:10;254
+Park Row O / Sherbrooke;Victoria / de Maisonneuve;04/05/2021 17:10:25;254
+Ste-Catherine / Union;Bishop / Ste-Catherine;05/07/2022 17:07:43;254
+Fabre / St-Zotique;St-Denis / Ste-Catherine;01/09/2022 19:33:43;253
+Roy / St-André;Clark / Ontario;28/04/2022 11:17:59;253
+Métro Villa-Maria (de Monkland / Décarie);de Hampton / de Monkland;08/08/2022 15:33:55;252
+Parc Plage;Quai de la navette fluviale;25/07/2022 17:33:45;252
+27e avenue / Rosemont;Parc Sauvé (Balzac / de Bayonne);15/08/2022 16:47:57;251
+Parc Jeanne Mance (monument sir George-Etienne Cartier);du Mont-Royal / Clark;06/05/2022 19:13:10;251
+16e avenue / St-Joseph;de la Commune / Place Jacques-Cartier;21/08/2022 22:24:42;250
+Parc Marlborough (Beauzèle / Robichaud);O'Brien / Poirier;29/07/2022 16:09:34;249
+St-Urbain / de la Gauchetière;Georges-Vanier / Notre-Dame;22/06/2022 17:31:25;249
+de la Côte St-Antoine / Royal;St-Dominique / Laurier;02/09/2022 22:30:33;248
+Métro Snowdon (de Westbury / Queen-Mary);Métro du Collège (Cartier / Décarie);14/06/2022 16:30:05;246
+de Maisonneuve / Mansfield (sud);Mackay / Ste-Catherine;08/07/2022 13:55:20;244
+Ropery / Augustin-Cantin;Richmond / des Bassins;18/08/2022 21:59:42;243
+Marie-Anne / St-Hubert;de la Peltrie / de la Côte-des-Neiges;29/08/2022 18:53:55;242
+Métro Longueuil - Université de Sherbrooke;Sainte-Catherine / Parthenais;03/06/2022 20:08:30;242
+Métro Lucien-L'Allier  (Lucien l'Allier / Argyle);de la Côte St-Paul / St-Ambroise;16/08/2022 11:49:12;242
+Parc des Rapides (LaSalle / 6e avenue);Métro Charlevoix (Centre / Charlevoix);31/07/2022 14:25:38;242
+de Monkland / Girouard;de la Commune / St-Sulpice;08/05/2022 14:44:08;242
+Parc Maisonneuve (Viau / Sherbrooke);Marmier / St-Denis;21/07/2022 15:25:51;241
+Poupart / Ste-Catherine;Gare d'autocars de Montréal (Berri / Ontario);11/06/2022 23:05:40;241
+Fullum / Marie-Anne;Crescent / de Maisonneuve;09/07/2022 20:08:34;240
+de Mentana / Marie-Anne;de la Commune / Place Jacques-Cartier;06/08/2022 21:35:09;240
+Boyer / Bélanger;Jeanne-Mance / Beaubien;10/06/2022 11:47:19;239
+Drummond / de Maisonneuve;Métro Atwater (Atwater / Ste-Catherine);24/04/2021 13:49:06;238
+St-Antoine / de la Montagne;Métro Place-des-Arts (du Président-Kennedy / Jeanne-Mance);12/06/2022 19:53:54;238
+de Ville-Marie / Ste-Catherine;Dorion / Gauthier;14/08/2021 18:12:22;238
+Fortune / Wellington;Métro de l'Église (Ross / de l'Église);13/08/2022 14:50:24;237
+du Champ-de-Mars / Gosford;Métro Champ-de-Mars (Viger / Sanguinet);13/08/2022 13:14:41;237
+André-Laurendeau / Rachel;Molson / William-Tremblay;25/10/2022 13:43:10;236
+Métro Angrignon (Lamont /  des Trinitaires);Jogues / Allard;22/05/2022 00:02:55;236
+Métro Guy-Concordia (Guy / St-Catherine);Mackay / Sainte-Catherine;10/06/2021 11:40:36;236
+Atwater / Greene;de la Commune / Place Jacques-Cartier;25/06/2022 13:55:45;235
+Prince-Arthur / du Parc;Ste-Famille / Sherbrooke;27/08/2022 12:39:42;235
+Ste-Famille / Sherbrooke;Calixa-Lavallée / Rachel;18/07/2021 00:24:55;235
+de l'Église / de Verdun;Guy / Sainte-Catherine;28/08/2022 10:47:47;235
+de l'Esplanade / du Mont-Royal;7e avenue / St-Joseph Rosemont;07/06/2021 16:55:52;234
+Bernard / St-Urbain;Parc Jeanne Mance (monument sir George-Etienne Cartier);04/06/2021 23:17:37;232
+Georges-Vanier / Notre-Dame;Crescent / de Maisonneuve;19/04/2022 18:48:25;232
+Gloria / Dollard;LaSalle / 80e avenue;31/10/2021 07:14:43;232
+Roy / St-Denis;Parc Jeanne Mance (monument sir George-Etienne Cartier);12/06/2021 18:10:55;232
+St-Jacques / St-Pierre;Métro Place-d'Armes (Viger / St-Urbain);26/07/2022 11:45:16;232
+Métro Lasalle (de Rushbrooke / Caisse);LaSalle / Crawford;26/07/2022 12:19:24;231
+Métro Monk (Allard / Beaulieu);Monk / Biencourt;24/09/2022 13:45:32;231
+de Brébeuf / du Mont-Royal;St-Dominique / Laurier;28/08/2022 21:03:03;231
+Dollard / Van Horne;McKenna / Édouard-Montpetit;17/08/2021 22:38:31;230
+Letourneux / Ste-Catherine;LaSalle / 80e avenue;25/08/2022 13:01:08;230
+Ontario / Sicard;de la Salle / Ontario;01/10/2022 14:54:48;230
+Boyer / Jean-Talon;Métro Angrignon (Lamont /  des Trinitaires);20/05/2022 12:26:25;229
+Jeanne-Mance / René-Lévesque;Métro Place-d'Armes (Viger / St-Urbain);25/08/2022 17:43:50;229
+des Soeurs-Grises / Marguerite-d'Youville;Marché Atwater;16/04/2022 10:52:22;229
+Métro Viau (Pierre-de-Coubertin / Viau);Michelet / Jean-Talon;07/07/2022 20:59:47;228
+St-Denis / Ste-Catherine;de la Côte St-Antoine / Argyle;10/10/2022 10:34:27;228
+du Havre / de Rouen;Letourneux / Ste-Catherine;22/07/2022 19:52:26;228
+McKenna / Édouard-Montpetit;Métro St-Michel (Shaughnessy / St-Michel);09/09/2022 08:22:09;227
+Omer-Lavallée / du Midway;3e avenue / Holt;18/07/2022 12:45:19;227
+des Jockeys / Décarie;de Bellechasse / de St-Vallier;02/10/2022 13:57:37;227
+Drummond / Sherbrooke;Ottawa / William;18/07/2022 15:30:52;226
+Fullum / Gilford;Aylmer / Sherbrooke;15/08/2022 14:44:50;226
+Atateken / du Square Amherst;Sanguinet / Ste-Catherine;08/07/2022 21:14:18;225
+Clark / Prince-Arthur;Gare d'autocars de Montréal (Berri / Ontario);08/09/2022 18:05:06;225
+Louisbourg / O'brien;Hôpital Sacré-Coeur (Forbes);16/09/2022 13:32:44;225
+Messier / St-Joseph;Villeneuve / de l'Hôtel-de-Ville;24/09/2022 08:33:16;225
+Kirkfield / de Chambois;Duluth / de l'Esplanade;09/05/2022 17:21:13;224
+Lionel-Groulx / George-Vanier;Canning / Notre-Dame;25/08/2022 13:15:42;224
+Wolfe / de la Gauchetière;St-Mathieu / Sherbrooke;25/06/2022 18:00:50;224
+Clark / Rachel;St-Antoine / St-François-Xavier;10/10/2022 11:25:52;223
+Milton / Durocher;Aylmer / Sherbrooke;15/05/2021 12:44:58;222
+Grey / Sherbrooke;de Maisonneuve / Mansfield (nord);03/06/2022 21:35:31;221
+Émile-Journault / de Chateaubriand;de Bordeaux / Jean-Talon;26/05/2022 19:25:12;220
+Aylmer / Ste-Catherine;Place du Canada (Peel / de la Gauchetière);21/08/2022 10:51:55;219
+Gary-Carter / St-Laurent;Drolet / Laurier;02/08/2022 20:14:56;219
+de l'Esplanade / Fairmount;Maguire / St-Laurent;12/06/2022 18:19:14;219
+15e avenue / Masson;Union / René-Lévesque;10/06/2022 14:26:56;218
+5e avenue / Masson;10e avenue / Masson;13/08/2022 12:03:14;218
+Hôpital général juif (de la Côte Ste-Catherine / Légaré);de la Peltrie / de la Côte-des-Neiges;25/04/2022 12:12:01;218
+Boyer / du Mont-Royal;Marquette / du Mont-Royal;16/04/2022 16:59:43;217
+des Ormeaux / de Grosbois;St-Jacques / St-Pierre;21/08/2021 17:06:04;217
+Calixa-Lavallée / Rachel;Parc Georges St-Pierre (Oxford / Upper Lachine);01/07/2022 20:10:16;216
+de Maisonneuve / Greene;de la Commune / Place Jacques-Cartier;15/06/2022 17:33:54;216
+Henri-Julien / Duluth;de l'Hôtel-de-Ville / Roy;04/08/2022 16:28:05;215
+Rivard / Rachel;André-Laurendeau / Rachel;24/09/2022 20:18:35;215
+Valois / Ste-Catherine;Letourneux / Hochelaga;03/06/2022 20:38:10;215
+de l'Eglise / St-Germain;Beaucourt / de la Côte-Ste-Catherine;06/07/2021 18:16:10;215
+Aylmer / Sherbrooke;CÉGEP du Vieux-Montréal (Ontario / de l'Hôtel-de-Ville);18/08/2022 00:49:58;214
+Parc des Hirondelles (Fleury / André-Jobin);Laforest / Dudemaine;07/07/2022 09:38:43;214
+Chabot / Villeray;27e avenue / Rosemont;24/06/2022 10:38:39;213
+Cypress / Peel;Resther / du Mont-Royal;07/08/2022 17:33:42;213
+Terminus Le Carrefour (Terry-Fox / Le Carrefour);Louisbourg / O'brien;08/10/2022 17:44:35;212
+de Bordeaux / Marie-Anne;Parthenais / du Mont-Royal;28/08/2022 13:55:58;210
+Dubois / Eadie;Parc St-Paul (Le Caron / Marc-Sauvalle);25/07/2021 18:25:33;209
+de Mentana / Laurier;de Versailles / St-Jacques;03/09/2022 15:12:53;209
+Bourget / St-Jacques;St-Nicolas / Place d'Youville;26/06/2022 14:38:16;208
+Lajeunesse / Jarry;de Gaspé / Beaubien;19/04/2021 16:36:15;208
+St-Dominique / Bernard;Parc Père-Marquette (Chambord / Rosemont);03/05/2022 19:19:14;207
+de Mentana / Rachel;Calixa-Lavallée / Rachel;25/08/2021 17:31:34;207
+Lincoln / du Fort;U. Concordia - Campus Loyola (Sherbrooke / West Broadway);30/09/2022 15:15:59;206
+Parc nature de l'Île-de-la-Visitation (Gouin / de Bruchési);Francis / Fleury;20/08/2022 12:06:25;206
+Quai de la navette fluviale;de la Commune / Place Jacques-Cartier;19/06/2022 16:39:07;206
+de Melrose / Sherbrooke;Parc Jeanne-Mance (du Mont-Royal / du Parc);08/05/2022 00:45:13;206
+Métro Sherbrooke (de Rigaud / St-Denis);Berri /Ste-Catherine;12/09/2022 14:59:23;205
+Palm / St-Rémi;Métro Place St-Henri (St-Ferdinand / St-Jacques);04/11/2021 18:22:50;205
+Parc Painter (Marcotte / Quenneville);Tolhurst / Fleury;16/09/2022 13:15:14;205
+Hutchison / des Pins;de Bleury / de Maisonneuve;13/06/2021 12:38:49;204
+Place Émilie-Gamelin (St-Hubert / de Maisonneuve);Prince-Arthur / du Parc;21/08/2021 10:30:53;204
+Turgeon / Notre-Dame;Marquette / Laurier;07/07/2022 21:11:09;204
+Marie-Anne / Papineau;Hôpital Maisonneuve-Rosemont (Rosemont / Chatelain);03/11/2021 09:34:18;203
+St-André / Ontario;Parc de Bullion (de Bullion / Prince-Arthur);20/06/2022 13:15:49;203
+Dixie / 54e avenue;Parc Summerlea (53e avenue / St-Joseph);25/06/2022 20:34:50;202
+Parc Stoney-Point (St-Joseph / 47e avenue);Parc de Beauséjour (Gouin / Henri-d'Arles);22/05/2022 14:54:02;202
+Parc Van Horne (de la Peltrie / de Westbury);Louis-Hémon / Rosemont;03/06/2022 20:25:16;202
+de Maisonneuve / Aylmer (ouest);Cypress / Peel;26/06/2022 20:59:33;202
+Louis-Hébert / Beaubien;Bernard / Jeanne-Mance;07/10/2021 22:51:43;201
+Pontiac / Gilford;Laurier / de Bordeaux;01/11/2022 14:14:31;201
+University / Milton;Ste-Catherine / St-Marc;29/05/2022 15:35:03;201
+Beaudry / Ontario;St-Joseph / 8e avenue Lachine;05/08/2022 16:08:50;200
+Bossuet / Sherbrooke;Métro Beaudry (Montcalm / de Maisonneuve);27/06/2022 20:02:53;200
+Drolet / St-Zotique;de Gaspé / Beaubien;12/04/2021 17:17:32;200
+Notre-Dame / Jean-d'Estrées;William / Robert-Bourassa;25/06/2022 13:17:55;200
+Papineau / René-Lévesque;des Seigneurs / Notre-Dame;17/07/2021 11:31:52;200
+Parc Wilfrid-Bastien (Lacordaire / des Galets);d'Orléans / Masson;04/11/2022 16:06:01;199
+Robert-Bourassa / Ste-Catherine;Métro Angrignon (Lamont /  des Trinitaires);27/09/2021 18:37:15;199
+Aylmer / Prince-Arthur;Square St-Louis (du Square St-Louis / Laval);14/06/2022 10:20:00;198
+Chabot / de Bellechasse;Molson / Beaubien;23/05/2022 09:49:22;198
+Gauthier / Parthenais;Alexandre-DeSève / Ste-Catherine;21/05/2022 18:35:19;198
+St-Mathieu / Sherbrooke;Marcil / Sherbrooke;06/07/2021 22:31:43;198
+Elgar / de l'Île-des-Sœurs;Place du Commerce;12/05/2021 11:51:18;197
+Garnier / St-Grégoire;Fullum / Marie-Anne;03/09/2022 10:25:00;197
+Mairie d'arrondissement LaSalle (Dupras / Jeannette);2e avenue / Centrale;05/08/2022 12:47:23;197
+Parc Champdoré (Champdoré / de Lille);Parc Stoney-Point (St-Joseph / 47e avenue);20/06/2022 13:15:46;197
+du Président-Kennedy / Jeanne-Mance;Logan / de Champlain;22/05/2021 11:04:16;197
+Fullum / Ontario;Ontario / Sicard;09/07/2022 22:40:32;196
+Sherbrooke / Frontenac;St-André / Ontario;13/05/2022 16:44:23;196
+Parc de la Confédération (Fielding / West Hill);Grand Boulevard / de Terrebonne;12/05/2022 22:20:25;195
+Ste-Émilie / Sir-Georges-Etienne-Cartier;Atwater / Greene;05/08/2022 15:24:41;195
+de Bordeaux / Jean-Talon;Cartier / Bélanger;08/05/2021 16:52:41;195
+7e avenue / St-Joseph Rosemont;Métro Radisson (Sherbrooke / des Groseilliers);26/05/2022 21:08:08;194
+de Gaspé / St-Viateur;St-Catherine / St-Laurent;14/06/2022 14:02:46;194
+Alton-Goldbloom / Notre-Dame;Louisbourg / O'brien;21/09/2022 19:30:48;193
+Hutchison / Prince-Arthur;Panet / Ste-Catherine;24/08/2022 14:15:42;193
+St-Nicolas / Place d'Youville;Métro Charlevoix (Centre / Charlevoix);02/08/2022 00:44:37;193
+Villeneuve / de l'Hôtel-de-Ville;des Érables / Laurier;21/07/2022 21:09:40;193
+William / St-Henri;Ann / Wellington;10/06/2022 02:41:02;193
+de Lanaudière / du Mont-Royal (2);Logan / de Champlain;17/07/2021 00:02:40;193
+BAnQ (Berri);Métro Angrignon (Lamont /  des Trinitaires);19/10/2022 21:02:35;191
+Ottawa / William;St-Charles / Thomas-Keefer;09/07/2022 15:58:23;191
+Durocher / Bernard;St-Antoine / St-François-Xavier;31/05/2022 14:05:44;190
+Parc de Montréal-Est (Notre-Dame Est / David);Parc du Pélican (1ère avenue / Masson);11/09/2022 11:49:40;190
+Bishop / René-Lévesque;Stanley / Sherbrooke;13/08/2021 18:13:34;189
+Jeanne-Mance / Laurier;Atwater / Greene;23/07/2021 16:37:40;189
+Mackay / Sainte-Catherine;St-Patrick / Briand;10/09/2021 12:32:53;189
+Marquette / Laurier;Berri / Cherrier;18/05/2022 14:44:57;189
+de Lanaudière / Marie-Anne;Dorion / Ontario;16/06/2022 12:35:00;189
+Sanguinet / de Maisonneuve;St-Urbain / de la Gauchetière;09/07/2021 18:42:20;188
+William / Robert-Bourassa;des Bassins / du Séminaire;03/07/2022 13:15:16;188
+Boyer / Rosemont;de la Commune / Place Jacques-Cartier;31/07/2021 11:09:51;187
+Drolet / Marie-Anne;de la Commune / Place Jacques-Cartier;30/08/2022 10:33:53;187
+Graham / Wicksteed;Graham / Kindersley;10/10/2022 14:30:15;187
+CHU Sainte-Justine (de la Côte Sainte-Catherine / Hudson);Parc Kent (de Kent / Hudson);23/06/2021 23:33:40;186
+Guizot / St-Denis;Gilford / St-Denis;20/05/2022 19:03:08;186
+St-Germain / Hochelaga;Sherbrooke / Frontenac;22/08/2021 22:28:41;186
+Egan / Laurendeau;Tupper / du Fort;04/07/2022 08:39:55;185
+Gilford / de Brébeuf;St-Hubert / Laurier;30/07/2022 12:42:57;184
+Maguire / Henri-Julien;Mozart / Waverly;30/09/2022 19:57:05;184
+du Rosaire / St-Hubert;Henri-Julien / de Castelnau;21/08/2022 11:48:19;184
+Travaux publics LaSalle (Cordner / Léger);de la Commune / St-Sulpice;14/05/2022 16:19:06;183
+BAnQ (Berri / de Maisonneuve);Plessis / Logan;11/06/2022 17:38:16;182
+University / Prince-Arthur;Aylmer / Prince-Arthur;03/08/2022 11:47:48;182
+de Champlain / Ontario;Metcalfe / du Square-Dorchester;06/08/2021 00:36:50;182
+Alexandre-DeSève  / Ontario;Atateken / du Square Amherst;17/09/2022 18:18:15;181
+François-Boivin / Bélanger;Dumesnil / Bélanger;12/08/2021 19:14:13;181
+Jeanne-Mance / Beaubien;Métro Parc  (Hutchison / Ogilvy);18/10/2022 14:41:46;181
+Parc Summerlea (53e avenue / St-Joseph);Métro Place St-Henri (St-Ferdinand / St-Jacques);11/05/2022 11:21:09;181
+Beaucourt / de la Côte-Ste-Catherine;Marché Jean-Talon (Casgrain / Shamrock);08/05/2022 11:15:03;180
+Clark / Ontario;Métro St-Laurent (de Maisonneuve / St-Laurent);20/05/2021 18:46:20;180
+Mairie d'arrondissement Montréal-Nord (Hébert / de Charleroi);des Récollets / Martial;19/06/2022 12:34:52;180
+St-Mathieu / Ste-Catherine;du Parc-La Fontaine / Roy;25/05/2021 17:30:54;180
+Parc St-Louis (St-Joseph / 34e avenue);de la Commune / Place Jacques-Cartier;13/08/2022 11:24:57;179
+d'Orléans / Hochelaga;Jardin Botanique (Pie-IX / Sherbrooke);10/11/2021 14:00:00;179
+Drolet / Gounod;Gary-Carter / St-Laurent;29/04/2021 16:37:02;178
+Métro Beaudry (Montcalm / de Maisonneuve);Mackay / de Maisonneuve;22/07/2022 13:25:24;178
+Ann / Wellington;des Bassins / du Séminaire;10/06/2022 12:41:24;177
+Bel Air / St-Antoine;Bourget / St-Jacques;17/06/2022 12:01:40;177
+Duluth / St-Laurent;de la Commune / St-Sulpice;23/07/2021 17:14:26;177
+Lucien L'Allier / St-Jacques;Bloomfield / Jean-Talon;13/07/2021 19:20:40;177
+Parc Ferland (Belleherbe / Albanel);Parc Armand-Bombardier (Perras / Armand-Bombardier);16/09/2022 19:26:04;177
+Bloomfield / Bernard;Durocher / St-Viateur;30/05/2022 13:02:25;176
+Marquette / Rachel;des Érables / Rachel;10/04/2021 16:26:03;176
+Notre-Dame / St-Gabriel;Ste-Émilie / Sir-Georges-Etienne-Cartier;28/09/2021 13:02:33;176
+Parc Villeray (Christophe-Colomb / Jarry);Métro St-Michel (Shaughnessy / St-Michel);05/09/2021 16:29:34;175
+St-Dominique / Laurier;Ernest-Gendreau / du Mont-Royal;07/05/2022 14:50:43;175
+Berri / Rachel;Roy / St-Denis;23/05/2022 18:02:29;174
+Chabot / du Mont-Royal;Parc Maisonneuve (Viau / Sherbrooke);16/04/2022 15:34:31;174
+Newman / Senkus;Place du Canada (Peel / de la Gauchetière);23/10/2022 12:11:28;174
+4e avenue / de Verdun;Léa-Roback / Sir-Georges-Etienne-Cartier;10/05/2022 11:06:32;173
+Rosemont / Viau;Michelet / Jean-Talon;13/07/2022 18:23:27;173
+Harvard / de Monkland;U. Concordia - Campus Loyola (Sherbrooke / West Broadway);03/08/2022 20:49:06;172
+St-Joseph / 21e avenue Lachine;Parc Highlands (Highlands / LaSalle);09/05/2022 15:55:01;172
+de Castelnau / Lajeunesse;Boyer / Jean-Talon;11/05/2022 08:05:00;172
+Complexe sportif Claude-Robillard;Chabanel / du Parc;01/10/2021 13:31:39;171
+Métro Lionel-Groulx (St-Jacques / Atwater);Canning / Notre-Dame;25/06/2022 16:19:44;171
+de Kent / de la Côte-des-Neiges;Métro Plamondon (de Kent / Victoria);04/06/2022 16:57:06;171
+de Lanaudière / Bélanger;St-Dominique / Jean-Talon;25/06/2021 11:59:33;171
+Wolfe / Robin;Atwater / Greene;06/10/2021 13:23:32;170
+Sabrevois / des Récollets;Parc Champdoré (Champdoré / de Lille);22/08/2022 16:02:02;169
+Fullum / Sherbrooke;Fullum / de Rouen;02/06/2021 17:56:06;168
+Guy / Notre-Dame;de la Commune / St-Sulpice;02/06/2021 17:20:04;168
+Hickson / Wellington;Parc St-Louis (St-Joseph / 34e avenue);22/09/2022 13:21:33;168
+Mozart / St-Laurent;Berri / Duluth;13/09/2021 11:12:31;168
+de la Salle / Ontario;Marché Maisonneuve;29/08/2022 07:06:00;168
+Bennett / Ste-Catherine;Wurtele / de Rouen;28/05/2021 23:18:26;167
+Hôpital Sacré-Coeur (Forbes);Lacombe / Victoria;24/06/2022 02:15:16;167
+Métro Joliette  (Joliette / Hochelaga);Dézéry / Ontario;28/04/2021 15:32:39;167
+Métro Université de Montréal (Édouard-Montpetit / Louis-Collin);Duluth / de l'Esplanade;04/09/2022 11:56:27;167
+Place du Village (St-Jean-Baptiste / Notre-Dame);Aréna Rodrigue-Gilbert (du Tricentenaire / de Montigny);14/05/2022 15:11:33;167
+de Bullion / du Mont-Royal;Berri / Rachel;26/05/2022 15:37:02;167
+Drolet / Beaubien;Durocher / Sherbrooke;14/08/2022 16:07:00;166
+1ère avenue / Masson;Métro Préfontaine (Moreau / Hochelaga);19/06/2021 16:29:40;165
+Chambord/ Beaubien;Gerry-Boulet / St-Grégoire;13/05/2022 17:34:13;165
+St-Jacques / McGill;Berri / Cherrier;08/06/2022 10:55:05;165
+St-Marc / Ste-Catherine;Alexandre-DeSève  / Ontario;26/10/2022 13:48:54;165
+Alfred Laliberté / de Poutrincourt;Parc de Beauséjour (Gouin / Henri-d'Arles);17/09/2022 12:33:58;164
+Clark / de Liège;Parc Howard (de l'Épée / de Liège);17/07/2021 19:24:09;164
+Hutchison / Sherbrooke;du Président-Kennedy / Jeanne-Mance;19/04/2021 16:32:07;164
+Jogues / Allard;Argyle / Bannantyne;27/06/2021 12:20:55;164
+Mackay / de Maisonneuve;Hutchison / Sherbrooke;14/05/2021 17:18:37;164
+Métro Verdun (Willibrord / de Verdun);Monk / de Biencourt;10/07/2021 13:37:01;164
+Ste-Catherine / St-Marc;Métro Guy-Concordia (Guy / St-Catherine);18/04/2021 15:33:18;164
+Mansfield / Cathcart;Mackay / Sainte-Catherine;21/08/2021 14:09:33;163
+Louis-Hémon / Jean-Talon;Hôpital général juif (de la Côte Ste-Catherine / Légaré);02/06/2022 12:22:38;162
+Wellington / Gordon;Newman / Senkus;16/08/2022 18:29:14;162
+de Chambly / Rachel;Laurier / de Bordeaux;29/06/2022 00:19:54;162
+de Normanville / Beaubien;Parc Père-Marquette (de Lanaudière / de Bellechasse);06/11/2021 14:58:53;162
+CHSLD Robert Cliche (de Bellechasse / 16e avenue);Parc Joseph-Robin (18e avenue / Everett);20/08/2022 23:27:12;161
+Hutchison / Beaubien;Campus MIL (Outremont / Thérèse-Lavoie Roux);09/07/2022 09:27:12;161
+Chambord / Beaubien;Roy / St-Denis;24/05/2021 16:27:24;160
+Eleanor / Ottawa;des Bassins / du Séminaire;30/10/2021 11:14:51;160
+Parthenais / Ste-Catherine;Poupart / Ste-Catherine;18/05/2022 22:03:46;160
+Dorion / Rachel;Rachel / de Brébeuf;03/06/2022 10:37:52;159
+St-Laurent / St-Jacques;Hickson / Wellington;04/11/2022 13:19:29;159
+Union / René-Lévesque;Mackay / de Maisonneuve;10/07/2022 19:42:56;159
+de la Roche /  de Bellechasse;St-Dominique / Napoléon;24/08/2022 09:39:58;159
+de la Roche / Everett;Parc Howard (de l'Épée / de Liège);13/07/2021 18:48:58;159
+Lacombe / Victoria;Parc Beaulac (rue Élizabeth);03/06/2022 22:59:46;158
+Parc de Dieppe;St-Christophe / René-Lévesque;03/08/2022 20:51:55;158
+Peel / Ottawa;Young / Wellington;24/06/2022 12:45:35;158
+Centre ÉPIC (St-Zotique / 40e avenue);Michelet / Jean-Talon;29/07/2022 17:39:20;157
+Cartier / St-Joseph;Gare d'autocars de Montréal (Berri / Ontario);31/08/2022 18:45:52;156
+Gare d'autocars de Montréal (Berri / Ontario);de la Commune / Place Jacques-Cartier;06/07/2022 18:36:00;156
+Mackay / Ste-Catherine;Metcalfe / St-Catherine;03/05/2022 13:22:13;156
+Bennett / Pierre-de-Coubertin;19e avenue / St-Zotique;05/06/2021 00:38:07;155
+Labadie / du Parc;de Normanville / Beaubien;09/11/2021 10:09:31;155
+Laurier / de Brébeuf;Boyer / Jean-Talon;13/11/2021 02:22:44;155
+Stanley / Sherbrooke;Métro Atwater (Atwater / Ste-Catherine);28/05/2021 16:47:56;155
+Clark / St-Viateur;Durocher / Beaumont;07/07/2022 12:49:30;154
+Durocher / Beaumont;Métro Parc  (Hutchison / Ogilvy);08/11/2022 10:23:45;154
+Métro Édouard-Montpetit (du Mont-Royal / Vincent-d'Indy);Métro Université de Montréal (Édouard-Montpetit / Louis-Collin);25/08/2021 13:36:31;154
+de Bordeaux / Gilford;Waverly / St-Viateur;10/11/2021 09:09:29;154
+Chambord / Fleury;Hamel / Sauvé;22/08/2022 19:11:06;153
+LaSalle / 37e avenue;Métro Angrignon (Lamont /  des Trinitaires);14/08/2022 12:49:16;153
+Métro Cadillac (Cadillac / Sherbrooke);McTavish / Sherbrooke;03/09/2022 07:13:23;153
+Villeray / St-Michel;Parc Champdoré (Champdoré / de Lille);02/05/2022 22:48:05;153
+de Laprairie / Centre;Chomedey / de Maisonneuve;06/11/2022 20:38:38;153
+Gagne / LaSalle;Rousselot / Jarry;14/07/2022 15:10:42;152
+Clark / Fleury;Chabot / de Bellechasse;11/06/2022 09:46:31;151
+Hutchison / Van Horne;Ball / Querbes;01/06/2021 12:14:52;151
+Melville / de Maisonneuve;Métro Vendôme (de Marlowe / de Maisonneuve);26/08/2022 13:18:19;151
+Métro Frontenac (Ontario / du Havre);de Bordeaux / Masson;07/08/2022 15:30:16;151
+Métro Plamondon (Carlton / Victoria);Parc Jeanne-Mance (du Mont-Royal / du Parc);06/11/2022 13:33:12;151
+Swail / Decelles;Parc des Rapides (LaSalle / 6e avenue);17/08/2021 17:52:56;151
+de Chambly / de Rouen;St-Denis / Ste-Catherine;13/10/2022 08:22:49;151
+de l'Hôtel-de-Ville / Villeneuve;Louis-Hémon / Jean-Talon;23/10/2022 18:17:06;150
+Beaubien / 8e avenue;19e avenue / St-Zotique;23/07/2021 18:59:32;149
+Bercy / Rachel;St-Hubert / Duluth;22/04/2022 18:56:14;149
+Bloomfied / St-Viateur;du Champ-de-Mars / Gosford;30/10/2022 17:17:26;149
+Métro Crémazie (Crémazie / Lajeunesse);Complexe sportif Claude-Robillard;17/05/2022 17:25:54;149
+Parc Highlands (Highlands / LaSalle);Terminus Newman (Airlie / Lafleur);11/08/2021 12:30:04;149
+Parc Père-Marquette (de Lanaudière / de Bellechasse);Valois / Ste-Catherine;29/09/2022 10:03:39;149
+Villeneuve / du Parc;Fullum / Gilford;30/08/2022 15:13:57;149
+Wurtele / de Rouen;Hogan / Ontario;04/06/2022 19:10:42;149
+6e avenue / Villeray;Parc Jeanne-Mance (du Mont-Royal / du Parc);25/09/2022 10:59:48;148
+Gilford / de Lanaudière;St-Dominique / du Mont-Royal;21/09/2022 17:17:28;148
+St-Dominique / Jean-Talon;Métro de Castelnau (de Castelnau / St-Laurent);15/06/2021 17:12:17;148
+St-Hubert /de Maisonneuve;Métro Lionel-Groulx (St-Jacques / Atwater);06/08/2022 23:28:13;148
+St-Patrick / Briand;de la Commune / King;24/06/2022 11:46:41;148
+de l'Hôtel-de-Ville / Ontario;Ste-Catherine / Union;10/05/2022 14:30:22;148
+de la Côte St-Paul / St-Ambroise;Place d'Youville / McGill;20/07/2022 09:22:32;148
+28e avenue / Rosemont;Jardin Botanique (Pie-IX / Sherbrooke);02/07/2021 01:36:19;147
+Casgrain / Mozart;de Brébeuf / du Mont-Royal;10/07/2021 00:38:38;147
+Cégep André-Laurendeau;de Laprairie / Centre;20/07/2021 13:13:46;147
+Logan / Fullum;Léa-Roback / Sir-Georges-Etienne-Cartier;14/09/2022 12:47:56;147
+1ère avenue / Rosemont;Louis-Hémon / Rosemont;02/07/2022 17:30:24;146
+St-Hubert / de Maisonneuve (sud);St-André / Ste-Catherine;31/10/2022 01:53:55;146
+Gordon / Wellington;Bloomfield / Bernard;29/05/2022 17:55:59;145
+Gauthier / Papineau;Gauthier / de Lorimier;06/06/2021 19:42:38;144
+de Gaspé / Dante;Bélanger / St-Denis;11/06/2022 00:13:35;144
+Fleury / de St-Firmin;de Gaspé / Villeray;24/09/2021 13:00:35;143
+La Tour de Montréal (Pierre-de-Coubertin / Bennett);Henri-Julien / Duluth;25/06/2022 16:59:52;143
+Marquette / Fleury;Fleury / de St-Firmin;08/08/2021 17:28:44;143
+Métro Beaudry ( Montcalm / Ste-Catherine);de la Commune / Berri;30/09/2022 18:09:03;143
+Parc MacDonald (Clanranald / Isabella);de la Côte St-Antoine / Royal;17/06/2021 17:19:34;143
+Métro Bonaventure (de la Gauchetière / de la Cathédrale);de la Commune / Place Jacques-Cartier;30/04/2022 13:23:06;142
+Parc Howard (de l'Épée / de Liège);Bloomfield / Jean-Talon;03/06/2022 16:46:25;142
+Parc Kent (de Kent / Hudson);Plessis / Ontario;18/08/2022 09:11:04;142
+de la Roche / Marie-Anne;Métro Place St-Henri (St-Ferdinand / St-Jacques);24/10/2022 14:54:58;142
+8e avenue / Everett;27e avenue / Rosemont;02/06/2022 18:06:34;141
+Leman / de Chateaubriand;Parc Champdoré (Champdoré / de Lille);25/06/2022 21:01:06;141
+Métro Snowdon (Dornal / Westbury);Métro Plamondon (de Kent / Victoria);18/08/2021 19:24:00;141
+Sanguinet / Ste-Catherine;de Maisonneuve / Aylmer (est);13/06/2022 11:57:11;141
+Valois / Ontario;Liébert / Hochelaga;05/05/2021 16:33:37;141
+Faillon / St-Denis;Alexandra / Jean-Talon;12/06/2021 00:24:42;140
+Molson / William-Tremblay;Métro Peel (de Maisonneuve / Stanley);30/10/2022 11:08:37;140
+Métro Cadillac (de Cadillac / Sherbrooke);Monsabré / Boileau;18/10/2021 13:24:43;140
+Métro Fabre (Marquette / Jean-Talon);Gauthier / Parthenais;23/08/2021 18:42:57;140
+de Rouen / Lespérance;Hogan / Ontario;12/11/2022 22:09:10;140
+de l'Hôtel-de-Ville / Roy;Earnscliffe / Queen-Mary;02/08/2022 22:05:06;140
+Chambord / de Castelnau;Parc Tino-Rossi (18e avenue / Everett);01/07/2022 09:19:12;139
+Jeanne-Mance / St-Viateur;Métro Sauvé (Berri / Sauvé);08/05/2022 12:14:18;139
+Larivière / de Lorimier;des Érables / Rachel;14/10/2022 11:22:16;139
+Panet / Ste-Catherine;Parc de Dieppe;25/06/2022 11:49:57;139
+Parc Chenier (de l'Aréna / Chenier);d'Orléans / Masson;31/10/2022 21:52:47;139
+St-Joseph / 8e avenue Lachine;Metcalfe / du Square-Dorchester;11/07/2022 16:26:01;139
+du President-Kennedy / Union;de la Commune / King;31/07/2021 13:43:55;139
+Duchesneau / de Marseille;REV (Souligny / Desmarteau);24/10/2022 20:35:12;138
+Notre-Dame / Gauvin;Turgeon / Notre-Dame;06/06/2022 08:47:28;137
+Parc Georges St-Pierre (Oxford / Upper Lachine);Métro Champ-de-Mars (Viger / Sanguinet);03/08/2022 12:02:24;137
+Parc Luigi-Pirandello (de Bretagne / Jean-Rivard);Parc Courbertin (Valéry / Perrier);12/10/2022 19:27:29;137
+St-André / St-Antoine;de la Commune / King;06/09/2022 17:59:21;136
+Boyer / St-Zotique;Mozart / Waverly;15/08/2022 11:29:17;135
+Plessis / René-Lévesque;des Récollets / McGill;26/04/2022 08:30:47;135
+Rivier / Davidson;du Mont-Royal / Augustin-Frigon;29/05/2022 14:48:49;135
+de Bleury / de Maisonneuve;City Councillors / du President-Kennedy;06/08/2022 17:01:57;135
+Ateliers municipaux de St-Laurent (Cavendish / Poirier);du Souvenir / Chomedey;11/06/2021 19:03:57;134
+Cité des Arts du Cirque (Paul Boutet / des Regrattiers);Basile-Routhier / Chabanel;17/04/2021 15:59:26;134
+Dorion / Ontario;Metcalfe / St-Catherine;26/07/2022 17:42:28;134
+de la Montagne / Sherbrooke;Crescent / de Maisonneuve;25/04/2021 09:03:36;134
+Charlevoix / Lionel-Groulx;Guy / Notre-Dame;21/06/2022 13:58:36;133
+Jacques-Le Ber / de la Pointe Nord;2e avenue / Wellington;04/11/2022 13:50:15;133
+Place du Village-de-la-Pointe-aux-Trembles (St-Jean-Baptiste / Notre-Dame);Fleury / de St-Firmin;04/09/2021 04:31:16;133
+Duluth /St-Denis;Notre-Dame / de la Montagne;04/06/2022 21:31:12;132
+Logan / d'Iberville;Métro Papineau (Cartier / Ste-Catherine);25/06/2021 00:32:31;132
+HEC (Decelles / Jean-Brillant);Parc Jeanne-Mance (du Mont-Royal / du Parc);28/08/2022 14:45:16;131
+Parc riverain de Lachine (des Iroquois);Mairie d'arrondissement LaSalle (Dupras / Jeannette);31/07/2022 14:44:19;130
+René-Lévesque / Papineau;Duvernay / Charlevoix;12/08/2022 11:43:54;130
+Hélène-Baillargeon / St-Denis;Gilford / de Brébeuf;13/06/2022 14:49:36;129
+Metcalfe / de Maisonneuve;McTavish / Sherbrooke;19/07/2022 09:27:02;129
+Métro St-Michel (Shaughnessy / St-Michel);Cité des Arts du Cirque (Paul Boutet / des Regrattiers);26/07/2021 22:56:46;129
+Parc Outremont (Bloomfield / Elmwood);Gare Bois-de-Boulogne;21/06/2021 19:06:45;129
+Parc St-Paul (Le Caron / Marc-Sauvalle);Mackay / Ste-Catherine;09/07/2022 21:41:48;129
+Place Longueuil;Métro Longueuil - Université de Sherbrooke;03/07/2022 12:39:15;129
+de Bellechasse / Pie-IX;Jeanne-d'Arc / Ontario;05/11/2022 09:49:02;129
+de la Gauchetière / Robert-Bourassa;Union / René-Lévesque;12/09/2022 16:45:07;129
+LaSalle / 80e avenue;Natatorium (LaSalle / Rolland);21/08/2022 14:00:07;128
+Robin / 15e rue;Métro Sherbrooke (de Rigaud / St-Denis);06/06/2021 13:31:09;128
+Logan / de Champlain;St-Urbain / René-Lévesque;08/08/2022 20:08:35;127
+Métro Radisson (Sherbrooke / des Groseilliers);Rosemont / Viau;05/05/2022 12:19:07;127
+St-Dominique / de Bellechasse;Métro Beaubien (de Chateaubriand / Beaubien);22/07/2022 21:05:54;127
+Alexandre-DeSève / Ste-Catherine;de la Cathédrale / René-Lévesque;04/07/2022 15:09:58;126
+Hillside / Ste-Catherine;Atwater / Greene;19/07/2022 17:00:55;126
+Marcil / Sherbrooke;Marché Atwater;12/06/2021 10:45:58;126
+Métro Lionel-Groulx (Saint-Jacques/ Atwater);Marché Atwater;06/10/2021 17:29:43;126
+Natatorium (LaSalle / Rolland);Benny / Sherbrooke;24/05/2021 17:39:46;126
+Parc Chopin (Dumouchel / Tessier);Alton-Goldbloom / Notre-Dame;14/09/2022 21:55:35;126
+Francis / Fleury;Marquette / Fleury;23/06/2022 18:16:48;125
+Hochelaga / Chapleau;du Havre / de Rouen;05/09/2022 17:31:34;125
+Molson / Beaubien;Drolet / Laurier;11/08/2022 22:40:51;125
+Métro de la Savane (de Sorel / Bougainville);Chabanel / du Parc;01/10/2022 10:38:42;125
+Place du Canada (Peel / de la Gauchetière);Durocher / Sherbrooke;27/04/2022 00:10:35;125
+Queen / Wellington;Atwater / Greene;16/05/2022 11:05:00;125
+Union / Ste-Catherine;Jeanne-Mance / René-Lévesque;20/08/2022 08:58:37;125
+Gauthier / de Lorimier;Larivière / de Lorimier;28/05/2022 22:11:12;124
+LaSalle / Godin;Wellington / Hickson;23/07/2022 16:59:45;124
+Marquette / Villeray;Rousselot / Jarry;22/07/2022 22:29:41;124
+Waverly / Van Horne;Marmier / St-Denis;29/09/2022 04:21:34;124
+Brittany / Ainsley;Graham / Wicksteed;05/11/2022 13:57:10;123
+Wolfe / Ste-Catherine;Notre-Dame / St-Gabriel;05/08/2022 12:25:11;123
+City Councillors / du President-Kennedy;de la Commune / St-Sulpice;05/07/2022 10:22:42;122
+CÉGEP du Vieux-Montréal (Ontario / de l'Hôtel-de-Ville);Métro St-Laurent 2 ( de Maisonneuve / St-Laurent);10/09/2022 01:18:20;122
+St-Ambroise / Louis-Cyr;Atwater / Greene;11/11/2022 12:36:47;122
+de Soissons / de Darlington;Parc Plage;20/08/2022 16:14:18;122
+Parc Tino-Rossi (18e avenue / Everett);Roy / St-Denis;21/05/2022 12:27:30;121
+Terminus Newman (Airlie / Lafleur);LaSalle / 80e avenue;03/07/2022 13:55:45;121
+Berri /Ste-Catherine;St-André / Robin;01/09/2022 16:46:30;120
+Parc Hébert (Colbert / Provencher);Aylmer / Ste-Catherine;09/10/2022 17:10:13;120
+St-Jacques / des Seigneurs;Métro Georges-Vanier (St-Antoine / Canning);13/05/2022 13:53:36;120
+Bloomfield / Ball;Campus MIL (Outremont / Thérèse-Lavoie Roux);30/04/2022 21:56:24;119
+Grand Trunk / d'Hibernia;Hamilton / Jolicoeur;29/05/2022 15:49:25;119
+Jeanne-Mance / Bernard;Querbes / Laurier;09/05/2021 13:41:42;119
+des Érables / Dandurand;5e avenue / Rosemont;30/08/2022 00:05:36;119
+35e avenue / Beaubien;Parc Jeanne Mance (monument sir George-Etienne Cartier);16/08/2022 18:34:13;118
+Beaudet / Marcel-Laurin;de l'Eglise / St-Germain;17/05/2022 19:03:50;118
+Drolet / Laurier;Guy / Sainte-Catherine;14/09/2022 13:11:10;118
+Ste-Croix / Tassé;Hôpital Sacré-Coeur (Forbes);10/04/2021 14:24:53;118
+16e avenue / Beaubien;12e avenue / St-Zotique;13/09/2021 12:00:39;117
+Aréna Rodrigue-Gilbert (du Tricentenaire / de Montigny);St-Jean-Baptiste / René-Lévesque;11/06/2022 15:17:26;117
+Henri-Julien / de Castelnau;Métro St-Michel (Shaughnessy / St-Michel);28/09/2022 15:16:15;117
+Montcalm / de Maisonneuve;Marie-Anne / de la Roche;28/07/2021 17:05:15;117
+Nicolet / Sherbrooke;Parc Jean-Drapeau (Chemin Macdonald);10/05/2022 16:05:18;117
+St-Dominique / St-Viateur;St-Jacques / St-Laurent;03/09/2021 14:05:48;117
+2e avenue / Wellington;Beurling / Godin;11/11/2021 13:40:38;116
+Chabot / Beaubien;McTavish / Sherbrooke;09/07/2022 10:36:17;116
+Earnscliffe / Queen-Mary;Métro Snowdon (de Westbury / Queen-Mary);24/08/2022 22:05:19;116
+Hôpital Maisonneuve-Rosemont (Rosemont / Chatelain);5e avenue / Masson;26/05/2021 11:07:49;116
+de Gaspé / Jarry;Cartier / Dandurand;03/07/2022 11:45:25;116
+6e avenue / Bélanger;Louis-Hébert / Bélanger;05/10/2022 10:49:41;115
+41e avenue / Rosemont;de Maisonneuve / Mansfield (nord);11/08/2022 09:50:30;114
+Chabanel / de l'Esplanade;Marché Atwater;05/06/2022 14:31:04;114
+Du Quesne / Pierre-de-Coubertin;Métro Cadillac (Cadillac / Sherbrooke);04/09/2022 23:49:28;114
+O'Brien / Poirier;Métro du Collège (Cartier / Décarie);11/08/2022 18:41:43;114
+Ste-Émilie / St-Rémi;de la Commune / King;11/05/2022 13:31:46;114
+d'Orléans / Masson;de Côme / Jean-Talon;23/08/2021 16:39:04;114
+du Tricentenaire / Prince-Albert;Aréna Rodrigue-Gilbert (du Tricentenaire / de Montigny);13/06/2021 19:54:41;114
+Casgrain / St-Viateur;de Lanaudière / Laurier;28/08/2022 15:44:07;113
+Chabanel / du Parc;des Bassins / du Séminaire;07/08/2022 16:45:39;113
+Legrand / Laurier;Jean-Brillant / de la Côte-des-Neiges;30/07/2021 19:52:41;113
+Place des Festivals ( du Président-Kennedy / de Bleury);des Érables / Laurier;28/10/2022 15:11:30;113
+St-Zotique / Clark;Métro Place St-Henri (St-Ferdinand / St-Jacques);29/06/2022 13:59:07;113
+du Souvenir / Chomedey;Métro Montmorency;20/05/2022 20:01:18;113
+Bassin olympique (Chemin du Chenal le Moyne);Parc St-Louis (St-Joseph / 34e avenue);23/05/2022 22:05:18;112
+Bishop/ René-Lévesque;de l'Hôtel-de-Ville / Ste-Catherine;03/07/2021 02:02:50;112
+Collège Édouard-Montpetit (de Gentilly / de Normandie);St-Zotique / Clark;06/11/2022 01:19:13;112
+Garnier / St-Joseph;Henri-Julien / de Bellechasse;12/05/2021 18:16:14;112
+de Maisonneuve / Berri;St-Hubert / René-Lévesque;25/04/2021 11:44:57;112
+des Ormeaux / Notre-Dame;Mackay / de Maisonneuve;16/07/2021 18:16:27;112
+Beatty / de Verdun;Drolet / Marie-Anne;05/06/2022 09:27:17;111
+CHU Ste-Justine (de la Côte Ste-Catherine / Hudson);Hôpital Maisonneuve-Rosemont (Rosemont / Chatelain);15/07/2022 16:04:28;111
+Duluth  / St-Denis;Metcalfe / de Maisonneuve;04/10/2022 11:19:23;111
+St-Urbain / Beaubien;Métro Peel (de Maisonneuve / Stanley);12/09/2022 13:13:29;111
+Victoria / 18e avenue Lachine;Métro Snowdon (de Westbury / Queen-Mary);30/05/2022 17:28:22;111
+Benny / Sherbrooke;Park Row O / Sherbrooke;28/07/2021 14:10:13;110
+Lapierre / Serge;Gloria / Dollard;19/07/2022 21:20:40;110
+Rousselot / Jarry;Lincoln / du Fort;27/07/2022 11:43:35;110
+St-Jean-Baptiste / René-Lévesque;Place du Village-de-la-Pointe-aux-Trembles (St-Jean-Baptiste / Notre-Dame);06/06/2021 17:49:03;110
+Stuart / St-Viateur;Métro Place St-Henri (St-Ferdinand / St-Jacques);28/07/2021 00:23:29;110
+Everett / Garnier;des Érables / Rachel;25/08/2022 01:58:35;109
+St-Joseph /21e avenue Lachine;Gagne / LaSalle;16/05/2021 12:05:32;109
+Wellington / Hickson;Marché Atwater;19/08/2022 11:25:41;109
+de la Salle / Ste-Catherine;Métro Frontenac (Ontario / du Havre);30/06/2021 22:56:35;109
+18e avenue / Rosemont;Bibliothèque et Complexe aquatique Rosemont (9e avenue / Rosemont);26/07/2022 23:10:07;108
+Métro Montmorency;du Souvenir / Chomedey;29/07/2021 14:30:39;108
+de Versailles / St-Jacques;Young / Wellington;22/07/2022 11:27:07;108
+1ère  avenue / St-Zotique;Métro Guy-Concordia (Guy / St-Catherine);03/05/2022 14:54:22;106
+Bloomfield / Van Horne;Campus MIL (Outremont / Thérèse-Lavoie Roux);02/07/2022 15:35:56;106
+LaSalle / 90e avenue;Place du Commerce;20/07/2022 15:08:10;106
+Bibliothèque de Verdun (Brown / Bannantyne);Argyle / de Verdun;21/09/2022 12:47:08;105
+Centre des loisirs (Tassé / Grenet);Place Rodolphe-Rousseau (Gohier / Édouard-Laurin);16/08/2022 14:46:45;105
+Henri-Julien / de Bellechasse;St-Dominique / de Bellechasse;19/10/2022 10:33:46;105
+Notre-Dame / Murray;Richmond / des Bassins;30/10/2021 16:00:45;105
+Casino de Montréal;Parc Jean-Drapeau (Chemin Macdonald);24/05/2021 12:42:09;104
+Parc Lalancette (de Rouen/ Valois);Métro Plamondon (de Kent / Victoria);31/07/2022 13:00:08;104
+REV (Souligny / Desmarteau);Métro Viau (Viau / Pierre-de-Coubertin);09/08/2022 16:28:38;104
+Wolfe / René-Lévesque;des Seigneurs / Notre-Dame;09/10/2021 16:53:18;104
+de Bellechasse / de St-Vallier;26e avenue / Beaubien;11/06/2021 16:53:30;104
+Laurier / de Bordeaux;de Bordeaux / Masson;27/08/2022 03:19:41;103
+St-Cyril / Wiseman;Métro Laurier (Rivard / Laurier);29/07/2021 17:05:36;103
+des Érables / Bélanger;Rachel / de Brébeuf;05/08/2022 11:52:49;103
+Berlioz / de l'Île des Soeurs;Elgar / de l'Île-des-Sœurs;05/09/2022 13:05:20;102
+Hôpital Santa Cabrini (St-Zotique / Jeanne-Jugan);Langelier / Marie-Victorin;05/09/2022 13:56:07;102
+St-Christophe / Cherrier;de l'Église / de Verdun;14/05/2021 13:43:08;102
+de Côme / Jean-Talon;Hickson / Wellington;07/05/2022 14:32:02;102
+Mozart / Casgrain;de la Commune / Place Jacques-Cartier;25/04/2022 13:41:41;101
+Métro Laurier (Berri / Laurier);Ste-Catherine / Union;21/08/2022 17:34:21;101
+St-Charles / Grant;Collège Édouard-Montpetit (de Gentilly / de Normandie);17/10/2021 11:59:34;101
+Ste-Claire / Pierre-Tétreault;Duchesneau / de Marseille;02/05/2022 20:25:19;101
+Marmier / St-Denis;Waverly / St-Viateur;16/10/2022 18:22:35;100
+de Chateaubriand / Jarry;Lajeunesse / Jarry;02/07/2021 20:06:14;100
+de Gaspé / Marmier;10e avenue / Masson;08/07/2022 16:25:50;100
+des Érables / du Mont-Royal;Hamel / Sauvé;17/06/2021 19:50:57;100
+2e avenue / Jean-Rivard;Mansfield / Ste-Catherine;16/05/2021 13:42:26;99
+Cartier / Rosemont;Richmond / des Bassins;12/05/2022 17:23:01;99
+Gilford / Parthenais;Marquette / Laurier;28/06/2021 17:39:31;98
+Hamel / Sauvé;Mansfield / Cathcart;02/08/2021 12:55:55;98
+La Ronde;Guy / Notre-Dame;02/07/2022 21:16:42;98
+Legrand / Cartier;Bélanger / St-Denis;03/07/2021 10:57:19;98
+Ontario / Viau;St-Charles / Thomas-Keefer;16/04/2022 14:17:13;98
+Parc LaSalle (10e avenue / Victoria);St-Joseph / 34e avenue Lachine;11/10/2021 19:58:04;98
+St-Marc / Sherbrooke;St-Mathieu / Sherbrooke;09/10/2021 00:33:53;98
+Des Érables / Villeray;Complexe sportif Claude-Robillard;05/06/2022 13:45:49;97
+Garnier / Everett;de la Commune / Place Jacques-Cartier;06/06/2021 13:11:48;97
+Métro Laurier (Berri / St-Joseph);St-Dominique / Bernard;10/04/2021 14:24:11;97
+Shearer / Centre;Ryde / Charlevoix;06/10/2022 12:37:21;97
+St-Henri / Notre-Dame;Metcalfe / du Square-Dorchester;19/06/2021 18:25:53;97
+Aréna Chaumont (Chaumont / des Ormeaux);Langelier / Marie-Victorin;07/08/2022 00:33:45;96
+Bourbonnière / du Mont-Royal;Ste-Claire / Pierre-Tétreault;14/07/2022 18:59:39;96
+De la Commune / King (2);Métro Bonaventure (de la Gauchetière / de la Cathédrale);14/05/2021 13:59:31;96
+Guizot / St-Laurent;Métro de Castelnau (de Castelnau / St-Laurent);07/08/2022 02:10:25;96
+Louis-Hébert / Bélanger;Parc Champdoré (Champdoré / de Lille);31/08/2021 14:45:48;96
+de Bordeaux / St-Zotique;Hôpital Santa Cabrini (St-Zotique / Jeanne-Jugan);10/06/2022 18:52:53;96
+de Maisonneuve / Aylmer (est);de la Commune / St-Sulpice;17/09/2021 13:19:58;96
+Bibliothèque et Complexe aquatique Rosemont (9e avenue / Rosemont);3e avenue / Holt;23/10/2022 16:09:00;95
+Michelet / Jean-Talon;de Lisieux / Jean-Talon;05/09/2022 18:10:51;95
+Parc Beaubien Outremont (Stuart / St-Viateur);Dollard / Van Horne;26/08/2022 19:41:15;95
+St-Christophe / René-Lévesque;des Érables / Rachel;24/06/2022 16:16:49;95
+19e avenue / St-Antoine;de la Commune / St-Sulpice;20/06/2022 17:59:38;94
+Louis-Hémon / Villeray;Gilford / de Brébeuf;23/07/2021 18:52:33;94
+Parc du Bois-Franc (de l'Équateur / des Andes);Clark / Fleury;09/10/2021 13:08:45;94
+Cégep Marie-Victorin;Bossuet / Sherbrooke;04/07/2022 10:47:59;93
+Gare St-Michel / Montréal-Nord (Pie-IX / 56e);Parc Aimé-Léonard (Gouin / Ste-Gertrude);08/09/2022 19:54:20;93
+Louis-Hébert / St-Zotique;Rousselot / Jarry;22/07/2021 22:26:29;93
+Marquette / des Carrières;Cartier / Dandurand;15/09/2021 17:22:02;93
+St-Dominique / Gounod;Marché Jean-Talon (Henri-Julien / Jean-Talon);06/07/2021 16:36:26;93
+de la Peltrie / de la Côte-des-Neiges;Villeneuve / St-Urbain;21/08/2022 14:53:14;93
+Cartier / Dandurand;de Bordeaux / Masson;29/04/2022 22:36:40;92
+Cartier / Marie-Anne;de Mentana / Rachel;10/05/2021 18:14:01;92
+Complexe sportif Claude Robillard (Émile-Journault);Francis / Fleury;05/10/2022 16:34:41;92
+Everett / 8e avenue;12e avenue / St-Zotique;14/07/2021 01:40:12;92
+LaSalle / Crawford;Mairie d'arrondissement LaSalle (Dupras / Jeannette);20/08/2022 14:00:08;92
+Métro Pie-IX (Pierre-de-Coubertin / de la Salle) (2);Roy / St-Denis;13/06/2022 11:52:56;92
+Parc J.-Arthur-Champagne (de Chambly / du Mont-Royal);Ernest-Gendreau / du Mont-Royal;24/04/2021 16:02:00;92
+Wellington / 2e avenue;LaSalle / Godin;10/07/2022 16:05:49;92
+Boyer / Everett;Basile-Routhier / Chabanel;01/06/2022 22:23:09;91
+Chapleau / du Mont-Royal;Parc du Pélican (1ère avenue / Masson);13/08/2021 18:20:30;91
+Chomedey / Lincoln;Lincoln / du Fort;14/10/2021 17:20:33;91
+Parc St-Claude (7e avenue / 8e rue);Fleury / Lajeunesse;10/04/2021 14:10:17;91
+de St-Vallier / St-Zotique;St-Mathieu / Sherbrooke;27/08/2021 00:38:35;91
+Lajeunesse / Villeray;de Castelnau / Lajeunesse;08/10/2021 20:28:30;90
+des Érables / Rachel;Parthenais / du Mont-Royal;02/10/2022 13:00:13;90
+10e avenue / Holt;St-André / Cherrier;06/07/2022 05:46:57;89
+Métro Laurier (Rivard / Laurier);de la Commune / Place Jacques-Cartier;19/05/2021 10:37:03;89
+Métro St-Laurent 2 ( de Maisonneuve / St-Laurent);HEC (Decelles / Jean-Brillant);01/10/2022 03:37:20;89
+Parc Eusèbe-Ménard (Gouin / St-Vital);Parc des Hirondelles (Fleury / André-Jobin);27/08/2022 19:12:40;89
+Ellendale / de la Côte-des-Neiges;Hôpital général juif (de la Côte Ste-Catherine / Légaré);13/07/2021 12:31:20;88
+Cégep André-Laurendeau (Lapierre);Gloria / Dollard;19/07/2022 14:58:18;87
+Davaar / de la Côte-Ste-Catherine;Swail / Decelles;05/10/2021 01:01:20;87
+de Hampton / de Monkland;Grey / Sherbrooke;28/08/2022 11:23:00;87
+des Érables / Laurier;Chabot / Laurier;24/08/2021 13:40:14;87
+Champdoré / de Lorimier;Papineau / Émile-Journault;06/07/2022 16:01:28;86
+Parc Maurice Bélanger (Hebert / Forest);de la Commune / Place Jacques-Cartier;29/05/2022 15:36:00;86
+Pratt / Bates;d'Outremont / Ogilvy;26/05/2022 19:19:04;86
+2e avenue / Centrale;Drummond / Ste-Catherine;12/10/2022 10:41:39;85
+Chapleau / Terrasse Mercure;Calixa-Lavallée / Sherbrooke;07/05/2021 17:15:59;85
+Drolet / Jarry;Parc St-Paul (Le Caron / Marc-Sauvalle);23/07/2022 01:34:15;85
+Fullum / Holt;Parc Howard (de l'Épée / de Liège);20/06/2021 16:55:46;85
+Irene / St-Jacques;Métro Angrignon (Lamont /  des Trinitaires);22/10/2022 15:19:45;85
+Métro Pie-IX (Pierre-de-Coubertin / De La Salle);Cégep Marie-Victorin;09/05/2021 18:03:24;85
+Parc Delorme (Malouin / Laferté);Parc Wilfrid-Bastien (Lacordaire / des Galets);02/06/2022 08:40:53;85
+Pierre-de-Coubertin / Langelier;St-Catherine / St-Laurent;25/09/2022 17:04:29;85
+St-Joseph / 34e avenue Lachine;St-Joseph /21e avenue Lachine;02/06/2021 18:42:13;85
+de Belleville / Fleury;Papineau / Émile-Journault;27/07/2021 20:13:17;85
+29e avenue / St-Zotique;Rosemont / Viau;20/05/2022 22:37:04;84
+Monk / Jacques-Hertel;Hamilton / Jolicoeur;09/09/2021 18:41:43;84
+Métro Cartier;Lacombe / Victoria;23/08/2021 04:10:08;84
+de la Côte St-Antoine / Argyle;Léa-Roback / Sir-Georges-Etienne-Cartier;24/09/2022 12:50:00;84
+des Seigneurs / Notre-Dame;Léa-Roback / Sir-Georges-Etienne-Cartier;16/07/2022 19:15:39;84
+41e avenue / Victoria;Dixie / 54e avenue;09/07/2022 09:25:13;83
+Laurier / Parisi;Métro Longueuil - Université de Sherbrooke;24/08/2021 11:22:18;82
+Liébert / Hochelaga;Parc d'Antioche (Place d'Antioche / St-Zotique);27/04/2021 16:42:25;82
+Monsabré / Boileau;IUSMM (Georges-Villeneuve);05/10/2022 14:24:17;81
+Métro Jolicoeur (de Sève / Drake);Métro de l'Église (Ross / de l'Église);02/07/2022 13:15:16;81
+Parc Labelle (LaSalle / Henri-Duhamel);Fullum / Holt;17/07/2021 14:39:17;81
+St-André / Robin;Valois / Ste-Catherine;07/10/2021 05:20:49;81
+Ball / Querbes;Clark / de Liège;20/07/2021 00:11:17;80
+Bélanger / St-Laurent;Calixa-Lavallée / Rachel;10/07/2022 15:35:07;80
+Casgrain / Maguire;Bernard / St-Urbain;28/05/2022 22:53:08;80
+Péloquin / Fleury;Métro Henri-Bourassa (Henri-Bourassa / Millen);20/07/2022 17:48:57;80
+Querbes / Ball;Gary-Carter / St-Laurent;10/10/2021 20:10:10;80
+Sanguinet / Sainte-Catherine;Place Émilie-Gamelin (St-Hubert / de Maisonneuve);17/10/2021 10:30:30;80
+CIUSSS (du Trianon / Pierre-de-Coubertin);Métro Radisson (Sherbrooke / des Groseilliers);05/10/2021 13:03:32;79
+Collège de Rosemont (15e avenue / Beaubien);Gilford / des Érables;08/09/2022 14:17:47;79
+Letourneux / Hochelaga;Gilford / de Brébeuf;01/05/2022 18:04:34;79
+Parc Charleroi (Alfred / Louis-Francoeur);Métro Cadillac (Cadillac / Sherbrooke);26/10/2022 10:25:05;79
+St-Charles / Montarville;St-Charles / St-Sylvestre;20/05/2022 19:26:57;79
+Parc Noel-Nord (Toupin / Keller);Parc Painter (Marcotte / Quenneville);14/07/2022 17:48:00;78
+St-Mathieu / Baile;St-Joseph / 8e avenue Lachine;15/10/2022 16:32:33;78
+des Récollets / Martial;2e avenue / Jean-Rivard;17/09/2022 16:58:18;78
+12e avenue / St-Zotique;Molson / William-Tremblay;01/10/2022 15:50:46;77
+Bishop / de Maisonneuve;Hillside / Ste-Catherine;19/06/2022 16:44:03;77
+Jean Langlois / Fullum;Tolhurst / Fleury;29/05/2022 19:25:38;77
+Monk / Biencourt;St-Patrick / Briand;18/09/2022 00:24:01;77
+Notre-Dame / Guy;Wellington / Gordon;24/07/2022 14:25:52;77
+Parc Georges St-Pierre (Upper Lachine / Oxford);Métro Vendôme (de Marlowe / de Maisonneuve);09/09/2021 20:03:10;77
+Bibliothèque d'Ahuntsic (Lajeunesse / Fleury);Gare Bois-de-Boulogne;15/06/2022 14:21:44;76
+Chambord / Jean-Talon;Garnier / Everett;29/09/2021 20:12:14;76
+De Lanaudière / du Mont-Royal;de Bullion / du Mont-Royal;21/05/2021 07:18:06;76
+Regina / de Verdun;Bourget / St-Jacques;12/05/2022 10:58:34;76
+St-Maurice / Robert-Bourassa;St-Joseph Lachine / 21e avenue;14/06/2022 17:41:54;76
+Sanguinet / Ontario;St-Alexandre / Ste-Catherine;18/06/2021 12:24:23;75
+Ste-Catherine / St-Mathieu;Joseph-Manseau / René-Lévesque;25/09/2022 15:12:09;75
+Bélanger / des Galeries d'Anjou;41e avenue / Rosemont;28/08/2022 16:41:05;74
+Ste-Catherine / Sanguinet;Milton / Clark;05/09/2021 20:11:45;74
+de Gaspé / de Liège;Laurier / de Brébeuf;16/09/2022 17:37:48;74
+de la Salle / Hochelaga;Marché Maisonneuve;06/05/2021 18:55:04;74
+Maguire / Saint-Dominique;Maguire / St-Laurent;10/09/2021 14:47:01;73
+McNamara / St-Martin O;Métro Montmorency;07/09/2022 18:51:04;73
+Parc Félix-Leclerc (François-Boivin / St-Zotique);de l'Hôtel-de-Ville / Ste-Catherine;25/08/2022 12:14:13;73
+Ste-Catherine / Bishop;Métro Champ-de-Mars (Viger / Sanguinet);09/10/2022 18:46:34;73
+Chabot / Laurier;Cartier / Masson;15/11/2021 21:39:36;72
+Montcalm / Ontario;Métro Mont-Royal (Rivard / du Mont-Royal);26/08/2021 17:26:06;72
+Dumesnil / Bélanger;Jardin Botanique (Pie-IX / Sherbrooke);06/05/2021 16:55:20;71
+Fleury / André-Jobin;Jean-Brillant / de la Côte-des-Neiges;06/05/2021 20:12:42;71
+Letourneaux / Ste-Catherine;10e avenue / Masson;10/08/2021 00:47:07;71
+Métro de la Concorde (Léo-Lacombe);Legrand / Cartier;04/06/2022 23:13:14;71
+Parc Hébert (Provencher / Buies);28e avenue / Rosemont;10/08/2021 18:26:32;71
+Parc St-Laurent (Salk / Thomas-Chapais);Cégep Marie-Victorin;07/06/2022 11:45:42;71
+McLynn / Plamondon;de Kent / de la Côte-des-Neiges;29/07/2022 18:50:24;70
+du Mont-Royal / Augustin-Frigon;18e avenue / Rosemont;21/07/2022 19:10:07;70
+Notre-Dame / Liébert;de Gaspé / Fairmount;24/04/2021 15:44:55;69
+St-Viateur / Casgrain;Parc Jean-Drapeau (Chemin Macdonald);10/11/2021 12:06:46;69
+de Mentana / Gilford;Boyer / du Mont-Royal;30/06/2021 23:45:58;69
+Bordeaux / Mont-Royal;Place des Festivals ( du Président-Kennedy / de Bleury);16/10/2022 16:50:21;68
+Hôpital Général Juif (de la Côte-Ste-Catherine / Légaré);Parc de la Confédération (Fielding / West Hill);23/10/2022 17:32:37;68
+Labelle / Ste-Catherine;St-Christophe / René-Lévesque;14/10/2021 16:44:54;68
+Parc Labelle (Lasalle/ Henri Duhamel);BAnQ (Berri / de Maisonneuve);24/05/2021 17:23:38;68
+Vendôme / Sherbrooke;Valois / Ste-Catherine;31/07/2021 12:24:39;68
+Villeneuve / St-Denis;Villeneuve / de l'Hôtel-de-Ville;22/07/2021 15:11:01;68
+Parc Reine-Élizabeth (Penniston / Crawford);16e avenue / Jean-Talon;18/07/2022 13:51:20;67
+Parc d'Antioche (Place d'Antioche / St-Zotique);Argyle / de Verdun;23/05/2021 14:51:24;67
+Parc Ivan-Franko (33e avenue / Victoria);8e avenue / Notre-Dame Lachine;09/08/2022 02:17:37;66
+Parc Loyola (Somerled / Doherty);U. Concordia - Campus Loyola (Sherbrooke / West Broadway);24/07/2022 11:38:01;66
+St-Charles / Labonté;St-Charles / Montarville;11/07/2022 19:32:37;66
+Mayfield / St-Martin O;Clark / de Liège;09/10/2022 16:01:19;65
+Montmorency / Richardson;Quai de la navette fluviale;17/09/2022 10:33:08;65
+Beurling / Godin;LaSalle / 80e avenue;18/08/2021 14:22:01;64
+Gilford / des Érables;Métro Lionel-Groulx (St-Jacques / Atwater);16/05/2022 15:56:35;64
+Parc St-Laurent (Dutrisac);Jean-Brillant / de la Côte-des-Neiges;01/07/2022 23:21:27;64
+Soeurs-Grises / Margueritte d'Youville;Marché Atwater;01/10/2022 17:23:59;64
+Ann / Ottawa;Parc Dixie (54e avenue / Dixie);06/11/2021 15:33:38;63
+de Brébeuf / Gilford;de Gaspé / Fairmount;22/10/2022 21:50:41;63
+de Chateaubriand / Leman;Chambord / Fleury;03/08/2021 08:49:01;63
+de la Rotonde / Jacques-Le Ber;Casino de Montréal;24/05/2021 12:40:28;63
+21e avenue / St-Joseph Lachine;2e avenue / Wellington;25/05/2022 13:27:22;62
+5e avenue / Bannantyne;Valois / Ste-Catherine;18/04/2021 18:43:51;62
+Hutchison / Beaumont;Ball / Querbes;26/07/2021 21:05:24;62
+Keller / Cousineau;Louisbourg / O'brien;01/11/2022 18:38:22;62
+Métro Honoré-Beaugrand (Sherbrooke / Honoré-Beaugrand);Parc Jean-Drapeau (Chemin Macdonald);18/06/2022 09:10:18;62
+Dorion / Sherbrooke;Chabot / du Mont-Royal;04/10/2022 17:28:23;61
+Fabrik8 (Waverly / Jean-Talon);St-Ambroise / Louis-Cyr;22/10/2022 03:08:55;61
+Gare Montpellier (Muir / de la Côte-Vertu);CHU Ste-Justine (de la Côte Ste-Catherine / Hudson);09/09/2022 16:40:27;61
+Sainte-Catherine / Guy;Metcalfe / du Square-Dorchester;01/08/2022 11:43:52;61
+8e avenue / Jarry;du President-Kennedy / Union;21/05/2021 14:58:23;60
+Boyer / Rachel;Clark / St-Viateur;03/07/2021 16:34:15;60
+Métro Laurier (Bibaud / Rivard);5e avenue / Bannantyne;13/06/2022 19:23:23;60
+Square Viger (Berri / Viger);Travaux publics LaSalle (Cordner / Léger);11/11/2022 14:07:03;60
+St-Mathieu / Tupper;de la Commune / St-Sulpice;30/09/2022 16:29:03;60
+de Grosbois / Duchesneau;des Ormeaux / de Grosbois;04/09/2021 17:40:41;60
+Parc du Mail (Bois de Coulonges / du Mail);d'Orléans / Masson;03/11/2022 21:43:25;59
+Dandurand / de Lorimier;Parc Jeanne Mance (monument sir George-Etienne Cartier);22/08/2021 17:37:41;57
+Parc Garibaldi (Liénart / Bélanger);de Bleury / de Maisonneuve;17/09/2022 13:41:45;57
+St-Gérard / Villeray;Cartier / Masson;13/04/2021 18:28:47;57
+8e avenue / Saint-Joseph Lachine;Marché Atwater;10/08/2021 15:06:14;56
+Dorion / Gauthier;Notre-Dame / St-Gabriel;20/10/2021 12:39:04;56
+Parc Langelier - Marie-Victorin;St-Dominique / St-Zotique;28/08/2021 18:27:17;56
+de Châteauguay / Ropery;de la Commune / Place Jacques-Cartier;31/07/2022 10:36:47;56
+Le Corbusier / St-Martin O;11e avenue / du Souvenir;21/09/2022 15:26:01;55
+Lusignan / St-Jacques;Métro Guy-Concordia (Guy / St-Catherine);12/10/2021 20:05:02;55
+Mairie d'arrondissement St-Laurent (Beaudet / Marcel-Laurin);de la Commune / King;02/09/2022 07:40:07;55
+Métro Lionel-Groulx (Walker / Saint-Jacques);Milton / Clark;18/06/2021 20:42:05;55
+Parc de l'Hôtel-de-Ville (Laurendeau / Ste-Julie);Ann / Wellington;17/08/2022 14:14:07;55
+Clark / St-Zotique;Waverly / St-Viateur;14/10/2021 11:27:38;54
+Dixie / 53e avenue;Drummond / Ste-Catherine;01/09/2021 13:08:13;54
+de Chenonceau / Chomedey;Chapleau / du Mont-Royal;20/08/2022 14:21:49;54
+18e avenue / St-Joseph Lachine;de la Commune / St-Sulpice;24/04/2021 11:45:48;53
+CHSLD Joseph-François-Perrault (St-Michel / Everett);Guilbault / Clark;10/11/2022 21:19:42;53
+Bibliothèque du Vieux-St-Laurent (de l'Église / Filiatrault);11e avenue / du Souvenir;16/08/2022 09:38:47;52
+Duluth / St-Denis;Waverly / St-Viateur;29/05/2021 23:16:49;52
+Northcliffe / Notre-Dame-de-Grâce;Lajeunesse / Villeray;29/06/2022 17:14:06;52
+Parc Olympique (Pie-IX / Sherbrooke);Parc Garibaldi (Liénart / Bélanger);21/08/2022 09:53:21;51
+St-Cuthbert / St-Urbain;Marché Atwater;04/08/2021 15:12:11;51
+Marquette / Jean-Talon;Jeanne-Mance / Bernard;17/04/2021 08:14:40;50
+Métro St-Laurent Dépôt ( de Maisonneuve / St-Laurent);Bloomfield / Bernard;19/07/2022 21:35:40;50
+Parc Grovehill (St-Antoine / Ivan-Franko);Métro Charlevoix (Centre / Charlevoix);16/07/2022 09:51:07;50
+de Grosbois / Ducheneau;15e avenue / Masson;12/05/2021 12:21:08;50
+des Bassins / Richmond;Gordon / Wellington;11/04/2021 09:02:46;50
+Garnier / du Mont-Royal;de Bullion / du Mont-Royal;16/04/2021 14:40:26;49
+Guizot / Clark;Bishop / René-Lévesque;06/07/2021 15:12:31;49
+Hochelaga / de l'Assomption;Drolet / Beaubien;20/09/2022 16:33:48;49
+Parc Nicolas-Tillemont (des Érables / Villeray);Parc Wilfrid-Bastien (Lacordaire / des Galets);07/09/2022 17:40:35;49
+Sicard / Adam;Place du Canada (Peel / de la Gauchetière);23/08/2021 23:07:13;49
+d'Orléans / du Mont-Royal;Métro Acadie (de l'Acadie / Beaumont);28/05/2021 12:04:43;49
+St-Hubert / de Maisonneuve (nord);Ste-Catherine / Union;22/10/2022 21:48:03;48
+Hutchison/ Van Horne;16e avenue / Beaubien;22/04/2022 16:01:20;47
+Métro Beaudry ( Beaudry / Ste-Catherine);Métro Sherbrooke (de Rigaud / St-Denis);24/09/2022 19:13:37;47
+Parc Dixie (54e avenue / Dixie);Marché Atwater;13/11/2021 12:59:15;47
+Alexis-Nihon / St-Louis;du Mont-Royal / Clark;25/08/2021 19:50:46;46
+Berri / Duluth;U. Concordia - Campus Loyola (Sherbrooke / West Broadway);07/10/2021 08:13:53;46
+King / de la Commune;Richmond / des Bassins;15/06/2022 13:25:30;46
+Parc Courbertin (Valéry / Perrier);Parc Luigi-Pirandello (de Bretagne / Jean-Rivard);01/11/2022 18:19:06;46
+Parc Henri-Durant (Léger / Henri-Durant);Parc Chopin (Dumouchel / Tessier);11/09/2021 07:08:50;46
+St-Hubert / René-Lévesque;St-Denis / René-Lévesque;10/04/2021 18:43:46;46
+de l'Hôtel-de-Ville / St-Joseph;Marché Atwater;07/09/2021 14:21:25;46
+Evans / Clark;Jeanne-d'Arc / Ontario;25/10/2022 18:04:40;45
+Parc Maurice-Bélanger (Hébert / Denommée);Sabrevois / des Récollets;30/08/2022 17:10:20;45
+Parc du Pélican (Laurier/ 2e avenue);de la Commune / St-Sulpice;18/09/2021 14:20:58;45
+Parc Angrignon ( Lacroix / des Trinitaires);Métro Angrignon (Lamont /  des Trinitaires);28/08/2022 19:16:59;44
+de la Pépinière / Pierre-de-Coubertin;de Lanaudière / Bélanger;18/04/2021 11:50:54;44
+2e avenue /centrale;de la Commune / St-Sulpice;27/06/2022 13:02:37;43
+Aylmer/ Sainte-Catherine;Rosemont / Viau;01/06/2021 17:40:10;43
+Darling / Sherbrooke;Chabanel / du Parc;05/11/2022 09:15:35;43
+Maguire / St-Dominique;Victoria / de Maisonneuve;14/11/2021 16:58:10;43
+Parc Aimé-Léonard (Gouin / Ste-Gertrude);Bibliothèque d'Ahuntsic (Lajeunesse / Fleury);10/09/2022 02:36:54;43
+Robert-Bourassa / de Maisonneuve;29e avenue / St-Zotique;06/11/2021 14:54:31;43
+11e avenue / du Souvenir;Bélanger / St-Denis;03/09/2022 13:03:27;42
+Sainte-Catherine / Union;Chapleau / Terrasse Mercure;04/05/2021 15:29:40;42
+de Mentana / St-Joseph;Mackay / de Maisonneuve;06/08/2022 13:53:18;42
+Parc d'Antioche ( Place d'Antioche / St-Zotique);Métro Viau (Pierre-de-Coubertin / Viau);26/04/2022 17:39:09;41
+de Maisonneuve / Mansfield SE;Louis-Hébert / Bélanger;09/11/2022 17:25:04;41
+du Mans / des Alouettes;Maguire / St-Laurent;11/10/2022 11:16:16;41
+Parc Turin (Chambord / Jean-Talon);St-Jacques / St-Pierre;09/05/2022 08:09:13;40
+19e avenue / Saint-Antoine;LaSalle / 80e avenue;10/10/2021 23:51:03;39
+Parc Sauvé (Balzac / de Bayonne);de Chateaubriand / Jarry;11/05/2022 20:33:02;39
+University / des Pins;Chambord / Fleury;27/10/2022 17:51:04;39
+Parc Ernest-Rouleau (Gouin);Parc Aimé-Léonard (Gouin / Ste-Gertrude);10/11/2022 21:40:36;38
+d'Iberville / Fleury;Bennett / Adam;31/10/2022 15:54:58;38
+Parc Beaubien (Stuart / St-Viateur);St-André / Ste-Catherine;11/10/2021 18:14:35;37
+Parc MacDonald (Earnscliffe / Dupuis);Dézéry / Ontario;25/05/2021 16:43:26;37
+Préfontaine / Marcel-Pépin;des Érables / Rachel;21/09/2022 16:08:21;37
+Robin / de la Visitation;Parc Jeanne-Mance (du Mont-Royal / du Parc);07/08/2021 05:02:37;37
+Parc Outremont (Bloomfield / St-Viateur);Mackay / de Maisonneuve;17/10/2021 11:05:02;35
+Durocher / Van Horne;Richardson / de Montmorency;04/10/2021 13:31:42;34
+Parc Armand-Bombardier (Perras / Armand-Bombardier);Péloquin / Fleury;31/10/2022 16:42:03;34
+Duluth / du Parc;Métro de l'Église (Ross / de l'Église);13/09/2022 08:11:49;32
+Métro Beaudry (Beaudry / Ste-Catherine);St-André / Ste-Catherine;03/11/2022 21:58:26;32
+Parc St-Paul (Marc-Sauvalle / Le Caron);St-Denis / René-Lévesque;04/11/2021 08:38:25;32
+Place du Canada ( Peel / de la Gauchetière);Notre-Dame / de la Montagne;14/05/2021 15:51:53;32
+St-Viateur / St-Laurent;Métro Guy-Concordia (Guy / St-Catherine);02/05/2021 13:00:04;32
+Drolet / Faillon;CHU Sainte-Justine (de la Côte Sainte-Catherine / Hudson);27/10/2021 07:40:10;31
+Saint-Viateur / Casgrain;Hochelaga / Chapleau;24/08/2021 17:45:03;31
+Dandurand / des Érables;Prince-Arthur / du Parc;01/08/2021 11:04:29;30
+Pierre-Péladeau / du Centropolis;Métro Sauvé (Berri / Sauvé);09/11/2022 16:19:12;30
+de l’hôtel de ville / Saint-Joseph;Wilderton  / Van Horne;30/08/2021 16:41:08;30
+du Mont-Royal / Laurendeau;de la Commune / King;07/11/2021 11:20:24;30
+Centre récréatif Édouard-Rivet (Lesage / Notre-Dame);Métro Honoré-Beaugrand (Sherbrooke / Honoré-Beaugrand);12/07/2022 18:40:50;29
+Ropery / Grand Trunk;Marcil / Sherbrooke;07/10/2021 14:02:37;28
+Terminus Le Carrefour (Terry-Fox / Le Carr);Parc Saint-Laurent (Dutrisac);24/10/2021 11:08:33;26
+Dépôt Festivals ( de Maisonneuve / St-Laurent);Parc du Pélican (1ère avenue / Masson);27/07/2022 23:21:21;23
+de Normanville / Jean-Talon;Parc Jeanne Mance (monument sir George-Etienne Cartier);17/10/2021 09:07:27;23
+Delisle / George-Vanier;Ropery / Augustin-Cantin;30/09/2022 07:13:08;21
+de Grenoble / de Cassis;Guizot / St-Denis;04/11/2022 00:12:15;20
+Parc Hébert ( Provencher / Buies);29e avenue / St-Zotique;25/07/2021 19:12:32;18
+Berri/ Duluth;St-Alexandre / Ste-Catherine;07/07/2021 08:32:24;14
+Jeanne-Mance / St-Martin O;Terminus Le Carrefour (Terry-Fox / Le Carrefour);24/09/2022 09:48:21;13
+Parc Saint-Laurent (Dutrisac);Laforest / Dudemaine;27/10/2021 08:24:57;13
+Parc des Vétérans (des Vétérans / Broadway);Parc de Montréal-Est (Notre-Dame Est / David);23/07/2022 08:12:39;13
+Robert Bourassa / Sainte-Catherine;Chomedey / de Maisonneuve;08/06/2021 15:42:11;12
+Square Nelligan (des Appalaches / Alexis-Nihon);Place Rodolphe-Rousseau (Gohier / Édouard-Laurin);14/11/2022 17:42:35;12
+Gare du Ruisseau (Dutrisac / Henri-Bourassa);Place Rodolphe-Rousseau (Gohier / Édouard-Laurin);13/08/2022 10:25:47;9
+Parc Angrignon (Lacroix / des Trinitaires);LaSalle / Crawford;31/08/2022 18:04:20;9
+Duluth  / St-Denis (2);du Mont-Royal / Clark;14/11/2022 15:20:22;6
+Parc Maurice Bélanger (Forest / de l'Hôtel-de-Ville);Sabrevois / des Récollets;28/07/2021 19:04:35;6

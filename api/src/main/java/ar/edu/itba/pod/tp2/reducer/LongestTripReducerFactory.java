@@ -35,7 +35,6 @@ public class LongestTripReducerFactory implements ReducerFactory<Integer, Finish
 
         @Override
         public FinishedBikeTrip finalizeReduce() {
-            System.out.println("Finalizing Reduce... Value: " + longestTrip.toString());
             return longestTrip;
         }
     }
