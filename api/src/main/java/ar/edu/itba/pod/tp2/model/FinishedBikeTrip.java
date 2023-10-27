@@ -8,11 +8,13 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBikeTrip> {
 
     private int endStationId;
-    private double durationInMinutes;
+    private int durationInMinutes;
     private LocalDateTime startDate;
     private String endStationName = ""; // Este nombre se setea en el collator
 
@@ -20,7 +22,7 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
     public FinishedBikeTrip() {
     }
 
-    public FinishedBikeTrip(int endStationId, double durationInMinutes, LocalDateTime startDate) {
+    public FinishedBikeTrip(int endStationId, int durationInMinutes, LocalDateTime startDate) {
         this.endStationId = endStationId;
         this.durationInMinutes = durationInMinutes;
         this.startDate = startDate;
@@ -54,18 +56,16 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
         FinishedBikeTrip that = (FinishedBikeTrip) o;
 
         if (endStationId != that.endStationId) return false;
-        if (Double.compare(durationInMinutes, that.durationInMinutes) != 0) return false;
+        if (durationInMinutes != that.durationInMinutes) return false;
         return startDate.equals(that.startDate);
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = endStationId;
-        temp = Double.doubleToLongBits(durationInMinutes);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        int result = endStationId;
+        result = 31 * result + durationInMinutes;
         result = 31 * result + startDate.hashCode();
+        result = 31 * result + (endStationName != null ? endStationName.hashCode() : 0);
         return result;
     }
 
@@ -82,7 +82,7 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
     @Override
     public void writeData(ObjectDataOutput out) throws IOException {
         out.writeInt(endStationId);
-        out.writeDouble(durationInMinutes);
+        out.writeInt(durationInMinutes);
         out.writeLong(startDate.toInstant(ZoneOffset.UTC).toEpochMilli());
 
     }
@@ -90,7 +90,7 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
     @Override
     public void readData(ObjectDataInput in) throws IOException {
         endStationId = in.readInt();
-        durationInMinutes = in.readDouble();
+        durationInMinutes = in.readInt();
         startDate = LocalDateTime.ofInstant(Instant.ofEpochMilli(in.readLong()), ZoneOffset.UTC);
     }
 
@@ -102,6 +102,22 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
         if (aux == 0)
             return other.startDate.compareTo(this.startDate);
         return aux;
+    }
+
+    // TODO: Si este no es unico formato de csv, hacerlo del lado del cliente
+    public StringBuilder toCSV(boolean lastSemicolon, boolean lineBreak) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+        StringBuilder sb = new StringBuilder()
+            .append(endStationName).append(';')
+            .append(startDate.format(formatter)).append(';')
+            .append(durationInMinutes);
+
+        if(lastSemicolon)
+            sb.append(';');
+        if (lineBreak)
+            sb.append('\n');
+        return sb;
     }
 
     public boolean isLongerThan(FinishedBikeTrip other) {

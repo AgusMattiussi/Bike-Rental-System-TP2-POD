@@ -92,7 +92,7 @@ public class Client {
             }
             case "query3" -> {
                 logger.info("Query 3");
-                Query3 query3Instance = new Query3("query3", hazelcastInstance, stationMap, bikeTripMap);
+                Query3 query3Instance = new Query3("query3", hazelcastInstance, stationMap, bikeTripMap, outPath);
                 query3Instance.run();
             }
             case "query4" -> {

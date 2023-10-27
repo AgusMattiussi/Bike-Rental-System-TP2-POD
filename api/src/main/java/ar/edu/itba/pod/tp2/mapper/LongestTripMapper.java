@@ -42,7 +42,7 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Fin
         Duration tripDuration = Duration.between(bikeTrip.getStartDate(), bikeTrip.getEndDate());
 
         // Emitimos una tupla (startStationId, (endStationId, tripDuration, startDateTime))
-        context.emit(startStationId, new FinishedBikeTrip(endStationId, tripDuration.toMinutes(), bikeTrip.getStartDate()));
+        context.emit(startStationId, new FinishedBikeTrip(endStationId, (int) tripDuration.toMinutes(), bikeTrip.getStartDate()));
     }
 
 
