@@ -1,10 +1,7 @@
 package ar.edu.itba.pod.tp2.client;
 
-import ar.edu.itba.pod.tp2.keypredicates.DateRangePredicate;
-import ar.edu.itba.pod.tp2.keypredicates.SameStationPredicate;
 import ar.edu.itba.pod.tp2.mapper.AffluenceByStationMapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
-import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
 import ar.edu.itba.pod.tp2.model.Station;
 import ar.edu.itba.pod.tp2.model.Triple;
 import ar.edu.itba.pod.tp2.reducer.AffluenceByStationReducerFactory;
