@@ -128,7 +128,7 @@ public class Client {
                  validateNullArgument(startDate, "Start date not specified");
                  validateNullArgument(endDate, "End date not specified");
 
-                Query4 query4Instance = new Query4("query4", hazelcastInstance, stationMap, bikeTripMap, startDate, endDate);
+                Query4 query4Instance = new Query4("query4", hazelcastInstance, stationMap, bikeTripMap, startDate, endDate, outPath);
                 query4Instance.run();
             }
             default -> logger.error("Invalid query");

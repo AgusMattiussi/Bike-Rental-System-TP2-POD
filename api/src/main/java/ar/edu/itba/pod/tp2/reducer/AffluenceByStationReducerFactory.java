@@ -1,23 +1,24 @@
 package ar.edu.itba.pod.tp2.reducer;
 
+import ar.edu.itba.pod.tp2.model.AffluenceInfo;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Triple;
 import com.hazelcast.mapreduce.Reducer;
 import com.hazelcast.mapreduce.ReducerFactory;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class AffluenceByStationReducerFactory implements ReducerFactory<Integer, Pair<LocalDateTime, Integer>, Triple<Integer, Integer, Integer>> {
+public class AffluenceByStationReducerFactory implements ReducerFactory<Integer, Pair<LocalDate, Integer>, AffluenceInfo> {
     @Override
-    public Reducer<Pair<LocalDateTime, Integer>, Triple<Integer, Integer, Integer>> newReducer(Integer integer) {
+    public Reducer<Pair<LocalDate, Integer>, AffluenceInfo> newReducer(Integer integer) {
         return new AffluenceByStationReducer();
     }
 
-    private static class AffluenceByStationReducer extends Reducer<Pair<LocalDateTime, Integer>, Triple<Integer, Integer, Integer>> {
-        private Map<LocalDateTime, Integer> affluenceByDay = new HashMap<>();
+    private static class AffluenceByStationReducer extends Reducer<Pair<LocalDate, Integer>, AffluenceInfo> {
+        private Map<LocalDate, Integer> affluenceByDay = new HashMap<>();
 
         @Override
         public void beginReduce() {
@@ -25,8 +26,9 @@ public class AffluenceByStationReducerFactory implements ReducerFactory<Integer,
         }
 
         @Override
-        public void reduce(Pair<LocalDateTime, Integer> pair) {
-            LocalDateTime time = pair.first();
+        public void reduce(Pair<LocalDate, Integer> pair) {
+            System.out.println("Reducing...");
+            LocalDate time = pair.first();
             Integer affluence = pair.second();
 
             affluenceByDay.compute(time, (key, currentValue) -> {
@@ -39,7 +41,7 @@ public class AffluenceByStationReducerFactory implements ReducerFactory<Integer,
         }
 
         @Override
-        public Triple<Integer, Integer, Integer> finalizeReduce(){
+        public AffluenceInfo finalizeReduce(){
             int positiveDays = 0;
             int negativeDays = 0;
             int neutralDays = 0;
@@ -54,7 +56,7 @@ public class AffluenceByStationReducerFactory implements ReducerFactory<Integer,
                 }
             }
 
-            return new Triple<>(positiveDays, negativeDays, neutralDays);
+            return new AffluenceInfo(positiveDays, negativeDays, neutralDays);
         }
     }
 }
