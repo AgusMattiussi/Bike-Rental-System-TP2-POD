@@ -23,7 +23,6 @@ public class LongestTripCollator implements Collator<Map.Entry<Integer, Finished
 
     @Override
     public List<Pair<String, FinishedBikeTrip>> collate(Iterable<Map.Entry<Integer, FinishedBikeTrip>> values) {
-        System.out.println("Collating...");
         List<Pair<String, FinishedBikeTrip>> sortedValues = new ArrayList<>();
 
         // Resolvemos los nombres de las estaciones de origen y destino

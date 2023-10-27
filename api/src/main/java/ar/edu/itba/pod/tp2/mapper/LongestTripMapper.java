@@ -23,19 +23,16 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Fin
     @Override
     public void setHazelcastInstance(HazelcastInstance hazelcastInstance) {
         stations = hazelcastInstance.getMap(STATIONS_MAP_NAME);
-        System.out.println("[LongestTripMapper] Stations map size: " + stations.size());
     }
 
     @Override
     public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, FinishedBikeTrip> context) {
-        System.out.println("Mapping...");
         Integer startStationId = bikeTrip.getStartStationId();
         Integer endStationId = bikeTrip.getEndStationId();
 
         // Solo tenemos en cuenta viajes entre distintas estaciones
-        if(startStationId.equals(endStationId) || !stations.containsKey(startStationId) || !stations.containsKey(endStationId)) {
+        if(startStationId.equals(endStationId) || !stations.containsKey(startStationId) || !stations.containsKey(endStationId))
             return;
-        }
 
         // Calculamos la duracion del viaje en minutos
         Duration tripDuration = Duration.between(bikeTrip.getStartDate(), bikeTrip.getEndDate());

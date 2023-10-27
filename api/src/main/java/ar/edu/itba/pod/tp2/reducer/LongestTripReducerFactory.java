@@ -28,7 +28,6 @@ public class LongestTripReducerFactory implements ReducerFactory<Integer, Finish
 
         @Override
         public void reduce(FinishedBikeTrip trip) {
-            System.out.println("Reducing...");
             if (longestTrip == null || trip.isLongerThan(longestTrip))
                 longestTrip = trip;
         }
