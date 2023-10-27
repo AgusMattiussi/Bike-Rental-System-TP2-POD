@@ -41,10 +41,7 @@ public class Query4 {
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 
         JobCompletableFuture<Map<Integer, Triple<Integer, Integer, Integer>>> future = jobTracker.newJob(source)
-                //TODO: Fix predicates
-//                .keyPredicate(new DateRangePredicate(startDate, endDate))
-//                .keyPredicate(new SameStationPredicate())
-                .mapper(new AffluenceByStationMapper())
+                .mapper(new AffluenceByStationMapper(startDate, endDate))
                 .reducer(new AffluenceByStationReducerFactory())
                 .submit();
         // Attach a callback listenerfuture .andThen(buildCallback());
