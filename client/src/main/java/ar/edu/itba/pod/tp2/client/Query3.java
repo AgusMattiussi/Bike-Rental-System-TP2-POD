@@ -7,6 +7,7 @@ import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Station;
 import ar.edu.itba.pod.tp2.reducer.LongestTripReducerFactory;
+import com.hazelcast.config.JobTrackerConfig;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.JobCompletableFuture;
@@ -17,7 +18,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 @SuppressWarnings("deprecation")
-public class Query3 {
+public class Query3 implements Runnable {
     private final String jobName;
     private final HazelcastInstance hazelcast;
     private final IMap<Integer, Station> stations;
@@ -31,7 +32,9 @@ public class Query3 {
         this.trips = trips;
     }
 
+    @Override
     public void run() {
+        System.out.println("Running query3");
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 
@@ -46,14 +49,18 @@ public class Query3 {
         Map<Integer, FinishedBikeTrip> result;
 
         try {
+            System.out.println("Waiting for result...");
             result = future.get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         }
 
+        System.out.println("Done!");
+        System.out.println("Result size: " + result.size());
+
         //TODO: Cambiar stationIds por stationNames y generar CSV
         result.entrySet().stream()
-                .sorted(/* TODO: Sort */)
+                //.sorted(/* TODO: Sort */)
                 .map(entry -> "From: " + entry.getKey() + " - To: " + entry.getValue().getEndStationId()
                         + " - Trip duration: " + entry.getValue().getDurationInMinutes())
                 .forEach(System.out::println);

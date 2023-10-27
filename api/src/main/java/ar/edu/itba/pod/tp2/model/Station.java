@@ -14,6 +14,10 @@ public final class Station implements DataSerializable {
     private double latitude;
     private double longitude;
 
+    /* Para Hazelcast */
+    public Station() {
+    }
+
     public Station(int id, String name, double latitude, double longitude) {
         this.id = id;
         this.name = name;

@@ -20,15 +20,17 @@ import java.time.LocalDateTime;
 public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, FinishedBikeTrip>, HazelcastInstanceAware {
 
     private IMap<Integer, Station> stations;
-    private static final String STATIONS_MAP_NAME = "stations"; //TODO: Deberia ser parametro?
+    private static final String STATIONS_MAP_NAME = "station-map"; //TODO: Deberia ser parametro?
 
     @Override
     public void setHazelcastInstance(HazelcastInstance hazelcastInstance) {
         stations = hazelcastInstance.getMap(STATIONS_MAP_NAME);
+        System.out.println("[LongestTripMapper] Stations map size: " + stations.size());
     }
 
     @Override
     public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, FinishedBikeTrip> context) {
+        System.out.println("Mapping...");
         Integer startStationId = bikeTrip.getStartStationId();
         Integer endStationId = bikeTrip.getEndStationId();
 

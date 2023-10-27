@@ -17,6 +17,10 @@ public final class BikeTrip implements DataSerializable {
     private LocalDateTime endDate;
     private boolean isMember;
 
+    /* Para Hazelcast */
+    public BikeTrip() {
+    }
+
     public BikeTrip(int startStationId, LocalDateTime startDate, int endStationId, LocalDateTime endDate, boolean isMember) {
         this.startStationId = startStationId;
         this.startDate = startDate;

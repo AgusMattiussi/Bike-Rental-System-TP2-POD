@@ -26,6 +26,7 @@ public class LongestTripCombinerFactory implements CombinerFactory<Integer, Fini
 
         @Override
         public void combine(FinishedBikeTrip trip) {
+            System.out.println("Combining...");
             if(longestTrip == null || trip.isLongerThan(longestTrip))
                 longestTrip = trip;
         }

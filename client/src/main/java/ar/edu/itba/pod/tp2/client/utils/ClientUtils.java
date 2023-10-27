@@ -64,8 +64,8 @@ public final class ClientUtils {
     }
 
     public static HazelcastInstance getHazelClientInstance(List<String> addresses) {
-        String name = "group_name";
-        String pass = "group_password";
+        String name = "g0";
+        String pass = "g0-pass";
 
         try {
             logger.info("Hazelcast client Starting...");

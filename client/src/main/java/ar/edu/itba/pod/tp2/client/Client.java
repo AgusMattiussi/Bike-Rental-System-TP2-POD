@@ -1,23 +1,17 @@
 package ar.edu.itba.pod.tp2.client;
 
+import ar.edu.itba.pod.tp2.client.utils.BikeTripCSVBatchPopulator;
+import ar.edu.itba.pod.tp2.client.utils.StationsCSVBatchPopulator;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
 
 import ar.edu.itba.pod.tp2.model.Station;
 import com.hazelcast.client.HazelcastClient;
-import com.hazelcast.client.proxy.ClientMapProxy;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
-import com.opencsv.CSVParser;
-import com.opencsv.CSVParserBuilder;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -26,6 +20,11 @@ import static ar.edu.itba.pod.tp2.client.AverageDistance.*;
 
 
 public class Client {
+    private static final String STATIONS_CSV_NAME = "stations.csv";
+    private static final String BIKES_CSV_NAME = "bikes.csv";
+    private static final String STATIONS_MAP_NAME = "station-map";
+    private static final String BIKES_MAP_NAME = "bike-map";
+    
     private static Logger logger = LoggerFactory.getLogger(Client.class);
 
     public static void main(String[] args) throws InterruptedException {
@@ -35,7 +34,10 @@ public class Client {
         // ./queryX -Daddresses='xx.xx.xx.xx:XXXX;yy.yy.yy.yy:YYYY' -DinPath=XX -DoutPath=YY [-Dn=4 |  -DstartDate=01/05/2021 -DendDate=31/05/2021 ]
         final Map<String, String> argMap = parseArguments(args);
 
-        final String query = args[0]; // TODO: Revisar
+        /*final*/ String query = args[0]; // TODO: Revisar
+        //TODO: Cambiar
+        query = "query3";
+
         final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
         final String inPath = argMap.get(INPUT_PATH);
         final String outPath = argMap.get(OUT_PATH);
@@ -45,26 +47,34 @@ public class Client {
         validateNullArgument(outPath, "Output path not specified");
 
         HazelcastInstance hazelcastInstance = getHazelClientInstance(addresses);
-        logger.info("Hazelcast client started");
-
-//        Mapa de tipo pk -> station
-        Map<Integer, Station> stationMap = getStations(inPath);
-
-//        Mapa de tipo emplacement_pk_start -> [viajes que salen de ahi]
-        Map<Integer, BikeTrip> bikeTripMap = getBikeTrip(inPath, stationMap);
-
-        IMap<Integer, BikeTrip> bikeIMap = hazelcastInstance.getMap("bike-map");
-        IMap<Integer, Station> stationIMap = hazelcastInstance.getMap("station-map");
-        bikeIMap.clear();
-        stationIMap.clear();
-
-        try{
-            bikeIMap.putAll(bikeTripMap);
-            stationIMap.putAll(stationMap);
-        }catch (Exception e){
-            logger.error("Error en la lectura del archivo");
-//            TODO: limpiar y borrar
+        if(hazelcastInstance == null){
+            logger.error("Error creating hazelcast client");
+            System.exit(1);
         }
+        logger.info("Hazelcast client started");
+        
+        // Obtenemos los mapas de Hazelcast
+        //TODO: Si no usamos metodos de IMap, instanciar como Map
+        IMap<Integer, BikeTrip> bikeTripMap = hazelcastInstance.getMap(BIKES_MAP_NAME);
+        bikeTripMap.clear();
+
+        IMap<Integer, Station> stationMap = hazelcastInstance.getMap(STATIONS_MAP_NAME);
+        stationMap.clear();
+        
+        // Populamos los mapas con los archivos CSV
+        logger.info("Populating Stations");
+        StationsCSVBatchPopulator stationsPopulator = new StationsCSVBatchPopulator(inPath + STATIONS_CSV_NAME, stationMap);
+        stationsPopulator.run();
+
+        logger.info("Populating Bike Trips");
+        BikeTripCSVBatchPopulator bikeTripPopulator = new BikeTripCSVBatchPopulator(inPath + BIKES_CSV_NAME, bikeTripMap);
+        bikeTripPopulator.run();
+
+        if(bikeTripMap.isEmpty() || stationMap.isEmpty()){
+            logger.error("Error populating maps");
+            System.exit(1);
+        }
+        
 
         switch (query) {
             case "query1" -> {
@@ -78,11 +88,11 @@ public class Client {
                 List<Station> stations = new ArrayList<>();
                 stations.addAll(stationMap.values());
 
-                averageClientSolver(hazelcastInstance,Integer.parseInt(n), bikeIMap, stations, outPath);
+                averageClientSolver(hazelcastInstance,Integer.parseInt(n), bikeTripMap, stations, outPath);
             }
             case "query3" -> {
                 logger.info("Query 3");
-                Query3 query3Instance = new Query3("query3", hazelcastInstance, stationIMap, bikeIMap);
+                Query3 query3Instance = new Query3("query3", hazelcastInstance, stationMap, bikeTripMap);
                 query3Instance.run();
             }
             case "query4" -> {
@@ -95,52 +105,28 @@ public class Client {
             }
             default -> logger.error("Invalid query");
         }
+        
+        //TODO: Borrar tests
+        /*System.out.println("StationMap size: " + stationMap.size());
+        System.out.println("BikeTripMap size: " + bikeTripMap.size());
+
+        System.out.println(stationMap.get(550).toString());
+        System.out.println(stationMap.get(1055).toString());
+        System.out.println(stationMap.get(776).toString());
+        
+        System.out.println(bikeTripMap.get(1).toString());
+        System.out.println(bikeTripMap.get(100).toString());
+        System.out.println(bikeTripMap.get(1000).toString());*/
+        
+        
+        // Limpiamos los mapas antes de terminar
+        bikeTripMap.clear();
+        stationMap.clear();
 
         // Shutdown
         HazelcastClient.shutdownAll();
     }
+    
 
-    private static Map<Integer, Station> getStations(String inPath){
-        List<String[]> data = readData(inPath + "stations.csv");
-        Map<Integer, Station> stationMap = new HashMap<>();
-        for (String[] dArr: data) {
-//            pk;name;latitude;longitude
-            stationMap.put(Integer.parseInt(dArr[0]), new Station(
-                    Integer.parseInt(dArr[0]), dArr[1], Double.parseDouble(dArr[2]), Double.parseDouble(dArr[3])));
-        }
-        return  stationMap;
-    }
-
-    private static Map<Integer, BikeTrip> getBikeTrip(String inPath, Map<Integer,Station> stationMap){
-        List<String[]> data = readData(inPath + "bikes.csv");
-        Map<Integer, BikeTrip> bikeTripMap = new HashMap<>();
-        for (String[] dArr: data) {
-//            start_date;emplacement_pk_start;end_date;emplacement_pk_end;is_member
-            bikeTripMap.put(Integer.parseInt(dArr[1]), new BikeTrip( Integer.parseInt(dArr[1]), LocalDateTime.parse(dArr[0]), Integer.parseInt(dArr[3]), LocalDateTime.parse(dArr[2]), dArr[4].equals("1")));
-        }
-        return  bikeTripMap;
-    }
-
-    private static List<String[]> readData(String inPath){
-            FileReader filereader = null;
-            try {
-                filereader = new FileReader(inPath);
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException("File not found");
-            }
-
-            CSVParser parser = new CSVParserBuilder()
-                    .withSeparator(';')
-                    .build();
-            try(CSVReader csvReader = new CSVReaderBuilder(filereader)
-                    .withSkipLines(1)
-                    .withCSVParser(parser)
-                    .build()) {
-                return csvReader.readAll();
-            } catch (IOException e) {
-                throw new RuntimeException("Error reading file in path");
-            }
-
-    }
 
 }

@@ -15,6 +15,10 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
     private double durationInMinutes;
     private LocalDateTime startDate;
 
+    /* Para Hazelcast */
+    public FinishedBikeTrip() {
+    }
+
     public FinishedBikeTrip(int endStationId, double durationInMinutes, LocalDateTime startDate) {
         this.endStationId = endStationId;
         this.durationInMinutes = durationInMinutes;
