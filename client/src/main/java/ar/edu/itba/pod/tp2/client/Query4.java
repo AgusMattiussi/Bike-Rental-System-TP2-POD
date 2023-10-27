@@ -45,7 +45,7 @@ public class Query4 {
 //                .keyPredicate(new DateRangePredicate(startDate, endDate))
 //                .keyPredicate(new SameStationPredicate())
                 .mapper(new AffluenceByStationMapper())
-                .reducer( new AffluenceByStationReducerFactory())
+                .reducer(new AffluenceByStationReducerFactory())
                 .submit();
         // Attach a callback listenerfuture .andThen(buildCallback());
 
