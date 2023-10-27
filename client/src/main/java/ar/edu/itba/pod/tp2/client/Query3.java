@@ -1,5 +1,6 @@
 package ar.edu.itba.pod.tp2.client;
 
+import ar.edu.itba.pod.tp2.collators.LongestTripCollator;
 import ar.edu.itba.pod.tp2.combiners.LongestTripCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.LongestTripMapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
@@ -14,6 +15,7 @@ import com.hazelcast.mapreduce.JobCompletableFuture;
 import com.hazelcast.mapreduce.JobTracker;
 import com.hazelcast.mapreduce.KeyValueSource;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -38,15 +40,15 @@ public class Query3 implements Runnable {
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 
-        JobCompletableFuture<Map<Integer, FinishedBikeTrip>> future = jobTracker.newJob(source)
+        JobCompletableFuture<List<Pair<String, FinishedBikeTrip>>> future = jobTracker.newJob(source)
                 .mapper(new LongestTripMapper())
                 .combiner(new LongestTripCombinerFactory())
                 .reducer( new LongestTripReducerFactory())
-                .submit();
+                .submit(new LongestTripCollator(stations));
                 // Attach a callback listenerfuture .andThen(buildCallback());
 
         // Esperamos el resultado de forma sincrónica
-        Map<Integer, FinishedBikeTrip> result;
+        List<Pair<String, FinishedBikeTrip>> result;
 
         try {
             System.out.println("Waiting for result...");
@@ -59,11 +61,7 @@ public class Query3 implements Runnable {
         System.out.println("Result size: " + result.size());
 
         //TODO: Cambiar stationIds por stationNames y generar CSV
-        result.entrySet().stream()
-                //.sorted(/* TODO: Sort */)
-                .map(entry -> "From: " + entry.getKey() + " - To: " + entry.getValue().getEndStationId()
-                        + " - Trip duration: " + entry.getValue().getDurationInMinutes())
-                .forEach(System.out::println);
+        result.forEach(pair -> System.out.println(pair.first() + " " + pair.second().toString()));
 
     }
 

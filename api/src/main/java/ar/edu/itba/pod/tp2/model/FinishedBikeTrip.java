@@ -14,6 +14,7 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
     private int endStationId;
     private double durationInMinutes;
     private LocalDateTime startDate;
+    private String endStationName = ""; // Este nombre se setea en el collator
 
     /* Para Hazelcast */
     public FinishedBikeTrip() {
@@ -35,6 +36,14 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
 
     public LocalDateTime getStartDate() {
         return startDate;
+    }
+
+    public String getEndStationName() {
+        return endStationName;
+    }
+
+    public void setEndStationName(String endStationName) {
+        this.endStationName = endStationName;
     }
 
     @Override
