@@ -12,7 +12,6 @@ import com.hazelcast.core.IMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.LocalDateTime;
 import java.util.*;
 
 import static ar.edu.itba.pod.tp2.client.utils.ClientUtils.*;
@@ -103,7 +102,7 @@ public class Client {
                  validateNullArgument(startDate, "Start date not specified");
                  validateNullArgument(endDate, "End date not specified");
 
-                Query4 query4Instance = new Query4("query4", hazelcastInstance, stationIMap, bikeIMap, startDate, endDate);
+                Query4 query4Instance = new Query4("query4", hazelcastInstance, stationMap, bikeTripMap, startDate, endDate);
                 query4Instance.run();
             }
             default -> logger.error("Invalid query");
