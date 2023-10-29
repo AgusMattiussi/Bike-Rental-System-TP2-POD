@@ -20,22 +20,24 @@ public class Query1 {
     private final HazelcastInstance hazelcast;
     private final IMap<Integer, Station> stations;
     private final IMap<Integer, BikeTrip> trips;
+    private final String outPath;
 
     public Query1(String jobName, HazelcastInstance hazelcast,
-                  IMap<Integer, Station> stations, IMap<Integer, BikeTrip> trips) {
+                  IMap<Integer, Station> stations, IMap<Integer, BikeTrip> trips, String outPath) {
         this.jobName = jobName;
         this.hazelcast = hazelcast;
         this.stations = stations;
         this.trips = trips;
+        this.outPath = outPath;
     }
 
     public void run() {
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
-
+        System.out.println("here");
+//
 //        JobCompletableFuture<Map<Integer, Pair<Integer, Long>>> future = jobTracker.newJob(source)
 //                .mapper(new AllTripsMapper())
-//                .combiner(new LongestTripCombinerFactory())
 //                .reducer( new LongestTripReducerFactory())
 //                .submit(); // Attach a callback listenerfuture .andThen(buildCallback());
 //

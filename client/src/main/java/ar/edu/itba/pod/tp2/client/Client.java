@@ -43,7 +43,7 @@ public class Client {
 //        final String query = args[0]; // TODO: hacer scripts para cada query
 
         //TODO: Cambiar
-        String query = "query3";
+        String query = "query1";
         String queryNumber = query.substring(5);
 
         final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
@@ -103,6 +103,10 @@ public class Client {
         switch (query) {
             case "query1" -> {
                 logger.info("Query 1");
+                Query1 query1Instance = new Query1("query1", hazelcastInstance, stationMap, bikeTripMap, outPath);
+                performanceLogger.info("Inicio del trabajo map/reduce");
+                query1Instance.run();
+                performanceLogger.info("Fin del trabajo map/reduce");
             }
             case "query2" -> {
                 String n = argMap.get(N_VAL);
