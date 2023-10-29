@@ -35,9 +35,9 @@ public class Query1 {
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
         System.out.println("here");
-//
-//        JobCompletableFuture<Map<Integer, Pair<Integer, Long>>> future = jobTracker.newJob(source)
-//                .mapper(new AllTripsMapper())
+
+        JobCompletableFuture<Map<Integer, Pair<Integer, Long>>> future = jobTracker.newJob(source)
+                .mapper(new AllTripsMapper())
 //                .reducer( new LongestTripReducerFactory())
 //                .submit(); // Attach a callback listenerfuture .andThen(buildCallback());
 //
