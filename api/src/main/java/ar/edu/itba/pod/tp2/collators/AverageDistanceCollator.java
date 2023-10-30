@@ -1,5 +1,6 @@
 package ar.edu.itba.pod.tp2.collators;
 
+import ar.edu.itba.pod.tp2.model.DistanceJourney;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Station;
 import com.hazelcast.core.IMap;
@@ -7,7 +8,7 @@ import com.hazelcast.mapreduce.Collator;
 
 import java.util.*;
 
-public class AverageDistanceCollator implements Collator<Map.Entry<Integer, Double>, List<Pair<String,Double>>> {
+public class AverageDistanceCollator implements Collator<Map.Entry<Integer, DistanceJourney>, List<Pair<String,Double>>> {
 
     private final IMap<Integer, Station> stations;
 
@@ -16,13 +17,13 @@ public class AverageDistanceCollator implements Collator<Map.Entry<Integer, Doub
     }
 
     @Override
-    public List<Pair<String, Double>> collate(Iterable<Map.Entry<Integer, Double>> iterable) {
+    public List<Pair<String, Double>> collate(Iterable<Map.Entry<Integer, DistanceJourney>> iterable) {
         List<Pair<String, Double>> sortedValues = new ArrayList<>();
 
         // Resolvemos los nombres de las estaciones de origen y destino
         iterable.forEach(entry -> {
             Station startStation = stations.get(entry.getKey());
-            sortedValues.add(new Pair<>(startStation.getName(), entry.getValue()));
+            sortedValues.add(new Pair<>(startStation.getName(), entry.getValue().getAverage()));
         });
 
         sortedValues.sort(new AvgDistanceAndNameComparator());

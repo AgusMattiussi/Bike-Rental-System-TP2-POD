@@ -1,34 +1,36 @@
 package ar.edu.itba.pod.tp2.combiners;
 
+import ar.edu.itba.pod.tp2.model.DistanceJourney;
 import com.hazelcast.mapreduce.Combiner;
 import com.hazelcast.mapreduce.CombinerFactory;
 
-public class AverageDistanceCombinerFactory implements CombinerFactory<Integer, Double, Double> {
+public class AverageDistanceCombinerFactory implements CombinerFactory<Integer, DistanceJourney, DistanceJourney> {
 
     @Override
-    public Combiner<Double, Double> newCombiner(Integer i) {
+    public Combiner<DistanceJourney, DistanceJourney> newCombiner(Integer i) {
         return new AverageDistanceCombiner();
     }
 
-    private class AverageDistanceCombiner extends Combiner<Double, Double> {
-        private double distanceSum = 0;
-        private double totalTrips = 0;
+    private class AverageDistanceCombiner extends Combiner<DistanceJourney, DistanceJourney> {
+        private DistanceJourney distanceJourney = null;
 
         @Override
-        public void combine( Double distance ) {
-            distanceSum += distance;
-            totalTrips += 1;
+        public void combine( DistanceJourney distance ) {
+            if (distanceJourney == null){
+                distanceJourney = distance;
+            }else{
+                distanceJourney.addDistanceAndJourneys(distance.getSumDistances(), distance.getJourneysAmount());
+            }
         }
 
         @Override
         public void reset() {
-            distanceSum = 0;
-            totalTrips = 0;
+            distanceJourney = null;
         }
 
         @Override
-        public Double finalizeChunk() {
-            return totalTrips == 0 ? 0 : distanceSum / totalTrips;
+        public DistanceJourney finalizeChunk() {
+            return distanceJourney;
         }
     }
 }

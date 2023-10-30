@@ -1,6 +1,7 @@
 package ar.edu.itba.pod.tp2.mapper;
 
 import ar.edu.itba.pod.tp2.model.BikeTrip;
+import ar.edu.itba.pod.tp2.model.DistanceJourney;
 import ar.edu.itba.pod.tp2.model.Station;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.HazelcastInstanceAware;
@@ -12,7 +13,7 @@ import java.util.Map;
 
 // Recibe un nombre de estacion y un viaje y emite el nombre de la estacion y al distancia del viaje
 @SuppressWarnings("deprecation")
-public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, Integer, Double>, HazelcastInstanceAware {
+public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, Integer, DistanceJourney>, HazelcastInstanceAware {
     private Map<Integer, Station> stations = new HashMap<>();
     private static final String STATIONS_MAP_NAME = "station-map";
 
@@ -22,7 +23,7 @@ public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, Integer,
     }
 
     @Override
-    public void map(Integer stationId, BikeTrip bikeTrip, Context<Integer, Double> context) {
+    public void map(Integer stationId, BikeTrip bikeTrip, Context<Integer, DistanceJourney> context) {
         Integer startId = bikeTrip.getStartStationId();
         Integer endId = bikeTrip.getEndStationId();
         // Solo tenemos en cuenta viajes entre distintas estaciones
@@ -31,9 +32,10 @@ public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, Integer,
 
         Station startStation = stations.get(startId);
         Station endStation = stations.get(endId);
+        DistanceJourney distanceJourney = new DistanceJourney(startId);
         Double distance = haversine(startStation.getLatitude(), startStation.getLongitude(), endStation.getLatitude(), endStation.getLongitude());
-
-        context.emit(startId, distance);
+        distanceJourney.addDistance(distance);
+        context.emit(startId, distanceJourney);
     }
 
     static Double haversine(double lat1, double lon1,double lat2, double lon2) {
