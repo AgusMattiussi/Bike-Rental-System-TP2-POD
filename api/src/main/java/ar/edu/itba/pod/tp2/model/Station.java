@@ -25,6 +25,7 @@ public final class Station implements DataSerializable {
         this.longitude = longitude;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

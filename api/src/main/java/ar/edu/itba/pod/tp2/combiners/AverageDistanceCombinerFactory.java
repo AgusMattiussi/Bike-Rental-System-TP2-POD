@@ -2,37 +2,33 @@ package ar.edu.itba.pod.tp2.combiners;
 
 import com.hazelcast.mapreduce.Combiner;
 import com.hazelcast.mapreduce.CombinerFactory;
-import com.hazelcast.mapreduce.Reducer;
-import com.hazelcast.mapreduce.ReducerFactory;
 
-
-public class AverageDistanceCombinerFactory implements CombinerFactory<String, Double, Double> {
+public class AverageDistanceCombinerFactory implements CombinerFactory<Integer, Double, Double> {
 
     @Override
-    public Combiner<Double, Double> newCombiner(String s) {
+    public Combiner<Double, Double> newCombiner(Integer i) {
         return new AverageDistanceCombiner();
     }
 
     private class AverageDistanceCombiner extends Combiner<Double, Double> {
         private double distanceSum = 0;
-        private double journeysAmount = 0;
-
+        private double totalTrips = 0;
 
         @Override
         public void combine( Double distance ) {
             distanceSum += distance;
-            journeysAmount++;
+            totalTrips += 1;
         }
 
         @Override
         public void reset() {
             distanceSum = 0;
-            journeysAmount = 0;
+            totalTrips = 0;
         }
 
         @Override
         public Double finalizeChunk() {
-            return distanceSum/journeysAmount;
+            return totalTrips == 0 ? 0 : distanceSum / totalTrips;
         }
     }
 }

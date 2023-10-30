@@ -2,60 +2,56 @@ package ar.edu.itba.pod.tp2.mapper;
 
 import ar.edu.itba.pod.tp2.model.BikeTrip;
 import ar.edu.itba.pod.tp2.model.Station;
+import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.core.HazelcastInstanceAware;
 import com.hazelcast.mapreduce.Context;
 import com.hazelcast.mapreduce.Mapper;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 // Recibe un nombre de estacion y un viaje y emite el nombre de la estacion y al distancia del viaje
 @SuppressWarnings("deprecation")
-public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, String, Double> {
+public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, Integer, Double>, HazelcastInstanceAware {
     private Map<Integer, Station> stations = new HashMap<>();
+    private static final String STATIONS_MAP_NAME = "station-map";
 
-
-    public AverageDistanceMapper(List<Station> stationList) {
-        for (Station station: stationList) {
-            stations.put(station.getId(), station);
-        }
+    @Override
+    public void setHazelcastInstance(HazelcastInstance hazelcastInstance) {
+        stations = hazelcastInstance.getMap(STATIONS_MAP_NAME);
     }
 
     @Override
-    public void map(Integer stationId, BikeTrip bikeTrip, Context<String, Double> context) {
-        double distances_total = 0;
-        if (stations.containsKey(stationId)){
-            Station startStation = stations.get(bikeTrip.getStartStationId());
+    public void map(Integer stationId, BikeTrip bikeTrip, Context<Integer, Double> context) {
+        int startId = bikeTrip.getStartStationId();
+        int endId = bikeTrip.getEndStationId();
+        if (stations.containsKey(startId)){
+            Station startStation = stations.get(startId);
             if (startStation.getId() == stationId){
-                Station endStation = stations.get(bikeTrip.getEndStationId());
-                distances_total = haversine(startStation.getLatitude(), startStation.getLongitude(),
+                Station endStation = stations.get(endId);
+                Double distance =  haversine(startStation.getLatitude(), startStation.getLongitude(),
                         endStation.getLatitude(), endStation.getLongitude());
+                context.emit(stationId, distance);
             }
-            context.emit(startStation.getName(), distances_total);
         }
 
     }
 
-    static double haversine(double lat1, double lon1,
+    static Double haversine(double lat1, double lon1,
                             double lat2, double lon2)
     {
         // distance between latitudes
         // and longitudes
-        double dLat = (lat2 - lat1) *
-                Math.PI / 180.0;
-        double dLon = (lon2 - lon1) *
-                Math.PI / 180.0;
-
-        // convert to radians
-        lat1 = (lat1) * Math.PI / 180.0;
-        lat2 = (lat2) * Math.PI / 180.0;
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
 
         // apply formulae
         double a = Math.pow(Math.sin(dLat / 2), 2) +
                 Math.pow(Math.sin(dLon / 2), 2) *
-                        Math.cos(lat1) * Math.cos(lat2);
-        double rad = 6371;
+                        Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2));
         double c = 2 * Math.asin(Math.sqrt(a));
-        return rad * c;
+        double EARTH_RADIUS = 6371;
+
+        return EARTH_RADIUS * c;
     }
 }

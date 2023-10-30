@@ -1,19 +1,43 @@
 package ar.edu.itba.pod.tp2.collators;
 
+import ar.edu.itba.pod.tp2.model.Pair;
+import ar.edu.itba.pod.tp2.model.Station;
+import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.Collator;
 
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
+import java.util.*;
 
-public class AverageDistanceCollator implements Collator<Map.Entry<String, Double>, List<Map.Entry<String,Double>>> {
-//    TODO: check si ordena descendentemente y luego alfabeticamente
+public class AverageDistanceCollator implements Collator<Map.Entry<Integer, Double>, List<Pair<String,Double>>> {
+
+    private final IMap<Integer, Station> stations;
+
+    public AverageDistanceCollator(IMap<Integer, Station> stations) {
+        this.stations = stations;
+    }
+
     @Override
-    public List<Map.Entry<String, Double>> collate(Iterable<Map.Entry<String, Double>> iterable) {
-        return StreamSupport.stream(iterable.spliterator(), false).sorted((o1, o2) -> {
-            int numberComparison = o2.getValue().compareTo(o1.getValue());
-            return numberComparison == 0 ? o1.getKey().compareTo(o2.getKey()) : numberComparison;
-        }).collect(Collectors.toList());
+    public List<Pair<String, Double>> collate(Iterable<Map.Entry<Integer, Double>> iterable) {
+        List<Pair<String, Double>> sortedValues = new ArrayList<>();
+
+        // Resolvemos los nombres de las estaciones de origen y destino
+        iterable.forEach(entry -> {
+            Station startStation = stations.get(entry.getKey());
+            sortedValues.add(new Pair<>(startStation.getName(), entry.getValue()));
+        });
+
+        sortedValues.sort(new AvgDistanceAndNameComparator());
+        return sortedValues;
+    }
+
+    private static class AvgDistanceAndNameComparator implements Comparator<Pair<String, Double>> {
+        @Override
+        public int compare(Pair<String, Double> o1, Pair<String, Double> o2) {
+            // Descendente por promedio de distancia
+            int durationComp = Double.compare(o2.second(), o1.second());
+            if(durationComp != 0)
+                return durationComp;
+            // Alfabetico por nombre de startStation
+            return o1.first().compareTo(o2.first());
+        }
     }
 }

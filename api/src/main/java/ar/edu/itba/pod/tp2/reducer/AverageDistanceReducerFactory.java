@@ -4,32 +4,32 @@ import com.hazelcast.mapreduce.Reducer;
 import com.hazelcast.mapreduce.ReducerFactory;
 
 
-public class AverageDistanceReducerFactory implements ReducerFactory<String, Double, Double> {
+public class AverageDistanceReducerFactory implements ReducerFactory<Integer, Double, Double> {
 
     @Override
-    public Reducer<Double, Double> newReducer(String s) {
+    public Reducer<Double, Double> newReducer(Integer i) {
         return new AverageDistanceReducer();
     }
 
     private class AverageDistanceReducer extends Reducer<Double, Double> {
         private double distanceSum;
-        private double journeysAmount;
+        private double totalTrips;
 
         @Override
         public void beginReduce () {
             distanceSum = 0;
-            journeysAmount = 0;
+            totalTrips = 0;
         }
 
         @Override
         public void reduce( Double distance ) {
             distanceSum += distance;
-            journeysAmount++;
+            totalTrips += 1;
         }
 
         @Override
         public Double finalizeReduce() {
-            return distanceSum/journeysAmount;
+            return totalTrips == 0 ? 0 : distanceSum / totalTrips;
         }
     }
 }

@@ -18,7 +18,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 
 import static ar.edu.itba.pod.tp2.client.utils.ClientUtils.*;
-import static ar.edu.itba.pod.tp2.client.AverageDistance.*;
+import static ar.edu.itba.pod.tp2.client.Query2.*;
 
 
 public class Client {
@@ -43,7 +43,7 @@ public class Client {
 //        final String query = args[0]; // TODO: hacer scripts para cada query
 
         //TODO: Cambiar
-        String query = "query1";
+        String query = "query2";
         String queryNumber = query.substring(5);
 
         final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
@@ -74,7 +74,6 @@ public class Client {
         logger.info("Hazelcast client started");
         
         // Obtenemos los mapas de Hazelcast
-        //TODO: Si no usamos metodos de IMap, instanciar como Map
         IMap<Integer, BikeTrip> bikeTripMap = hazelcastInstance.getMap(BIKES_MAP_NAME);
         bikeTripMap.clear();
 
@@ -112,10 +111,10 @@ public class Client {
                 String n = argMap.get(N_VAL);
                 validateNullArgument(n, "N (result limit) not specified");
                 logger.info("Query 2");
-
-                List<Station> stations = new ArrayList<>(stationMap.values());
-
-                averageClientSolver(hazelcastInstance,Integer.parseInt(n), bikeTripMap, stations, outPath);
+                Query2 query2Instance = new Query2("query2", hazelcastInstance, Integer.parseInt(n), bikeTripMap, stationMap, outPath);
+                performanceLogger.info("Inicio del trabajo map/reduce");
+                query2Instance.run();
+                performanceLogger.info("Fin del trabajo map/reduce");
             }
             case "query3" -> {
                 logger.info("Query 3");
