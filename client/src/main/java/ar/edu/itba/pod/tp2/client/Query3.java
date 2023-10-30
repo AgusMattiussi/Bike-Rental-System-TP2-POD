@@ -8,7 +8,6 @@ import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Station;
 import ar.edu.itba.pod.tp2.reducer.LongestTripReducerFactory;
-import com.hazelcast.config.JobTrackerConfig;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.JobCompletableFuture;

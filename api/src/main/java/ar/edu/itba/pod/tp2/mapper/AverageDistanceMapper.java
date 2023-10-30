@@ -23,32 +23,27 @@ public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, Integer,
 
     @Override
     public void map(Integer stationId, BikeTrip bikeTrip, Context<Integer, Double> context) {
-        int startId = bikeTrip.getStartStationId();
-        int endId = bikeTrip.getEndStationId();
-        if (stations.containsKey(startId)){
-            Station startStation = stations.get(startId);
-            if (startStation.getId() == stationId){
-                Station endStation = stations.get(endId);
-                Double distance =  haversine(startStation.getLatitude(), startStation.getLongitude(),
-                        endStation.getLatitude(), endStation.getLongitude());
-                context.emit(stationId, distance);
-            }
-        }
+        Integer startId = bikeTrip.getStartStationId();
+        Integer endId = bikeTrip.getEndStationId();
+        // Solo tenemos en cuenta viajes entre distintas estaciones
+        if(startId.equals(endId) || !stations.containsKey(startId) || !stations.containsKey(endId))
+            return;
 
+        Station startStation = stations.get(startId);
+        Station endStation = stations.get(endId);
+        Double distance = haversine(startStation.getLatitude(), startStation.getLongitude(), endStation.getLatitude(), endStation.getLongitude());
+
+        context.emit(startId, distance);
     }
 
-    static Double haversine(double lat1, double lon1,
-                            double lat2, double lon2)
-    {
+    static Double haversine(double lat1, double lon1,double lat2, double lon2) {
         // distance between latitudes
         // and longitudes
         double dLat = Math.toRadians(lat2 - lat1);
         double dLon = Math.toRadians(lon2 - lon1);
 
         // apply formulae
-        double a = Math.pow(Math.sin(dLat / 2), 2) +
-                Math.pow(Math.sin(dLon / 2), 2) *
-                        Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2));
+        double a = Math.pow(Math.sin(dLat / 2), 2) + Math.pow(Math.sin(dLon / 2), 2) * Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2));
         double c = 2 * Math.asin(Math.sqrt(a));
         double EARTH_RADIUS = 6371;
 
