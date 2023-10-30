@@ -8,6 +8,7 @@ import com.hazelcast.mapreduce.Collator;
 
 import java.util.*;
 
+@SuppressWarnings("deprecation")
 public class AverageDistanceCollator implements Collator<Map.Entry<Integer, DistanceJourney>, List<Pair<String,Double>>> {
 
     private final IMap<Integer, Station> stations;

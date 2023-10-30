@@ -28,7 +28,7 @@ public class AllTripsMapper implements Mapper<Integer, BikeTrip, Pair<Integer, I
         Integer startStationId = bikeTrip.getStartStationId();
         Integer endStationId = bikeTrip.getEndStationId();
 
-        // No se contemplan viajes circulares => estacio de inicio y fin deben ser diferentes.
+        // No se contemplan viajes circulares => estacion de inicio y fin deben ser diferentes.
         if(startStationId.equals(endStationId) || !stations.containsKey(startStationId) || !stations.containsKey(endStationId)) {
             return;
         }

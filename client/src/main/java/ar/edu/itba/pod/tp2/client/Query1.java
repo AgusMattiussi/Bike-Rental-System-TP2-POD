@@ -35,7 +35,6 @@ public class Query1 {
     public void run() {
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
-        System.out.println("here");
 
         JobCompletableFuture<Map<Pair<Integer, Integer>, Integer>> future = jobTracker.newJob(source)
                 .mapper(new AllTripsMapper())
@@ -50,9 +49,12 @@ public class Query1 {
             throw new RuntimeException(e);
         }
 
+        System.out.println("Done!");
+        System.out.println("Result size: " + result.size());
+
 //        result.entrySet().stream()
 //                .sorted(/* TODO: Sort */)
-//                .map(entry -> "From: " + entry.getKey() + " - To: " + entry.getValue().first())
+//                .map(entry -> "From: " + entry.getKey().first() + " - To: " + entry.getKey().second() + " - Count: " + entry.getValue().toString())
 //                .forEach(System.out::println);
         }
     }
