@@ -1,18 +1,19 @@
 package ar.edu.itba.pod.tp2.client;
-import ar.edu.itba.pod.tp2.combiners.LongestTripCombinerFactory;
+import ar.edu.itba.pod.tp2.collators.AllTripsCollator;
+import ar.edu.itba.pod.tp2.combiners.AllTripsCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.AllTripsMapper;
-import ar.edu.itba.pod.tp2.mapper.LongestTripMapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
+import ar.edu.itba.pod.tp2.model.BikeTripCount;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Station;
 import ar.edu.itba.pod.tp2.reducer.AllTripsReducerFactory;
-import ar.edu.itba.pod.tp2.reducer.LongestTripReducerFactory;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.JobCompletableFuture;
 import com.hazelcast.mapreduce.JobTracker;
 import com.hazelcast.mapreduce.KeyValueSource;
-import java.util.Map;
+
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @SuppressWarnings("deprecation")
@@ -36,13 +37,14 @@ public class Query1 {
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 
-        JobCompletableFuture<Map<Pair<Integer, Integer>, Integer>> future = jobTracker.newJob(source)
+        JobCompletableFuture<List<BikeTripCount>> future = jobTracker.newJob(source)
                 .mapper(new AllTripsMapper())
-                .reducer( new AllTripsReducerFactory())
-                .submit(); // Attach a callback listenerfuture .andThen(buildCallback());
+                .combiner(new AllTripsCombinerFactory())
+                .reducer(new AllTripsReducerFactory())
+                .submit(new AllTripsCollator(stations)); // Attach a callback listenerfuture .andThen(buildCallback());
 
         // Esperamos el resultado de forma sincrónica
-        Map<Pair<Integer, Integer>, Integer> result;
+        List<BikeTripCount> result;
         try {
             result = future.get();
         } catch (InterruptedException | ExecutionException e) {
@@ -52,12 +54,10 @@ public class Query1 {
         System.out.println("Done!");
         System.out.println("Result size: " + result.size());
 
-//        result.entrySet().stream()
-//                .sorted(/* TODO: Sort */)
-//                .map(entry -> "From: " + entry.getKey().first() + " - To: " + entry.getKey().second() + " - Count: " + entry.getValue().toString())
-//                .forEach(System.out::println);
-        }
     }
+
+
+}
 
 
 

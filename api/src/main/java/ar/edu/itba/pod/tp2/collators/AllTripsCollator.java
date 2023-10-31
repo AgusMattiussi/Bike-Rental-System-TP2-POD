@@ -1,5 +1,6 @@
 package ar.edu.itba.pod.tp2.collators;
 
+import ar.edu.itba.pod.tp2.model.BikeTripCount;
 import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Station;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class AllTripsCollator implements Collator<Map.Entry<Pair<Integer, Integer>, Integer>, List<Map.Entry<Pair<String, String>, Integer>>> {
+public class AllTripsCollator implements Collator<Map.Entry<Pair<Integer, Integer>, Integer>, List<BikeTripCount>> {
     private final IMap<Integer, Station> stations;
 
     public AllTripsCollator(IMap<Integer, Station> stations) {
@@ -22,34 +23,34 @@ public class AllTripsCollator implements Collator<Map.Entry<Pair<Integer, Intege
 
 
     @Override
-    public List<Map.Entry<Pair<String, String>, Integer>> collate(Iterable<Map.Entry<Pair<Integer, Integer>, Integer>> values) {
-        List<Map.Entry<Pair<String, String>, Integer>> sortedValues = new ArrayList<>();
+    public List<BikeTripCount> collate(Iterable<Map.Entry<Pair<Integer, Integer>, Integer>> values) {
+        List<BikeTripCount> sortedValues = new ArrayList<>();
 
         values.forEach(entry -> {
             Station startStation = stations.get(entry.getKey().first());
             Station endStation = stations.get(entry.getKey().second());
-            Map.Entry<Pair<String, String>, Integer> tripCount = new MapEntrySimple<>(new Pair<>(startStation.getName(), endStation.getName()), entry.getValue());
-            sortedValues.add(tripCount);
+            BikeTripCount toAdd = new BikeTripCount(startStation.getName(), endStation.getName(), entry.getValue());
+            sortedValues.add(toAdd);
         });
         sortedValues.sort(new TripsAndNameComparator());
         return sortedValues;
     }
 
-    private static class TripsAndNameComparator implements Comparator<Map.Entry<Pair<String, String>, Integer>> {
+    private static class TripsAndNameComparator implements Comparator<BikeTripCount> {
         @Override
-        public int compare(Map.Entry<Pair<String, String>, Integer> o1, Map.Entry<Pair<String, String>, Integer> o2) {
+        public int compare(BikeTripCount o1, BikeTripCount o2) {
             // Descendente por cantidad de viajes
-            int tripComp = Integer.compare(o2.getValue(), o1.getValue());
+            int tripComp = Integer.compare(o2.getTripCount(), o1.getTripCount());
             if(tripComp != 0) {
                 return tripComp;
             }
             // Alfabetico por nombre de startStation
-            int startStationComp = o1.getKey().first().compareTo(o2.getKey().first());
+            int startStationComp = o1.getStartStation().compareTo(o2.getStartStation());
             if(startStationComp != 0) {
                 return startStationComp;
             }
             // Alfabetico por nombre de endStation
-            return o1.getKey().second().compareTo(o2.getKey().second());
+            return o1.getEndStation().compareTo(o2.getEndStation());
         }
     }
 

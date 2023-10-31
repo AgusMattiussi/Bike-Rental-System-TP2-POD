@@ -15,7 +15,7 @@ import com.hazelcast.mapreduce.Mapper;
 public class AllTripsMapper implements Mapper<Integer, BikeTrip, Pair<Integer, Integer>, Integer>, HazelcastInstanceAware {
 
     private IMap<Integer, Station> stations;
-    private static final String STATIONS_MAP_NAME = "stations";
+    private static final String STATIONS_MAP_NAME = "station-map";
 
     @Override
     public void setHazelcastInstance(HazelcastInstance hazelcastInstance) {
@@ -24,7 +24,6 @@ public class AllTripsMapper implements Mapper<Integer, BikeTrip, Pair<Integer, I
 
     @Override
     public void map(Integer integer, BikeTrip bikeTrip, Context<Pair<Integer, Integer>, Integer> context) {
-        System.out.println("Started mapping");
         Integer startStationId = bikeTrip.getStartStationId();
         Integer endStationId = bikeTrip.getEndStationId();
 
