@@ -1,6 +1,0 @@
- 30/10/2023 10:50:17:0465 [INFO] main (ar.edu.itba.pod.tp2.client.Client) - Inicio de la lectura del archivo stations.csv
- 30/10/2023 10:50:17:0837 [INFO] main (ar.edu.itba.pod.tp2.client.Client) - Fin de la lectura del archivo stations.csv
- 30/10/2023 10:50:17:0844 [INFO] main (ar.edu.itba.pod.tp2.client.Client) - Inicio de la lectura del archivo bikes.csv
- 30/10/2023 10:50:26:0454 [INFO] main (ar.edu.itba.pod.tp2.client.Client) - Fin de la lectura del archivo bikes.csv
- 30/10/2023 10:50:26:0474 [INFO] main (ar.edu.itba.pod.tp2.client.Client) - Inicio del trabajo map/reduce
- 30/10/2023 10:51:53:0176 [INFO] main (ar.edu.itba.pod.tp2.client.Client) - Fin del trabajo map/reduce

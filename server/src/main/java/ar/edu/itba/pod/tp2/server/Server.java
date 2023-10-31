@@ -11,6 +11,8 @@ import com.hazelcast.core.HazelcastInstance;
 
 public class Server {
     private static Logger logger = LoggerFactory.getLogger(Server.class);
+    private static final String HAZELCAST_GROUP_NAME = "g6";
+    private static final String HAZELCAST_GROUP_PASSWORD = "g6-pass";
 
     public static void main(String[] args) throws InterruptedException, IOException {
         logger.info("hz-config Server Starting ...");
@@ -20,8 +22,8 @@ public class Server {
 
         // Group Config
         GroupConfig groupConfig = new GroupConfig()
-                .setName("g0")
-                .setPassword("g0-pass");
+                .setName(HAZELCAST_GROUP_NAME)
+                .setPassword(HAZELCAST_GROUP_PASSWORD);
         config.setGroupConfig(groupConfig);
 
         // Network Config

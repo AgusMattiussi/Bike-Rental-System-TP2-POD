@@ -21,6 +21,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+@SuppressWarnings("deprecation")
 public class Query2 implements Runnable{
     private static final String OUT_CSV_HEADER = "station;avg_distance";
     private static final String QUERY_2_CSV_NAME = "query2.csv";

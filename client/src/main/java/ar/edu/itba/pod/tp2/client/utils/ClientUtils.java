@@ -18,6 +18,8 @@ import java.util.Map;
 
 public final class ClientUtils {
     private final static Logger logger = LoggerFactory.getLogger(ClientUtils.class);
+    private static final String HAZELCAST_GROUP_NAME = "g6";
+    private static final String HAZELCAST_GROUP_PASSWORD = "g6-pass";
     public final static String INPUT_PATH = "inPath";
     public final static String ADDRESSES = "addresses";
     public final static String OUT_PATH = "outPath";
@@ -64,16 +66,14 @@ public final class ClientUtils {
     }
 
     public static HazelcastInstance getHazelClientInstance(List<String> addresses) {
-        String name = "g0";
-        String pass = "g0-pass";
-
         try {
             logger.info("Hazelcast client Starting...");
             ClientConfig clientConfig = new ClientConfig();
 
-            GroupConfig groupConfig = new GroupConfig().setName(name).setPassword(pass);
+            GroupConfig groupConfig = new GroupConfig()
+                    .setName(HAZELCAST_GROUP_NAME)
+                    .setPassword(HAZELCAST_GROUP_PASSWORD);
             clientConfig.setGroupConfig(groupConfig);
-
 
             ClientNetworkConfig clientNetworkConfig = new ClientNetworkConfig().setAddresses(addresses);
             clientConfig.setNetworkConfig(clientNetworkConfig);
@@ -86,5 +86,6 @@ public final class ClientUtils {
 
         return null;
     }
+
 }
 

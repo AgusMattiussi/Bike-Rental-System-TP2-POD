@@ -47,7 +47,7 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
                 .build();
     }
 
-    // Guarda un nuevo par clave-valor en el currentBatchIMap a partir de una linea del CSV
+    // Devuelve un par clave-valor para guardar en el currentBatchIMap a partir de una linea del CSV
     protected abstract IMap.Entry<KeyT, ValueT> consumeNextLine(String[] line);
 
     private void flushBatchToHazelcast() {
@@ -57,7 +57,7 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
     @Override
     public void run() {
         String[] line;
-
+        //TODO: Borrar i
         int i = 0;
         System.out.println("Starting to read file");
         try {
@@ -77,7 +77,7 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
             }
             System.out.println("Finished reading file");
         } catch (IOException e) {
-                throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
 
         System.out.println("Total Lines: " + i);
