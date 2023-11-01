@@ -31,14 +31,20 @@ public class Server {
 
         JoinConfig joinConfig = new JoinConfig().setMulticastConfig(multicastConfig);
 
+
         InterfacesConfig interfacesConfig = new InterfacesConfig()
 //                .setInterfaces(Collections.singletonList("127.0.0.1"))
-                .setInterfaces(Collections.singletonList("192.168.1.*"))
+                .setInterfaces(Collections.singletonList("10.9.66.*"))
                 .setEnabled(true);
 
         NetworkConfig networkConfig = new NetworkConfig()
                 .setInterfaces(interfacesConfig)
                 .setJoin(joinConfig);
+
+        config.getNetworkConfig()
+                .getJoin()
+                .getTcpIpConfig()
+                .setConnectionTimeoutSeconds(Integer.MAX_VALUE);
 
         config.setNetworkConfig(networkConfig);
 
