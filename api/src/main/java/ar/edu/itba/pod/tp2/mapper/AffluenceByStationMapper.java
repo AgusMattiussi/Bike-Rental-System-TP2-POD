@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 @SuppressWarnings("deprecation")
 public class AffluenceByStationMapper implements Mapper<Integer, BikeTrip, Integer, Pair<LocalDate, Integer>>, HazelcastInstanceAware {
 
-    private IMap<Integer, Station> stations;
+    private transient IMap<Integer, Station> stations;
     private static final String STATIONS_MAP_NAME = "station-map";
 
     private LocalDate startDate;

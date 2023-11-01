@@ -14,7 +14,7 @@ import java.util.Map;
 // Recibe un nombre de estacion y un viaje y emite el nombre de la estacion y al distancia del viaje
 @SuppressWarnings("deprecation")
 public class AverageDistanceMapper implements Mapper<Integer, BikeTrip, Integer, DistanceJourney>, HazelcastInstanceAware {
-    private Map<Integer, Station> stations = new HashMap<>();
+    private transient Map<Integer, Station> stations = new HashMap<>();
     private static final String STATIONS_MAP_NAME = "station-map";
 
     @Override

@@ -9,6 +9,7 @@ import com.hazelcast.mapreduce.Context;
 import com.hazelcast.mapreduce.Mapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
 
+import java.io.Serializable;
 import java.time.Duration;
 
 // Recibe un ID de viaje y un BikeTrip y emite como key el ID de la estación de inicio y como value un objeto
@@ -17,11 +18,12 @@ import java.time.Duration;
 @SuppressWarnings("deprecation")
 public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, FinishedBikeTrip>, HazelcastInstanceAware {
 
-    private IMap<Integer, Station> stations;
-    private static final String STATIONS_MAP_NAME = "station-map"; //TODO: Deberia ser parametro?
+    private transient IMap<Integer, Station> stations;
+    private static final String STATIONS_MAP_NAME = "station-map";
 
     @Override
     public void setHazelcastInstance(HazelcastInstance hazelcastInstance) {
+        //TODO: Deberia ser parametro?
         stations = hazelcastInstance.getMap(STATIONS_MAP_NAME);
     }
 

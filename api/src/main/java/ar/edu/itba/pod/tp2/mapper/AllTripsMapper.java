@@ -13,7 +13,7 @@ import com.hazelcast.mapreduce.Mapper;
 @SuppressWarnings("deprecation")
 public class AllTripsMapper implements Mapper<Integer, BikeTrip, Pair<Integer, Integer>, Integer>, HazelcastInstanceAware {
 
-    private IMap<Integer, Station> stations;
+    private transient IMap<Integer, Station> stations;
     private static final String STATIONS_MAP_NAME = "station-map";
 
     @Override
