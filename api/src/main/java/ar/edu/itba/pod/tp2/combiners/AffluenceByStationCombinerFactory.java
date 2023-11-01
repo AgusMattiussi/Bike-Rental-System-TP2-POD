@@ -19,12 +19,7 @@ public class AffluenceByStationCombinerFactory implements CombinerFactory<Intege
 
     private static class AffluenceByStationCombiner extends Combiner<Pair<LocalDate, Integer>,  Map<LocalDate, Integer>> {
 
-        private Map<LocalDate, Integer> affluenceByDay;
-
-        @Override
-        public void beginCombine() {
-            affluenceByDay = new HashMap<>();
-        }
+        private Map<LocalDate, Integer> affluenceByDay = new HashMap<>();
 
         @Override
         public void reset() {
@@ -43,7 +38,7 @@ public class AffluenceByStationCombinerFactory implements CombinerFactory<Intege
 
         @Override
         public  Map<LocalDate, Integer> finalizeChunk() {
-            return affluenceByDay;
+            return Map.copyOf(affluenceByDay);
         }
     }
 }
