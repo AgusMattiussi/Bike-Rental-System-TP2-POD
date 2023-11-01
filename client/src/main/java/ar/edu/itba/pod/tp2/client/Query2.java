@@ -49,7 +49,7 @@ public class Query2 implements Runnable{
 
         JobCompletableFuture<List<Pair<String, Double>>> future = jobTracker.newJob(source)
                 .mapper(new AverageDistanceMapper())
-                .combiner(new AverageDistanceCombinerFactory())
+//                .combiner(new AverageDistanceCombinerFactory())
                 .reducer(new AverageDistanceReducerFactory())
                 .submit(new AverageDistanceCollator(stations));
 
