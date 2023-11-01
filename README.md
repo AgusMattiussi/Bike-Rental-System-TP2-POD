@@ -32,6 +32,21 @@ donde:
   - Para la query 2: `-Dn=N` (donde N es un número entero, indica límite de cantidad de resultados)
   - Para la query 4: `-DstartDate=DD/MM/YYYY` `-DendDate=DD/MM/YYYY` (donde DD/MM/YYYY es una fecha válida, indica el rango de fechas a considerar)
 
+## Instrucciones para la descarga de archivos
+Para descargar los archivos `bikes.csv` y `stations.csv` para la ejecución de la aplicación, se deben ejecutar los siguientes comandos en la carpeta raíz del proyecto:
+
+Si se encuentra en pampero:
+```bash
+cp /afs/it.itba.edu.ar/pub/pod/stations.csv .
+cp /afs/it.itba.edu.ar/pub/pod/bikes.csv .
+```
+
+Si se encuentra en otro servidor:
+```bash
+scp [usuarioPampero]@pampero.itba.edu.ar:/afs/it.itba.edu.ar/pub/pod/stations.csv .
+scp [usuarioPampero]@pampero.itba.edu.ar:/afs/it.itba.edu.ar/pub/pod/bikes.csv .
+```
+
 
 ## Integrantes
 | Nombre                 | Legajo |
