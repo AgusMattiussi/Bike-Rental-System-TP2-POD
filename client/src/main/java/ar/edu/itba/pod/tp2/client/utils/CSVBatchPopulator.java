@@ -59,7 +59,6 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
         String[] line;
         //TODO: Borrar i
         int i = 0;
-        System.out.println("Starting to read file");
         try {
             while ((line = reader.readNext()) != null && i < LINE_LIMIT) {
                 if (currentBatchIMap.size() == BATCH_SIZE) {
@@ -75,12 +74,10 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
                     System.out.printf("Read %d lines%n", i);
                 }
             }
-            System.out.println("Finished reading file");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        System.out.println("Total Lines: " + i);
         flushBatchToHazelcast();
         try {
             reader.close();

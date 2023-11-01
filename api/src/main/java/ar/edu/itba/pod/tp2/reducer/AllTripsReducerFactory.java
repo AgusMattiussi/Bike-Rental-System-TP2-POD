@@ -19,7 +19,6 @@ public class AllTripsReducerFactory implements ReducerFactory<Pair<Integer, Inte
 
         @Override
         public void beginReduce() {
-            System.out.println("Started mapping");
             sum = 0;
         }
 
