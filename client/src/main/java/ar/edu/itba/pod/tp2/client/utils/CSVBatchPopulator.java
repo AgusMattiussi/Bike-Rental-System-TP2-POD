@@ -20,7 +20,7 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
     private final CSVReader reader;
     private final Map<KeyT, ValueT> currentBatchIMap;
     private final IMap<KeyT, ValueT> hazelcastIMap;
-    private final int LINE_LIMIT = 1000000;
+    private final int LINE_LIMIT = 100000;
 
     public CSVBatchPopulator(String path, IMap<KeyT, ValueT> hazelcastIMap) {
         this.reader = initializeCSVReader(path);
@@ -71,7 +71,7 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
                 currentBatchIMap.put(nextEntry.getKey(), nextEntry.getValue());
 
                 i++;
-                if(i % 1000000 == 0){
+                if(i % 10000 == 0){
                     System.out.println("Read " + i + " lines");
                 }
             }
