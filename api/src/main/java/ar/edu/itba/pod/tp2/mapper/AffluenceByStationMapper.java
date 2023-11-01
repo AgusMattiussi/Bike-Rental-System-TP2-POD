@@ -44,9 +44,8 @@ public class AffluenceByStationMapper implements Mapper<Integer, BikeTrip, Integ
         LocalDate tripStartDate = LocalDate.from(bikeTrip.getStartDate());
         LocalDate tripEndDate = LocalDate.from(bikeTrip.getEndDate());
 
-        /* Nos interesan viajes entre distintas estaciones,
-           que esten en el rango de fechas y que las estaciones existan en el csv de estaciones */
-        if(startStationId.equals(endStationId) || !stationsInStationsCsv(startStationId, endStationId) || !datesInRange(tripStartDate, tripEndDate)) {
+        /* Nos interesan viajes que esten en el rango de fechas y que las estaciones existan en el csv de estaciones */
+        if(!stationsInStationsCsv(startStationId, endStationId) || !datesInRange(tripStartDate, tripEndDate)) {
             return;
         }
 
