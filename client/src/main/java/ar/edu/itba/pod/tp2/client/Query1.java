@@ -55,11 +55,7 @@ public class Query1 {
             throw new RuntimeException(e);
         }
 
-        System.out.println("Done!");
-        System.out.println("Result size: " + result.size());
-
         writeResultToFile(result);
-
     }
 
     private void writeResultToFile(List<BikeTripCount> result) {

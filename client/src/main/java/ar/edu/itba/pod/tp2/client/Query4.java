@@ -41,7 +41,6 @@ public class Query4 implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Running query 4");
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 

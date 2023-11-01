@@ -36,8 +36,6 @@ public class AffluenceByStationMapper implements Mapper<Integer, BikeTrip, Integ
 
     @Override
     public void map(Integer integer, BikeTrip bikeTrip, Context<Integer, Pair<LocalDate, Integer>> context) {
-        System.out.println("Mapping...");
-
         Integer startStationId = bikeTrip.getStartStationId();
         Integer endStationId = bikeTrip.getEndStationId();
 

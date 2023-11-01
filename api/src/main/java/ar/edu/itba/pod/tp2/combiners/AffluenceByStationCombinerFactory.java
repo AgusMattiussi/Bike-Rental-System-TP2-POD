@@ -28,7 +28,6 @@ public class AffluenceByStationCombinerFactory implements CombinerFactory<Intege
 
         @Override
         public void combine(Pair<LocalDate, Integer> pair) {
-            System.out.println("Combining...");
             LocalDate time = pair.first();
             Integer affluence = pair.second();
 
