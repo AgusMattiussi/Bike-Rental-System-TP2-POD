@@ -48,7 +48,7 @@ public class LongestTripCollator implements Collator<Map.Entry<Integer, Finished
             if(durationComp != 0)
                 return durationComp;
             // Alfabetico por nombre de startStation
-            return o1.first().compareTo(o2.first());
+            return o1.first().toLowerCase().compareTo(o2.first().toLowerCase());
         }
     }
 }
