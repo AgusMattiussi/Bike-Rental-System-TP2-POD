@@ -44,8 +44,6 @@ public class Query2 implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("Running query2");
-
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);
 
@@ -57,17 +55,12 @@ public class Query2 implements Runnable{
 
         List<Pair<String, Double>> result;
         try {
-            System.out.println("Waiting for result...");
             result = future.get();
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         }
 
-        System.out.println("Done!");
-        System.out.println("Result size: " + result.size());
-
         writeResultToFile(result, n);
-
     }
 
     private void writeResultToFile (List<Pair<String, Double>> result,int n){
