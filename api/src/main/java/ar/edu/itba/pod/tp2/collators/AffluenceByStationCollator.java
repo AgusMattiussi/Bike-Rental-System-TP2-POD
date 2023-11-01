@@ -45,7 +45,7 @@ public class AffluenceByStationCollator implements Collator<Map.Entry<Integer, A
             int aux = Double.compare(o2.second().getPositiveDays(), o1.second().getPositiveDays());
             // Alfabetico por nombre de station
             if(aux == 0)
-                aux = o1.first().compareTo(o2.first());
+                aux = o1.first().toLowerCase().compareTo(o2.first().toLowerCase());
             return aux;
         }
     }
