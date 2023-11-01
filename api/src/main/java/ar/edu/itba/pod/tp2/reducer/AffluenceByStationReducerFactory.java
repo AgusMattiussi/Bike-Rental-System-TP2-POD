@@ -11,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SuppressWarnings("deprecation")
-public class AffluenceByStationReducerFactory implements ReducerFactory<Integer, Pair<LocalDate, Integer>, AffluenceInfo> {
+public class AffluenceByStationReducerFactory implements ReducerFactory<Integer, Map<LocalDate, Integer>, AffluenceInfo> {
     @Override
-    public Reducer<Pair<LocalDate, Integer>, AffluenceInfo> newReducer(Integer integer) {
+    public Reducer<Map<LocalDate, Integer>, AffluenceInfo> newReducer(Integer integer) {
         return new AffluenceByStationReducer();
     }
 
-    private static class AffluenceByStationReducer extends Reducer<Pair<LocalDate, Integer>, AffluenceInfo> {
+    private static class AffluenceByStationReducer extends Reducer<Map<LocalDate, Integer>, AffluenceInfo> {
         private Map<LocalDate, Integer> affluenceByDay = new HashMap<>();
 
         @Override
@@ -26,18 +26,8 @@ public class AffluenceByStationReducerFactory implements ReducerFactory<Integer,
         }
 
         @Override
-        public void reduce(Pair<LocalDate, Integer> pair) {
-            System.out.println("Reducing...");
-            LocalDate time = pair.first();
-            Integer affluence = pair.second();
-
-            affluenceByDay.compute(time, (key, currentValue) -> {
-                if (currentValue == null) {
-                    return affluence;
-                } else {
-                    return currentValue + affluence;
-                }
-            });
+        public void reduce(Map<LocalDate, Integer> partialAffluenceByDay) {
+            partialAffluenceByDay.forEach((key, value) -> affluenceByDay.merge(key, value, Integer::sum));
         }
 
         @Override

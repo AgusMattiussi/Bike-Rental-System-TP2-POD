@@ -35,6 +35,18 @@ public class AffluenceInfo implements DataSerializable, Comparable<AffluenceInfo
         return neutralDays;
     }
 
+    public void addPositiveDays(int count) {
+        positiveDays += count;
+    }
+
+    public void addNegativeDays(int count) {
+        negativeDays += count;
+    }
+
+    public void addNeutralDays(int count) {
+        neutralDays += count;
+    }
+
     public String getStationName() {
         return stationName;
     }
@@ -82,11 +94,15 @@ public class AffluenceInfo implements DataSerializable, Comparable<AffluenceInfo
 
     @Override
     public int compareTo(AffluenceInfo o) {
-        int aux = o.getPositiveDays() - this.getPositiveDays();
+        int aux = Integer.compare(this.positiveDays, o.positiveDays);
+        if(aux != 0) return aux;
 
-        if (aux == 0)
-            aux = this.getStationName().compareTo(o.getStationName());
+        aux = Integer.compare(this.negativeDays, o.negativeDays);
+        if(aux != 0) return aux;
 
-        return aux;
+        aux = Integer.compare(this.neutralDays, o.neutralDays);
+        if(aux != 0) return aux;
+
+        return this.stationName.compareTo(o.stationName);
     }
 }
