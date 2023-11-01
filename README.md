@@ -25,12 +25,12 @@ cd ./tmp/tpe2-g6-client-2023.2Q/
 ````
 donde:
 - queryX es el script que corre la query X.
-- -Daddresses refiere a las direcciones IP de los nodos con sus puertos (una o más, separadas por punto y coma)
-- -DinPath indica el path donde están los archivos de entrada bikes.csv y stations.csv.
-- -DoutPath indica el path donde estarán ambos archivos de salida.
+- `-Daddresses` refiere a las direcciones IP de los nodos con sus puertos (una o más, separadas por punto y coma)
+- `-DinPath` indica el path donde están los archivos de entrada bikes.csv y stations.csv.
+- `-DoutPath` indica el path donde estarán ambos archivos de salida.
 - [params]: los parámetros extras que corresponden para algunas queries.
-  - Para la query 2: -Dn=N (donde N es un número entero, indica límite de cantidad de resultados)
-  - Para la query 4: -DstartDate=DD/MM/YYYY -DendDate=DD/MM/YYYY (donde DD/MM/YYYY es una fecha válida, indica el rango de fechas a considerar)
+  - Para la query 2: `-Dn=N` (donde N es un número entero, indica límite de cantidad de resultados)
+  - Para la query 4: `-DstartDate=DD/MM/YYYY` `-DendDate=DD/MM/YYYY` (donde DD/MM/YYYY es una fecha válida, indica el rango de fechas a considerar)
 
 
 ## Integrantes
