@@ -42,7 +42,7 @@ public class Client {
         // final String query = args[0];
 
         //TODO: Cambiar
-        String query = "query2";
+        String query = "query4";
         String queryNumber = query.substring(5);
 
         final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
