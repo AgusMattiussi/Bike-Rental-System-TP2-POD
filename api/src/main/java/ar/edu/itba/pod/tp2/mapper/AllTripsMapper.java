@@ -10,7 +10,6 @@ import com.hazelcast.mapreduce.Context;
 import com.hazelcast.mapreduce.Mapper;
 
 
-// Recibe un ID y viaje, emite las estaciones de inicio y salida
 @SuppressWarnings("deprecation")
 public class AllTripsMapper implements Mapper<Integer, BikeTrip, Pair<Integer, Integer>, Integer>, HazelcastInstanceAware {
 
