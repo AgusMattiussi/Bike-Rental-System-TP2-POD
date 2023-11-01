@@ -8,7 +8,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 public class BikeTripCSVBatchPopulator extends CSVBatchPopulator<Integer, BikeTrip> {
-    // TODO: Considerar si no es mejor tener una lista
     private static int bikeTripId = 1;
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 

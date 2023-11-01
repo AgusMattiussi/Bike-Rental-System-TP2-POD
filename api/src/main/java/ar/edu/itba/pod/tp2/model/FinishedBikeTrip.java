@@ -95,7 +95,6 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
     }
 
     @Override
-    //TODO: Chequear si se esta quedando con el correcto
     public int compareTo(FinishedBikeTrip other) {
         int aux = Double.compare(this.durationInMinutes, other.durationInMinutes);
         // Si las duraciones son iguales, comparar por startDate
@@ -104,7 +103,6 @@ public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBi
         return aux;
     }
 
-    // TODO: Si este no es unico formato de csv, hacerlo del lado del cliente
     public StringBuilder toCSV(boolean lastSemicolon, boolean lineBreak) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
