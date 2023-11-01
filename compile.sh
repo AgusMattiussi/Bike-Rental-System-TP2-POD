@@ -20,6 +20,6 @@ rm "tpe2-g6-server-2023.2Q-bin.tar.gz"
 
 # Client
 tar -xzf "tpe2-g6-client-2023.2Q-bin.tar.gz"
-chmod +x tpe2-g6-client-2023.2Q/*-cli
+chmod +x tpe2-g6-client-2023.2Q/query*
 sed -i -e 's/\r$//' tpe2-g6-client-2023.2Q/query*
 rm "tpe2-g6-client-2023.2Q-bin.tar.gz"
