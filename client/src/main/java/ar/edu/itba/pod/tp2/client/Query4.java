@@ -1,6 +1,7 @@
 package ar.edu.itba.pod.tp2.client;
 
 import ar.edu.itba.pod.tp2.collators.AffluenceByStationCollator;
+import ar.edu.itba.pod.tp2.combiners.AffluenceByStationCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.AffluenceByStationMapper;
 import ar.edu.itba.pod.tp2.model.*;
 import ar.edu.itba.pod.tp2.reducer.AffluenceByStationReducerFactory;
@@ -46,6 +47,7 @@ public class Query4 implements Runnable {
 
         JobCompletableFuture<List<Pair<String, AffluenceInfo>>> future = jobTracker.newJob(source)
                 .mapper(new AffluenceByStationMapper(startDate, endDate))
+                .combiner(new AffluenceByStationCombinerFactory())
                 .reducer(new AffluenceByStationReducerFactory())
                 .submit(new AffluenceByStationCollator(stations));
         // Attach a callback listenerfuture .andThen(buildCallback());
