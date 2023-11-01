@@ -43,7 +43,7 @@ public class Client {
 //        final String query = args[0]; // TODO: hacer scripts para cada query
 
         //TODO: Cambiar
-        String query = "query2";
+        String query = "query4";
         String queryNumber = query.substring(5);
 
         final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
@@ -125,29 +125,17 @@ public class Client {
             }
             case "query4" -> {
                 logger.info("Query 4");
-
-                 String startDate = argMap.get(START_DATE);
-                 String endDate = argMap.get(END_DATE);
-                 validateNullArgument(startDate, "Start date not specified");
-                 validateNullArgument(endDate, "End date not specified");
-
+                String startDate = argMap.get(START_DATE);
+                String endDate = argMap.get(END_DATE);
+                validateNullArgument(startDate, "Start date not specified");
+                validateNullArgument(endDate, "End date not specified");
                 Query4 query4Instance = new Query4("query4", hazelcastInstance, stationMap, bikeTripMap, startDate, endDate, outPath);
+                performanceLogger.info("Inicio del trabajo map/reduce");
                 query4Instance.run();
+                performanceLogger.info("Fin del trabajo map/reduce");
             }
             default -> logger.error("Invalid query");
         }
-        
-        //TODO: Borrar tests
-        /*System.out.println("StationMap size: " + stationMap.size());
-        System.out.println("BikeTripMap size: " + bikeTripMap.size());
-
-        System.out.println(stationMap.get(550).toString());
-        System.out.println(stationMap.get(1055).toString());
-        System.out.println(stationMap.get(776).toString());
-        
-        System.out.println(bikeTripMap.get(1).toString());
-        System.out.println(bikeTripMap.get(100).toString());
-        System.out.println(bikeTripMap.get(1000).toString());*/
 
         // Cerramos el performanceFileHandler
         performanceFileHandler.close();

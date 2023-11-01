@@ -2,10 +2,7 @@ package ar.edu.itba.pod.tp2.client;
 import ar.edu.itba.pod.tp2.collators.AllTripsCollator;
 import ar.edu.itba.pod.tp2.combiners.AllTripsCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.AllTripsMapper;
-import ar.edu.itba.pod.tp2.model.BikeTrip;
-import ar.edu.itba.pod.tp2.model.BikeTripCount;
-import ar.edu.itba.pod.tp2.model.Pair;
-import ar.edu.itba.pod.tp2.model.Station;
+import ar.edu.itba.pod.tp2.model.*;
 import ar.edu.itba.pod.tp2.reducer.AllTripsReducerFactory;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
@@ -13,11 +10,18 @@ import com.hazelcast.mapreduce.JobCompletableFuture;
 import com.hazelcast.mapreduce.JobTracker;
 import com.hazelcast.mapreduce.KeyValueSource;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @SuppressWarnings("deprecation")
 public class Query1 {
+
+    private static final String OUT_CSV_HEADER = "station_a;station_b;trips_between_a_b\n";
+    private static final String QUERY_1_CSV_NAME = "query1.csv";
+
     private final String jobName;
     private final HazelcastInstance hazelcast;
     private final IMap<Integer, Station> stations;
@@ -54,6 +58,30 @@ public class Query1 {
         System.out.println("Done!");
         System.out.println("Result size: " + result.size());
 
+        writeResultToFile(result);
+
+    }
+
+    private void writeResultToFile(List<BikeTripCount> result) {
+
+        try (BufferedWriter buffWriter = new BufferedWriter(new FileWriter(outPath + QUERY_1_CSV_NAME))) {
+            buffWriter.write(OUT_CSV_HEADER);
+
+            for (BikeTripCount bikeTripCount : result)
+                buffWriter.write(nextLine(bikeTripCount));
+            buffWriter.flush();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private String nextLine(BikeTripCount bikeTripCount) {
+        StringBuilder sb = new StringBuilder()
+                .append(bikeTripCount.getStartStation()).append(';')
+                .append(bikeTripCount.getEndStation()).append(';')
+                .append(bikeTripCount.getTripCount()).append('\n');
+        return sb.toString();
     }
 
 

@@ -10,7 +10,6 @@ import com.hazelcast.mapreduce.Context;
 import com.hazelcast.mapreduce.Mapper;
 
 
-// Recibe un ID y viaje, emite las estaciones de inicio y salida
 @SuppressWarnings("deprecation")
 public class AllTripsMapper implements Mapper<Integer, BikeTrip, Pair<Integer, Integer>, Integer>, HazelcastInstanceAware {
 
@@ -27,7 +26,7 @@ public class AllTripsMapper implements Mapper<Integer, BikeTrip, Pair<Integer, I
         Integer startStationId = bikeTrip.getStartStationId();
         Integer endStationId = bikeTrip.getEndStationId();
 
-        // No se contemplan viajes circulares => estacion de inicio y fin deben ser diferentes.
+        // No se contemplan viajes circulares ni estaciones que no esten en el archivo
         if(startStationId.equals(endStationId) || !stations.containsKey(startStationId) || !stations.containsKey(endStationId)) {
             return;
         }

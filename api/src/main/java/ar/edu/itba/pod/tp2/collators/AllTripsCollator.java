@@ -45,12 +45,12 @@ public class AllTripsCollator implements Collator<Map.Entry<Pair<Integer, Intege
                 return tripComp;
             }
             // Alfabetico por nombre de startStation
-            int startStationComp = o1.getStartStation().compareTo(o2.getStartStation());
+            int startStationComp = o1.getStartStation().toLowerCase().compareTo(o2.getStartStation().toLowerCase());
             if(startStationComp != 0) {
                 return startStationComp;
             }
             // Alfabetico por nombre de endStation
-            return o1.getEndStation().compareTo(o2.getEndStation());
+            return o1.getEndStation().toLowerCase().compareTo(o2.getEndStation().toLowerCase());
         }
     }
 
