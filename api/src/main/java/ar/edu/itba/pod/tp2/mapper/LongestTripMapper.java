@@ -23,7 +23,6 @@ public class LongestTripMapper implements Mapper<Integer, BikeTrip, Integer, Fin
 
     @Override
     public void setHazelcastInstance(HazelcastInstance hazelcastInstance) {
-        //TODO: Deberia ser parametro?
         stations = hazelcastInstance.getMap(STATIONS_MAP_NAME);
     }
 
