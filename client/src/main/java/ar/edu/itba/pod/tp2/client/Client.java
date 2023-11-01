@@ -18,7 +18,6 @@ import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 
 import static ar.edu.itba.pod.tp2.client.utils.ClientUtils.*;
-import static ar.edu.itba.pod.tp2.client.Query2.*;
 
 
 public class Client {
@@ -29,7 +28,7 @@ public class Client {
     private static final String PERFORMANCE_FILE_PREFIX = "time";
     private static final String PERFORMANCE_FILE_EXT = ".txt";
     
-    private static Logger logger = LoggerFactory.getLogger(Client.class);
+    private static final Logger logger = LoggerFactory.getLogger(Client.class);
     private static final java.util.logging.Logger performanceLogger = java.util.logging.Logger.getLogger("performanceLogger");
 
 
