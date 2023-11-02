@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @SuppressWarnings("deprecation")
-public class Query1 {
+public class Query1 implements Runnable {
 
     private static final String OUT_CSV_HEADER = "station_a;station_b;trips_between_a_b\n";
     private static final String QUERY_1_CSV_NAME = "query1.csv";
@@ -37,6 +37,7 @@ public class Query1 {
         this.outPath = outPath;
     }
 
+    @Override
     public void run() {
         JobTracker jobTracker = hazelcast.getJobTracker(jobName);
         KeyValueSource<Integer, BikeTrip> source = KeyValueSource.fromMap(trips);

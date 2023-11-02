@@ -20,7 +20,7 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
     private final CSVReader reader;
     private final Map<KeyT, ValueT> currentBatchIMap;
     private final IMap<KeyT, ValueT> hazelcastIMap;
-    private final int LINE_LIMIT = 100_000;
+    private final int LINE_LIMIT = 7_000_000;
 
     public CSVBatchPopulator(String path, IMap<KeyT, ValueT> hazelcastIMap) {
         this.reader = initializeCSVReader(path);

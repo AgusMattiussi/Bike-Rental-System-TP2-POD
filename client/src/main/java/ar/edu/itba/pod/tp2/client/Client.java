@@ -3,8 +3,8 @@ package ar.edu.itba.pod.tp2.client;
 import ar.edu.itba.pod.tp2.client.utils.BikeTripCSVBatchPopulator;
 import ar.edu.itba.pod.tp2.client.utils.StationsCSVBatchPopulator;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
-
 import ar.edu.itba.pod.tp2.model.Station;
+
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
+import javax.swing.JOptionPane;
 
 import static ar.edu.itba.pod.tp2.client.utils.ClientUtils.*;
 
@@ -42,7 +43,7 @@ public class Client {
         // final String query = args[0];
 
         //TODO: Cambiar
-        String query = "query2";
+        String query = "query4";
         String queryNumber = query.substring(5);
 
         final List<String> addresses = getAddressesList(argMap.get(ADDRESSES));
@@ -97,30 +98,21 @@ public class Client {
             System.exit(1);
         }
         
-
+        Runnable queryInstance = null;
         switch (query) {
             case "query1" -> {
                 logger.info("Query 1");
-                Query1 query1Instance = new Query1("query1", hazelcastInstance, stationMap, bikeTripMap, outPath);
-                performanceLogger.info("Inicio del trabajo map/reduce");
-                query1Instance.run();
-                performanceLogger.info("Fin del trabajo map/reduce");
+                queryInstance = new Query1("query1", hazelcastInstance, stationMap, bikeTripMap, outPath);
             }
             case "query2" -> {
                 String n = argMap.get(N_VAL);
                 validateNullArgument(n, "N (result limit) not specified");
                 logger.info("Query 2");
-                Query2 query2Instance = new Query2("query2", hazelcastInstance, Integer.parseInt(n), bikeTripMap, stationMap, outPath);
-                performanceLogger.info("Inicio del trabajo map/reduce");
-                query2Instance.run();
-                performanceLogger.info("Fin del trabajo map/reduce");
+                queryInstance = new Query2("query2", hazelcastInstance, Integer.parseInt(n), bikeTripMap, stationMap, outPath);
             }
             case "query3" -> {
                 logger.info("Query 3");
-                Query3 query3Instance = new Query3("query3", hazelcastInstance, stationMap, bikeTripMap, outPath);
-                performanceLogger.info("Inicio del trabajo map/reduce");
-                query3Instance.run();
-                performanceLogger.info("Fin del trabajo map/reduce");
+                queryInstance = new Query3("query3", hazelcastInstance, stationMap, bikeTripMap, outPath);
             }
             case "query4" -> {
                 logger.info("Query 4");
@@ -128,13 +120,22 @@ public class Client {
                 String endDate = argMap.get(END_DATE);
                 validateNullArgument(startDate, "Start date not specified");
                 validateNullArgument(endDate, "End date not specified");
-                Query4 query4Instance = new Query4("query4", hazelcastInstance, stationMap, bikeTripMap, startDate, endDate, outPath);
-                performanceLogger.info("Inicio del trabajo map/reduce");
-                query4Instance.run();
-                performanceLogger.info("Fin del trabajo map/reduce");
+                queryInstance = new Query4("query4", hazelcastInstance, stationMap, bikeTripMap, startDate, endDate, outPath);
             }
-            default -> logger.error("Invalid query");
+            default -> {
+                logger.error("Invalid query");
+                performanceFileHandler.close();
+                bikeTripMap.clear();
+                stationMap.clear();
+                HazelcastClient.shutdownAll();
+                System.exit(1);
+            }
         }
+
+        // Corremos la Query
+        performanceLogger.info("Inicio del trabajo map/reduce");
+        queryInstance.run();
+        performanceLogger.info("Fin del trabajo map/reduce");
 
         // Cerramos el performanceFileHandler
         performanceFileHandler.close();
@@ -144,6 +145,7 @@ public class Client {
         stationMap.clear();
 
         // Shutdown
+        HazelcastClient.shutdown(hazelcastInstance);
         HazelcastClient.shutdownAll();
     }
 

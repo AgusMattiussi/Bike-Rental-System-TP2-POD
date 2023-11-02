@@ -33,8 +33,8 @@ public class Server {
 
 
         InterfacesConfig interfacesConfig = new InterfacesConfig()
-//                .setInterfaces(Collections.singletonList("127.0.0.1"))
-                .setInterfaces(Collections.singletonList("10.9.66.*"))
+                .setInterfaces(Collections.singletonList("127.0.0.1"))
+                //.setInterfaces(Collections.singletonList("192.168.1.*"))
                 .setEnabled(true);
 
         NetworkConfig networkConfig = new NetworkConfig()
