@@ -1,11 +1,9 @@
 package ar.edu.itba.pod.tp2.collators;
 
 import ar.edu.itba.pod.tp2.model.BikeTripCount;
-import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
 import ar.edu.itba.pod.tp2.model.Pair;
 import ar.edu.itba.pod.tp2.model.Station;
 import com.hazelcast.core.IMap;
-import com.hazelcast.map.impl.MapEntrySimple;
 import com.hazelcast.mapreduce.Collator;
 
 import java.util.ArrayList;

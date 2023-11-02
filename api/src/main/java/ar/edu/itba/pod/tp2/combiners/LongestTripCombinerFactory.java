@@ -1,11 +1,9 @@
 package ar.edu.itba.pod.tp2.combiners;
 
 import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
-import ar.edu.itba.pod.tp2.model.Triple;
 import com.hazelcast.mapreduce.Combiner;
 import com.hazelcast.mapreduce.CombinerFactory;
 
-import java.time.LocalDateTime;
 
 @SuppressWarnings("deprecation")
 public class LongestTripCombinerFactory implements CombinerFactory<Integer, FinishedBikeTrip, FinishedBikeTrip> {

@@ -7,7 +7,6 @@ import java.util.Collections;
 
 import com.hazelcast.config.*;
 import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
 
 public class Server {
     private static Logger logger = LoggerFactory.getLogger(Server.class);

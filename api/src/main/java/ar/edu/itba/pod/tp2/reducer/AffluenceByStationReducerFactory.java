@@ -1,8 +1,6 @@
 package ar.edu.itba.pod.tp2.reducer;
 
 import ar.edu.itba.pod.tp2.model.AffluenceInfo;
-import ar.edu.itba.pod.tp2.model.Pair;
-import ar.edu.itba.pod.tp2.model.Triple;
 import com.hazelcast.mapreduce.Reducer;
 import com.hazelcast.mapreduce.ReducerFactory;
 

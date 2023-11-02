@@ -3,6 +3,7 @@ package ar.edu.itba.pod.tp2.combiners;
 import ar.edu.itba.pod.tp2.model.DistanceJourney;
 import com.hazelcast.mapreduce.Combiner;
 import com.hazelcast.mapreduce.CombinerFactory;
+
 @SuppressWarnings("deprecation")
 public class AverageDistanceCombinerFactory implements CombinerFactory<Integer, DistanceJourney, DistanceJourney> {
 
@@ -11,7 +12,7 @@ public class AverageDistanceCombinerFactory implements CombinerFactory<Integer, 
         return new AverageDistanceCombiner();
     }
 
-    private class AverageDistanceCombiner extends Combiner<DistanceJourney, DistanceJourney> {
+    private static class AverageDistanceCombiner extends Combiner<DistanceJourney, DistanceJourney> {
         private DistanceJourney distanceJourney = null;
 
         @Override

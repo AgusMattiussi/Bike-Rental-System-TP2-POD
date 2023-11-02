@@ -11,7 +11,6 @@ public class AffluenceInfo implements DataSerializable, Comparable<AffluenceInfo
     private int positiveDays;
     private int negativeDays;
     private int neutralDays;
-
     private String stationName = "";
 
     public AffluenceInfo() {

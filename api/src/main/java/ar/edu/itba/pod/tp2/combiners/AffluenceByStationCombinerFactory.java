@@ -1,6 +1,5 @@
 package ar.edu.itba.pod.tp2.combiners;
 
-import ar.edu.itba.pod.tp2.model.AffluenceInfo;
 import ar.edu.itba.pod.tp2.model.Pair;
 import com.hazelcast.mapreduce.Combiner;
 import com.hazelcast.mapreduce.CombinerFactory;

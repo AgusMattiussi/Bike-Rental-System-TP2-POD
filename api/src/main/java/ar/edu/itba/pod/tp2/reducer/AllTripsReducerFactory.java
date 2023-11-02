@@ -1,7 +1,5 @@
 package ar.edu.itba.pod.tp2.reducer;
 
-import ar.edu.itba.pod.tp2.model.BikeTrip;
-import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
 import ar.edu.itba.pod.tp2.model.Pair;
 import com.hazelcast.mapreduce.Reducer;
 import com.hazelcast.mapreduce.ReducerFactory;
