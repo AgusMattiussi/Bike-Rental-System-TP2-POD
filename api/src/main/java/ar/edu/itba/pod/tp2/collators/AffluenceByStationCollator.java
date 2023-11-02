@@ -15,9 +15,11 @@ import java.util.stream.Collectors;
 @SuppressWarnings("deprecation")
 public class AffluenceByStationCollator implements Collator<Map.Entry<Integer, AffluenceInfo>, List<Pair<String, AffluenceInfo>>> {
     private final IMap<Integer, Station> stations;
+    private final int days;
 
-    public AffluenceByStationCollator(IMap<Integer, Station> stations) {
+    public AffluenceByStationCollator(IMap<Integer, Station> stations, int days) {
         this.stations = stations;
+        this.days = days;
     }
 
     @Override
@@ -32,6 +34,8 @@ public class AffluenceByStationCollator implements Collator<Map.Entry<Integer, A
 
             String stationName = station.getName();
             affluenceInfo.setStationName(stationName);
+
+            affluenceInfo.normalize(days);
 
             finalSortedValues.add(new Pair<>(stationName, affluenceInfo));
         });

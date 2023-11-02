@@ -50,6 +50,14 @@ public class AffluenceInfo implements DataSerializable, Comparable<AffluenceInfo
         return stationName;
     }
 
+    public void normalize(int days){
+        int sum = positiveDays + negativeDays + neutralDays;
+        if(sum != days){
+            int diff = days - sum;
+            addNeutralDays(diff);
+        }
+    }
+
     public void setStationName(String stationName) {
         this.stationName = stationName;
     }
