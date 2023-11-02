@@ -7,6 +7,7 @@ import com.hazelcast.core.IMap;
 import com.hazelcast.mapreduce.Collator;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("deprecation")
 public class AverageDistanceCollator implements Collator<Map.Entry<Integer, DistanceJourney>, List<Pair<String,Double>>> {
@@ -22,12 +23,16 @@ public class AverageDistanceCollator implements Collator<Map.Entry<Integer, Dist
         List<Pair<String, Double>> sortedValues = new ArrayList<>();
 
         // Resolvemos los nombres de las estaciones de origen y destino
+        List<Pair<String, Double>> finalSortedValues = sortedValues;
         iterable.forEach(entry -> {
             Station startStation = stations.get(entry.getKey());
-            sortedValues.add(new Pair<>(startStation.getName(), entry.getValue().getAverage()));
+            finalSortedValues.add(new Pair<>(startStation.getName(), entry.getValue().getAverage()));
         });
 
-        sortedValues.sort(new AvgDistanceAndNameComparator());
+        sortedValues = sortedValues.parallelStream()
+                .sorted(new AvgDistanceAndNameComparator())
+                .collect(Collectors.toList());
+
         return sortedValues;
     }
 

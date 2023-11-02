@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("deprecation")
 public class AllTripsCollator implements Collator<Map.Entry<Pair<Integer, Integer>, Integer>, List<BikeTripCount>> {
@@ -24,13 +25,19 @@ public class AllTripsCollator implements Collator<Map.Entry<Pair<Integer, Intege
     public List<BikeTripCount> collate(Iterable<Map.Entry<Pair<Integer, Integer>, Integer>> values) {
         List<BikeTripCount> sortedValues = new ArrayList<>();
 
+        // Resolvemos los nombres de las estaciones de origen y destino
+        List<BikeTripCount> finalSortedValues = sortedValues;
         values.forEach(entry -> {
             Station startStation = stations.get(entry.getKey().first());
             Station endStation = stations.get(entry.getKey().second());
             BikeTripCount toAdd = new BikeTripCount(startStation.getName(), endStation.getName(), entry.getValue());
-            sortedValues.add(toAdd);
+            finalSortedValues.add(toAdd);
         });
-        sortedValues.sort(new TripsAndNameComparator());
+
+        sortedValues = sortedValues.parallelStream()
+                .sorted(new TripsAndNameComparator())
+                .collect(Collectors.toList());
+
         return sortedValues;
     }
 

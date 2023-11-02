@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 // Ordena los resultados de mayor a menor duracion
 @SuppressWarnings("deprecation")
@@ -25,17 +26,21 @@ public class LongestTripCollator implements Collator<Map.Entry<Integer, Finished
     public List<Pair<String, FinishedBikeTrip>> collate(Iterable<Map.Entry<Integer, FinishedBikeTrip>> values) {
         List<Pair<String, FinishedBikeTrip>> sortedValues = new ArrayList<>();
 
-        // Resolvemos los nombres de las estaciones de origen y destino
+        // Resolvemos los nombres de las estaciones
+        List<Pair<String, FinishedBikeTrip>> finalSortedValues = sortedValues;
         values.forEach(entry -> {
             FinishedBikeTrip trip = entry.getValue();
             Station endStation = stations.get(trip.getEndStationId());
             Station startStation = stations.get(entry.getKey());
 
             trip.setEndStationName(endStation.getName());
-            sortedValues.add(new Pair<>(startStation.getName(), trip));
+            finalSortedValues.add(new Pair<>(startStation.getName(), trip));
         });
 
-        sortedValues.sort(new DurationAndNameComparator());
+        sortedValues = sortedValues.parallelStream()
+                .sorted(new DurationAndNameComparator())
+                .collect(Collectors.toList());
+
         return sortedValues;
     }
 
