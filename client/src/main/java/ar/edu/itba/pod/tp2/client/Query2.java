@@ -1,7 +1,6 @@
 package ar.edu.itba.pod.tp2.client;
 
 import ar.edu.itba.pod.tp2.collators.AverageDistanceCollator;
-import ar.edu.itba.pod.tp2.combiners.AverageDistanceCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.AverageDistanceMapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
 import ar.edu.itba.pod.tp2.model.Pair;

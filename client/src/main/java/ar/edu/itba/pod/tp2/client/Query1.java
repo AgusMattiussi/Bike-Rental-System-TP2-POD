@@ -1,6 +1,6 @@
 package ar.edu.itba.pod.tp2.client;
+
 import ar.edu.itba.pod.tp2.collators.AllTripsCollator;
-import ar.edu.itba.pod.tp2.combiners.AllTripsCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.AllTripsMapper;
 import ar.edu.itba.pod.tp2.model.*;
 import ar.edu.itba.pod.tp2.reducer.AllTripsReducerFactory;
@@ -43,7 +43,6 @@ public class Query1 {
 
         JobCompletableFuture<List<BikeTripCount>> future = jobTracker.newJob(source)
                 .mapper(new AllTripsMapper())
-                .combiner(new AllTripsCombinerFactory())
                 .reducer(new AllTripsReducerFactory())
                 .submit(new AllTripsCollator(stations)); // Attach a callback listenerfuture .andThen(buildCallback());
 
