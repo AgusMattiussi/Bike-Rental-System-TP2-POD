@@ -1,7 +1,6 @@
 package ar.edu.itba.pod.tp2.client;
 
 import ar.edu.itba.pod.tp2.collators.LongestTripCollator;
-import ar.edu.itba.pod.tp2.combiners.LongestTripCombinerFactory;
 import ar.edu.itba.pod.tp2.mapper.LongestTripMapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
 import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
@@ -49,7 +48,6 @@ public class Query3 implements Runnable {
 
         JobCompletableFuture<List<Pair<String, FinishedBikeTrip>>> future = jobTracker.newJob(source)
                 .mapper(new LongestTripMapper())
-                .combiner(new LongestTripCombinerFactory())
                 .reducer( new LongestTripReducerFactory())
                 .submit(new LongestTripCollator(stations));
                 // Attach a callback listenerfuture .andThen(buildCallback());
