@@ -10,13 +10,16 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("deprecation")
 public class AffluenceByStationCollator implements Collator<Map.Entry<Integer, AffluenceInfo>, List<Pair<String, AffluenceInfo>>> {
     private final IMap<Integer, Station> stations;
+    private final int days;
 
-    public AffluenceByStationCollator(IMap<Integer, Station> stations) {
+    public AffluenceByStationCollator(IMap<Integer, Station> stations, int days) {
         this.stations = stations;
+        this.days = days;
     }
 
     @Override
@@ -24,6 +27,7 @@ public class AffluenceByStationCollator implements Collator<Map.Entry<Integer, A
         List<Pair<String, AffluenceInfo>> sortedValues = new ArrayList<>();
 
         // Resolvemos los nombres de las estaciones
+        List<Pair<String, AffluenceInfo>> finalSortedValues = sortedValues;
         values.forEach(entry -> {
             Station station = stations.get(entry.getKey());
             AffluenceInfo affluenceInfo = entry.getValue();
@@ -31,10 +35,15 @@ public class AffluenceByStationCollator implements Collator<Map.Entry<Integer, A
             String stationName = station.getName();
             affluenceInfo.setStationName(stationName);
 
-            sortedValues.add(new Pair<>(stationName, affluenceInfo));
+            affluenceInfo.normalize(days);
+
+            finalSortedValues.add(new Pair<>(stationName, affluenceInfo));
         });
 
-        sortedValues.sort(new AffluenceComparator());
+        sortedValues = sortedValues.parallelStream()
+                .sorted(new AffluenceComparator())
+                .collect(Collectors.toList());
+
         return sortedValues;
     }
 

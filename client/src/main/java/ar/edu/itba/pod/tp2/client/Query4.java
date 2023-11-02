@@ -13,6 +13,9 @@ import com.hazelcast.mapreduce.KeyValueSource;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -48,7 +51,7 @@ public class Query4 implements Runnable {
                 .mapper(new AffluenceByStationMapper(startDate, endDate))
                 .combiner(new AffluenceByStationCombinerFactory())
                 .reducer(new AffluenceByStationReducerFactory())
-                .submit(new AffluenceByStationCollator(stations));
+                .submit(new AffluenceByStationCollator(stations, daysBetween(startDate, endDate)));
         // Attach a callback listenerfuture .andThen(buildCallback());
 
         // Esperamos el resultado de forma sincrónica
@@ -83,5 +86,12 @@ public class Query4 implements Runnable {
                 .append(pair.second().getNeutralDays()).append(';')
                 .append(pair.second().getNegativeDays()).append('\n');
         return sb.toString();
+    }
+
+    private int daysBetween(String startDate, String endDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate date1 = LocalDate.parse(startDate, formatter);
+        LocalDate date2 = LocalDate.parse(endDate, formatter);
+        return (int) ChronoUnit.DAYS.between(date1, date2);
     }
 }

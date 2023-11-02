@@ -4,7 +4,7 @@ import ar.edu.itba.pod.tp2.model.DistanceJourney;
 import com.hazelcast.mapreduce.Reducer;
 import com.hazelcast.mapreduce.ReducerFactory;
 
-
+@SuppressWarnings("deprecation")
 public class AverageDistanceReducerFactory implements ReducerFactory<Integer, DistanceJourney, DistanceJourney> {
 
     @Override

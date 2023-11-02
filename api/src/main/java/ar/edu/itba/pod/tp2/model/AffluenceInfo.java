@@ -11,7 +11,6 @@ public class AffluenceInfo implements DataSerializable, Comparable<AffluenceInfo
     private int positiveDays;
     private int negativeDays;
     private int neutralDays;
-
     private String stationName = "";
 
     public AffluenceInfo() {
@@ -49,6 +48,14 @@ public class AffluenceInfo implements DataSerializable, Comparable<AffluenceInfo
 
     public String getStationName() {
         return stationName;
+    }
+
+    public void normalize(int days){
+        int sum = positiveDays + negativeDays + neutralDays;
+        if(sum != days){
+            int diff = days - sum;
+            addNeutralDays(diff);
+        }
     }
 
     public void setStationName(String stationName) {

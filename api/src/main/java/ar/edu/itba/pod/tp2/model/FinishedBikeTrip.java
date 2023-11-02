@@ -9,7 +9,6 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
 public class FinishedBikeTrip implements DataSerializable, Comparable<FinishedBikeTrip> {
 

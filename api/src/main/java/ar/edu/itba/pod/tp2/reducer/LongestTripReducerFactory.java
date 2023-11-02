@@ -1,12 +1,9 @@
 package ar.edu.itba.pod.tp2.reducer;
 
 import ar.edu.itba.pod.tp2.model.FinishedBikeTrip;
-import ar.edu.itba.pod.tp2.model.Pair;
-import ar.edu.itba.pod.tp2.model.Triple;
 import com.hazelcast.mapreduce.Reducer;
 import com.hazelcast.mapreduce.ReducerFactory;
 
-import java.time.LocalDateTime;
 
 // (startStationId, (endStationId, tripDuration, startDateTime)) -> (endStationId, longestTripDuration)
 @SuppressWarnings("deprecation")

@@ -9,7 +9,6 @@ import com.hazelcast.mapreduce.Context;
 import com.hazelcast.mapreduce.Mapper;
 import ar.edu.itba.pod.tp2.model.BikeTrip;
 
-import java.io.Serializable;
 import java.time.Duration;
 
 // Recibe un ID de viaje y un BikeTrip y emite como key el ID de la estación de inicio y como value un objeto
