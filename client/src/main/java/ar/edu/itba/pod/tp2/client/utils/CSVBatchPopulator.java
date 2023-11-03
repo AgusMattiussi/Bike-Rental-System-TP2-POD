@@ -55,7 +55,6 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
     @Override
     public void run() {
         String[] line;
-        //TODO: Borrar i
         int i = 0;
         try {
             while ((line = reader.readNext()) != null && i < LINE_LIMIT) {
@@ -68,7 +67,7 @@ public abstract class CSVBatchPopulator<KeyT, ValueT> implements Runnable{
                 currentBatchIMap.put(nextEntry.getKey(), nextEntry.getValue());
 
                 i++;
-                if(i % 1_000_000 == 0){
+                if(i % 100_000 == 0){
                     System.out.printf("Read %d lines%n", i);
                 }
             }
